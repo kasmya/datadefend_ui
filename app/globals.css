@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  /* Common Colors */
+  --primary: #152645;
+  /* Dark Blue (User core color) */
+  --primary-light: #f0f7ff;
+  /* Very pale blue for backgrounds */
+  --accent: #2e66cc;
+  /* Vibrant Blue for buttons/highlights (derived to match) */
+  --accent-light: #a4d4ff;
+  /* Light Blue (User accent) */
+  --secondary: #64748b;
+  /* Slate for secondary text */
+  --text-main: #152645;
+  --text-muted: #64748b;
+  --white: #ffffff;
+
+  --background: #ffffff;
+  /* Major portion white */
+  --foreground: #152645;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-secondary: var(--secondary);
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+  --color-white: var(--white);
+
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--accent-light);
+  color: var(--primary);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--primary);
+}
