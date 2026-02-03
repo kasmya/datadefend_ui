@@ -1,4 +1,5 @@
 import { Hero } from "./components/Hero";
+import { MeityBadge } from "./components/MeityBadge";
 import { TrustBadges } from "./components/TrustBadges";
 import { IndustryCompliance } from "./components/IndustryCompliance";
 import { CustomerSegments } from "./components/CustomerSegments";
@@ -13,6 +14,7 @@ export default function Home() {
     <main className="min-h-screen bg-white">
       <Navbar />
       <Hero />
+      <MeityBadge />
       <TrustBadges />
       <IndustryCompliance />
       <CustomerSegments />
