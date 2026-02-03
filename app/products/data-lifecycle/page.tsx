@@ -2,78 +2,78 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { CheckCircle2, AlertTriangle, FileText, ClipboardCheck, Bell, Shield, ArrowRight, Calendar, Target, BarChart3, Lock } from "lucide-react";
+import { CheckCircle2, Search, Map, Trash2, Clock, Database, ArrowRight, Calendar, BarChart3, Lock, Zap, FolderSearch } from "lucide-react";
 import Link from "next/link";
 import { Navbar } from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
 
-export default function ThirdPartyRiskPage() {
+export default function DataLifecyclePage() {
     const keyFeatures = [
         {
-            icon: ClipboardCheck,
-            title: "Use Pre-built or Custom Questionnaire Templates",
+            icon: FolderSearch,
+            title: "Run Data Discovery with AI-Powered Classification",
             features: [
-                "Pre-populated questionnaire repository for DPIA, TPRA, ISO 27001, ISO 27701 assessments",
-                "Create and run your own templates with custom questionnaires tailored to your needs",
-                "Support for multiple question types—dropdowns, multi-selects, paragraphs, file uploads",
-                "Automated scoring and risk calculation based on vendor responses",
-                "Version control for questionnaires with audit trails of all changes"
-            ],
-            color: "from-[#f59e0b] to-[#d97706]"
-        },
-        {
-            icon: Target,
-            title: "Define and Track Privacy Risks via Central Risk Library",
-            features: [
-                "Identify risks based on assessment responses with automated risk detection",
-                "Maintain centralized risk library and register across the entire organization",
-                "Manage risk mitigation tasks by attaching them to individual risk register entries",
-                "Real-time risk scoring with severity levels and business impact assessment",
-                "Integration with compliance module for holistic risk-compliance view"
+                "Accurately detect PII across structured and unstructured sources—SQL databases, CRMs, cloud storage, internal servers",
+                "Automatic detection and classification of Aadhaar, PAN, name, DOB, email, phone numbers",
+                "99.7% accuracy with machine learning models trained on Indian data patterns",
+                "Scan across databases, files, APIs, and cloud platforms simultaneously",
+                "Classification complete in minutes, not weeks—with detailed categorization reports"
             ],
             color: "from-[#6366f1] to-[#8b5cf6]"
         },
         {
-            icon: Bell,
-            title: "Breach Management for Third Parties",
+            icon: Map,
+            title: "Map Your Data with Automated Lineage Tracking",
             features: [
-                "Structured approach to detect, manage, and resolve data breaches involving vendors",
-                "Identification and containment workflows to minimize damage and exposure",
-                "Automated notification to affected users and regulatory authorities per DPDP requirements",
-                "Vendor breach impact assessment with downstream data flow analysis",
-                "Complete audit trail of breach response actions for regulatory compliance"
+                "Map all personal data you collect to its source, purpose, and downstream usage",
+                "Get detailed data lineage maps for complete visibility on data flows across systems",
+                "Track data movement across 12+ system integrations in real-time",
+                "Identify shadow IT and unauthorized data transfers automatically",
+                "Visual data flow diagrams for compliance audits and risk assessments"
+            ],
+            color: "from-[#f59e0b] to-[#d97706]"
+        },
+        {
+            icon: Trash2,
+            title: "Automate Data Deletion Per DPDP Requirements",
+            features: [
+                "Define data retention policies for different data types and processing purposes",
+                "Automate deletion of user data when it's no longer necessary for original purpose",
+                "Compliance with DPDP 1-year retention limits and legal hold requirements",
+                "Scheduled deletion with verification and audit trails for every action",
+                "Real-time alerts for data approaching retention limits across all systems"
             ],
             color: "from-[#14b8a6] to-[#0d9488]"
         }
     ];
 
-    const riskMetrics = [
-        { label: "Vendors Assessed", value: "47", icon: BarChart3, color: "text-[#f59e0b]" },
-        { label: "High Risk", value: "3", icon: AlertTriangle, color: "text-red-500" },
-        { label: "Active Assessments", value: "12", icon: ClipboardCheck, color: "text-[#6366f1]" },
-        { label: "Avg Risk Score", value: "72/100", icon: Target, color: "text-[#14b8a6]" }
+    const dataCategories = [
+        { name: "Personal Identifiers", count: "1,247", icon: Database },
+        { name: "Financial Data", count: "689", icon: Lock },
+        { name: "Aadhaar/PAN", count: "423", icon: FolderSearch },
+        { name: "Health Records", count: "156", icon: BarChart3 }
     ];
 
     const benefits = [
         {
-            icon: Lock,
-            title: "Vendor Compliance",
-            description: "Ensure all third parties meet DPDP standards before data sharing"
+            icon: CheckCircle2,
+            title: "Complete Visibility",
+            description: "Full transparency into where personal data resides and how it flows"
         },
         {
-            icon: Shield,
-            title: "Risk Mitigation",
-            description: "Identify and address vendor risks before they become incidents"
+            icon: Clock,
+            title: "Automated Compliance",
+            description: "Set policies once, enforce continuously across all systems"
         },
         {
-            icon: FileText,
-            title: "Audit Documentation",
-            description: "Complete records of vendor assessments for regulatory audits"
+            icon: Zap,
+            title: "Fast Discovery",
+            description: "Scan millions of records in minutes with AI-powered classification"
         },
         {
-            icon: Bell,
-            title: "Breach Readiness",
-            description: "Structured workflows for rapid vendor breach response"
+            icon: Search,
+            title: "Risk Detection",
+            description: "Identify unauthorized data storage and shadow IT automatically"
         }
     ];
 
@@ -90,19 +90,19 @@ export default function ThirdPartyRiskPage() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6 }}
                         >
-                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#f59e0b]/10 border border-[#f59e0b]/20 rounded-full mb-6">
-                                <AlertTriangle className="w-4 h-4 text-[#f59e0b]" />
-                                <span className="text-sm font-semibold text-[#f59e0b]">THIRD PARTY RISK MANAGEMENT</span>
+                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#14b8a6]/10 border border-[#14b8a6]/20 rounded-full mb-6">
+                                <Database className="w-4 h-4 text-[#14b8a6]" />
+                                <span className="text-sm font-semibold text-[#14b8a6]">DATA LIFECYCLE MANAGEMENT</span>
                             </div>
                             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#152645] mb-6 leading-tight">
-                                Run DPIA, PIA, TPRA{" "}
-                                <span className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] bg-clip-text text-transparent">
-                                    Assessments
+                                Automate Identification,{" "}
+                                <span className="bg-gradient-to-r from-[#14b8a6] to-[#0d9488] bg-clip-text text-transparent">
+                                    Classification & Deletion
                                 </span>{" "}
-                                Through One Unified Module
+                                of Personal Data
                             </h1>
                             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                                Send DPIA, TPRA, PIA and other questionnaires to vendors. Get full customizability over questionnaires. Track vendor deletion and issue breach notices—all from one platform.
+                                Run data discovery across structured and unstructured data. Map data flows with automated lineage tracking. Delete data automatically after it has served its purpose or when retention period expires.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <Link
@@ -110,10 +110,10 @@ export default function ThirdPartyRiskPage() {
                                     className="px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 cursor-pointer"
                                 >
                                     <Calendar className="w-5 h-5" />
-                                    Start Risk Assessment
+                                    Start Data Discovery
                                 </Link>
                                 <button className="px-8 py-4 bg-gray-100 hover:bg-gray-200 text-[#152645] font-semibold rounded-xl transition-all flex items-center justify-center gap-2 border border-gray-300 cursor-pointer">
-                                    View Demo
+                                    View 2-Min Demo
                                     <ArrowRight className="w-5 h-5" />
                                 </button>
                             </div>
@@ -127,20 +127,26 @@ export default function ThirdPartyRiskPage() {
                         >
                             <div className="bg-gray-50 border border-gray-200 rounded-3xl p-8 shadow-2xl">
                                 <div className="mb-6">
-                                    <h3 className="text-[#152645] font-bold text-lg mb-4">Third-Party Risk Dashboard</h3>
+                                    <div className="flex items-center justify-between mb-4">
+                                        <span className="text-gray-500">Data Discovery Progress</span>
+                                        <span className="text-2xl font-bold text-[#14b8a6]">75%</span>
+                                    </div>
+                                    <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                                        <div className="h-full w-3/4 bg-gradient-to-r from-[#14b8a6] to-[#0d9488]"></div>
+                                    </div>
                                 </div>
                                 <div className="grid grid-cols-2 gap-4 mb-6">
-                                    {riskMetrics.map((metric, idx) => (
+                                    {dataCategories.map((cat, idx) => (
                                         <div key={idx} className="p-4 bg-gray-100 rounded-xl">
-                                            <metric.icon className={`w-6 h-6 ${metric.color} mb-2`} />
-                                            <p className="text-gray-400 text-xs mb-1">{metric.label}</p>
-                                            <p className={`${metric.color} font-bold text-2xl`}>{metric.value}</p>
+                                            <cat.icon className="w-6 h-6 text-[#14b8a6] mb-2" />
+                                            <p className="text-gray-400 text-xs mb-1">{cat.name}</p>
+                                            <p className="text-[#152645] font-bold text-lg">{cat.count} found</p>
                                         </div>
                                     ))}
                                 </div>
-                                <div className="p-4 bg-gradient-to-r from-[#f59e0b]/10 to-[#d97706]/10 rounded-xl border border-[#f59e0b]/20">
-                                    <p className="text-[#152645] text-sm font-semibold mb-2">✨ Unified Risk Management</p>
-                                    <p className="text-gray-400 text-xs">Automated scoring • Central risk library • Breach workflows</p>
+                                <div className="p-4 bg-gradient-to-r from-[#14b8a6]/10 to-[#6366f1]/10 rounded-xl border border-[#14b8a6]/20">
+                                    <p className="text-[#152645] text-sm font-semibold mb-2">✨ AI-Powered Discovery</p>
+                                    <p className="text-gray-400 text-xs">2,515 Total PII • 99.7% Accuracy • Real-time Mapping</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -158,10 +164,10 @@ export default function ThirdPartyRiskPage() {
                         className="text-center mb-16"
                     >
                         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#152645] mb-4">
-                            Complete Vendor Risk Lifecycle
+                            3 Modules for Complete Data Control
                         </h2>
                         <p className="text-xl text-gray-500 max-w-3xl mx-auto">
-                            From assessment to breach management—protect your organization from third-party risks
+                            Discover, map, and manage your data lifecycle—from ingestion to deletion
                         </p>
                     </motion.div>
 
@@ -188,7 +194,7 @@ export default function ThirdPartyRiskPage() {
                                     <div className="space-y-3">
                                         {feature.features.map((item, idx) => (
                                             <div key={idx} className="flex items-start gap-3 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
-                                                <CheckCircle2 className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" />
+                                                <CheckCircle2 className="w-5 h-5 text-[#14b8a6] flex-shrink-0 mt-0.5" />
                                                 <span className="text-gray-600 text-sm leading-relaxed">{item}</span>
                                             </div>
                                         ))}
@@ -211,9 +217,9 @@ export default function ThirdPartyRiskPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="bg-gray-50 border border-gray-200 rounded-2xl p-6 hover:border-[#f59e0b]/50 transition-all text-center"
+                                className="bg-gray-50 border border-gray-200 rounded-2xl p-6 hover:border-[#14b8a6]/50 transition-all text-center"
                             >
-                                <benefit.icon className="w-10 h-10 text-[#f59e0b] mx-auto mb-4" />
+                                <benefit.icon className="w-10 h-10 text-[#14b8a6] mx-auto mb-4" />
                                 <h4 className="text-lg font-bold text-[#152645] mb-2">{benefit.title}</h4>
                                 <p className="text-gray-400 text-sm">{benefit.description}</p>
                             </motion.div>
@@ -222,24 +228,24 @@ export default function ThirdPartyRiskPage() {
                 </div>
             </section>
 
-            {/* CTA Section */}
+            {/*  */}
             <section className="py-20 px-4">
                 <div className="container mx-auto max-w-5xl">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="bg-gradient-to-r from-[#f59e0b] via-[#d97706] to-[#f59e0b] rounded-[3rem] p-12 md:p-16 text-center relative overflow-hidden"
+                        className="bg-gradient-to-r from-[#14b8a6] via-[#0d9488] to-[#14b8a6] rounded-[3rem] p-12 md:p-16 text-center relative overflow-hidden"
                     >
                         <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
                         <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
                         
                         <div className="relative z-10">
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                                Start Managing Vendor Risks Today
+                                Start Your Data Discovery Journey Today
                             </h2>
                             <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-                                Assess your first 5 vendors free. Get complete visibility into third-party compliance and risk exposure.
+                                Scan your first 10,000 records free. Get complete visibility into your personal data landscape in minutes.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <Link
@@ -247,7 +253,7 @@ export default function ThirdPartyRiskPage() {
                                     className="px-8 py-4 bg-white hover:bg-gray-100 text-[#152645] font-bold rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
                                 >
                                     <Calendar className="w-5 h-5" />
-                                    Start Free Assessment
+                                    Get Started Free
                                 </Link>
                                 <Link
                                     href="/contact"

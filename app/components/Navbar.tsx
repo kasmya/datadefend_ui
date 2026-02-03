@@ -11,12 +11,15 @@ const navItems = [
         name: "Products",
         href: "#",
         dropdown: [
-            { name: "Consent Manager", href: "/products/consent-manager" },
-            { name: "Data Discovery", href: "/products/data-discovery" },
-            { name: "DSAR Automation", href: "/products/dsar" },
-            { name: "Vendor Risk", href: "/products/vendor-risk" },
+            { name: "Consent Management", href: "/products/consent-manager" },
+            { name: "Data Lifecycle Management", href: "/products/data-lifecycle" },
+            { name: "Compliance & Privacy", href: "/products/compliance-privacy" },
+            { name: "Third Party Risk Management", href: "/products/vendor-risk" },
+            { name: "Cookie Consent", href: "/products/cookie-consent" },
         ],
     },
+    { name: "Pricing", href: "/pricing" },
+    { name: "Integrations", href: "/integrations" },
     { name: "Resources", href: "/resources" },
     { name: "Contact Us", href: "/contact" },
 ];
@@ -25,6 +28,8 @@ export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+    const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
+    const [bannerVisible, setBannerVisible] = useState(true);
 
     const [timeLeft, setTimeLeft] = useState<{ months: number; days: number }>({ months: 0, days: 0 });
 
@@ -53,33 +58,57 @@ export function Navbar() {
         const handleScroll = () => setScrolled(window.scrollY > 20);
         window.addEventListener("scroll", handleScroll);
 
+        // Prevent body scroll when mobile menu is open
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+
         return () => {
             window.removeEventListener("scroll", handleScroll);
             clearInterval(timer);
+            document.body.style.overflow = 'unset';
         };
-    }, []);
+    }, [isOpen]);
 
     return (
         <>
             {/* Top Banner */}
-            <div className="bg-[#b45309] text-white text-sm py-2 text-center">
-                <span className="font-medium">
-                    🎉 Deadline: {timeLeft.months} mo | {timeLeft.days} days until May 14, 2027{" "}
-                    <Link href="/resources" className="underline hover:no-underline ml-1 text-[#fcd34d]">
-                        Learn More →
-                    </Link>
-                </span>
-            </div>
+            {bannerVisible && (
+                <div className="bg-[#b45309] text-white text-xs md:text-sm py-2 px-4 relative">
+                    <div className="max-w-7xl mx-auto flex items-center justify-between">
+                        <div className="flex-1 text-center">
+                            <span className="font-medium">
+                                🎉 Deadline: {timeLeft.months} mo | {timeLeft.days} days until May 13, 2027{" "}
+                                <Link href="/dpdp-guide" className="underline hover:no-underline ml-1 text-[#fcd34d]">
+                                    DPDP Rules Guide →
+                                </Link>
+                            </span>
+                        </div>
+                        <button
+                            onClick={() => setBannerVisible(false)}
+                            className="text-white/80 hover:text-white transition-colors p-1 hover:bg-white/10 rounded cursor-pointer"
+                            aria-label="Close banner"
+                        >
+                            <X className="w-4 h-4" />
+                        </button>
+                    </div>
+                </div>
+            )}
 
             {/* Main Navbar - Floating Pill Logic */}
-            <div className={`sticky z-50 transition-all duration-300 ${scrolled ? "top-0 px-4 md:px-8 pt-4" : "top-4 px-4 md:px-8"}`}>
+            <div className={`sticky z-50 transition-all duration-300 ${scrolled ? "top-0 mb-0" : "top-4 mb-4"} ${isOpen ? "md:px-8" : "px-4 md:px-8"}`}>
                 <nav
-                    className={`transition-all duration-300 mx-auto bg-white/95 backdrop-blur-md shadow-xl rounded-full max-w-7xl border border-gray-100/50`}
+                    className={`transition-all duration-300 mx-auto bg-white/95 backdrop-blur-md shadow-2xl ${isOpen ? "rounded-t-3xl md:rounded-full" : "rounded-full"} max-w-7xl border border-gray-100/50`}
                 >
                     <div className="container mx-auto px-4 md:px-6">
                         <div className="flex items-center justify-between h-16">
                             {/* Logo */}
-                            <Link href="/" className="flex items-center gap-2 pl-2">
+                            <Link href="/" className="flex items-center gap-2 pl-2" onClick={() => {
+                                setIsOpen(false);
+                                setMobileDropdown(null);
+                            }}>
                                 {/* Using dad.svg logo as requested - No Invert needed for white background */}
                                 <img src="/dad.svg" alt="DataDefend Logo" className="h-8 w-auto" />
                             </Link>
@@ -131,17 +160,21 @@ export function Navbar() {
                             {/* CTA Button */}
                             <div className="hidden md:flex items-center gap-4 pr-2">
                                 <Link
-                                    href="#demo"
+                                    href="/contact"
                                     className="flex items-center gap-2 px-6 py-2.5 bg-[#f59e0b] hover:bg-[#d97706] text-[#152645] font-semibold rounded-full transition-colors shadow-lg shadow-amber-500/20"
                                 >
-                                    Demo
+                                    Book Demo
                                 </Link>
                             </div>
 
                             {/* Mobile Menu Button */}
                             <button
-                                onClick={() => setIsOpen(!isOpen)}
-                                className={`md:hidden p-2 text-[#152645]`}
+                                onClick={() => {
+                                    setIsOpen(!isOpen);
+                                    if (!isOpen) setMobileDropdown(null);
+                                }}
+                                className={`md:hidden p-2 text-[#152645] relative z-50 cursor-pointer`}
+                                aria-label="Toggle menu"
                             >
                                 {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                             </button>
@@ -155,31 +188,102 @@ export function Navbar() {
                                 initial={{ opacity: 0, height: 0 }}
                                 animate={{ opacity: 1, height: "auto" }}
                                 exit={{ opacity: 0, height: 0 }}
-                                className="md:hidden bg-white border-t rounded-b-3xl overflow-hidden shadow-xl"
+                                transition={{ duration: 0.25, ease: "easeInOut" }}
+                                className="md:hidden bg-white border-t border-gray-100 rounded-b-3xl overflow-hidden shadow-2xl"
                             >
-                                <div className="container mx-auto px-4 py-4 space-y-4">
+                                <div className="px-4 py-4 space-y-1 max-h-[calc(100vh-120px)] overflow-y-auto">
                                     {navItems.map((item) => (
-                                        <Link
-                                            key={item.name}
-                                            href={item.href}
-                                            className="block text-gray-700 font-medium py-3 px-4 hover:bg-gray-50 rounded-xl"
-                                            onClick={() => setIsOpen(false)}
-                                        >
-                                            {item.name}
-                                        </Link>
+                                        <div key={item.name}>
+                                            {item.dropdown ? (
+                                                <div className="space-y-1">
+                                                    <button
+                                                        onClick={() => setMobileDropdown(mobileDropdown === item.name ? null : item.name)}
+                                                        className="w-full flex items-center justify-between text-gray-800 font-semibold py-3 px-4 hover:bg-gray-50 rounded-lg transition-all active:scale-[0.98] cursor-pointer"
+                                                    >
+                                                        <span className="text-base">{item.name}</span>
+                                                        <ChevronDown 
+                                                            className={`w-5 h-5 transition-transform duration-300 text-gray-500 ${
+                                                                mobileDropdown === item.name ? "rotate-180 text-[#0e488b]" : ""
+                                                            }`} 
+                                                        />
+                                                    </button>
+                                                    <AnimatePresence>
+                                                        {mobileDropdown === item.name && (
+                                                            <motion.div
+                                                                initial={{ opacity: 0, height: 0 }}
+                                                                animate={{ opacity: 1, height: "auto" }}
+                                                                exit={{ opacity: 0, height: 0 }}
+                                                                transition={{ duration: 0.2 }}
+                                                                className="space-y-1 overflow-hidden bg-gray-50 rounded-lg p-2"
+                                                            >
+                                                                {item.dropdown.map((subItem, index) => (
+                                                                    <Link
+                                                                        key={subItem.name}
+                                                                        href={subItem.href}
+                                                                        className="block text-gray-700 font-medium py-2.5 px-4 hover:bg-white hover:text-[#0e488b] rounded-md transition-all active:scale-[0.98]"
+                                                                        onClick={() => {
+                                                                            setIsOpen(false);
+                                                                            setMobileDropdown(null);
+                                                                        }}
+                                                                    >
+                                                                        <span className="flex items-center gap-2">
+                                                                            <span className="w-1.5 h-1.5 rounded-full bg-[#0e488b]"></span>
+                                                                            {subItem.name}
+                                                                        </span>
+                                                                    </Link>
+                                                                ))}
+                                                            </motion.div>
+                                                        )}
+                                                    </AnimatePresence>
+                                                </div>
+                                            ) : (
+                                                <Link
+                                                    href={item.href}
+                                                    className="block text-gray-800 font-semibold py-3 px-4 hover:bg-gray-50 rounded-lg transition-all text-base active:scale-[0.98]"
+                                                    onClick={() => {
+                                                        setIsOpen(false);
+                                                        setMobileDropdown(null);
+                                                    }}
+                                                >
+                                                    {item.name}
+                                                </Link>
+                                            )}
+                                        </div>
                                     ))}
-                                    <Link
-                                        href="#demo"
-                                        className="block w-full text-center px-5 py-4 bg-[#f59e0b] text-[#152645] font-semibold rounded-xl"
-                                        onClick={() => setIsOpen(false)}
-                                    >
-                                        Book a Demo
-                                    </Link>
+                                    <div className="pt-3 mt-3 border-t border-gray-100">
+                                        <Link
+                                            href="/contact"
+                                            className="block w-full text-center px-5 py-3.5 bg-gradient-to-r from-[#f59e0b] to-[#d97706] text-white font-bold rounded-xl shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40 active:scale-[0.98] transition-all"
+                                            onClick={() => {
+                                                setIsOpen(false);
+                                                setMobileDropdown(null);
+                                            }}
+                                        >
+                                            📅 Book a Demo
+                                        </Link>
+                                    </div>
                                 </div>
                             </motion.div>
                         )}
                     </AnimatePresence>
                 </nav>
+
+                {/* Backdrop overlay for mobile menu */}
+                <AnimatePresence>
+                    {isOpen && (
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="fixed inset-0 bg-black/20 backdrop-blur-sm -z-10 md:hidden"
+                            onClick={() => {
+                                setIsOpen(false);
+                                setMobileDropdown(null);
+                            }}
+                        />
+                    )}
+                </AnimatePresence>
             </div>
         </>
     );

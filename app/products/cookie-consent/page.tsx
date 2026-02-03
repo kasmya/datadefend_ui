@@ -2,78 +2,106 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { CheckCircle2, AlertTriangle, FileText, ClipboardCheck, Bell, Shield, ArrowRight, Calendar, Target, BarChart3, Lock } from "lucide-react";
+import { CheckCircle2, Cookie, Zap, Globe2, Settings, Monitor, ArrowRight, Calendar, BarChart3, Shield, Code2 } from "lucide-react";
 import Link from "next/link";
 import { Navbar } from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
 
-export default function ThirdPartyRiskPage() {
+export default function CookieConsentPage() {
+    const implementationSteps = [
+        {
+            step: "1",
+            title: "Configure Cookie Banner",
+            description: "Set up cookie banner language, permissions, and categories via the DataDefend Dashboard. Choose from 22 Indian languages and customize appearance to match your brand.",
+            icon: Settings
+        },
+        {
+            step: "2",
+            title: "Add Script to Website",
+            description: "Simply add the DataDefend Cookie Profile ID to your website footer. Takes just minutes with our lightweight, fast-loading script that won't slow down your site.",
+            icon: Code2
+        },
+        {
+            step: "3",
+            title: "Go Live with DPDP-Compliant Collection",
+            description: "Your website now has DPDP-compliant cookie consent collection with minimal user friction. Automatic categorization of essential, functional, analytics, and marketing cookies.",
+            icon: Monitor
+        },
+        {
+            step: "4",
+            title: "Monitor & Analyze",
+            description: "Track cookie consent data and analytics via the DataDefend Dashboard. Get insights on acceptance rates, user preferences, and compliance trends across your properties.",
+            icon: BarChart3
+        }
+    ];
+
     const keyFeatures = [
         {
-            icon: ClipboardCheck,
-            title: "Use Pre-built or Custom Questionnaire Templates",
+            icon: Zap,
+            title: "Fast, Light-weight, Low Latency",
             features: [
-                "Pre-populated questionnaire repository for DPIA, TPRA, ISO 27001, ISO 27701 assessments",
-                "Create and run your own templates with custom questionnaires tailored to your needs",
-                "Support for multiple question types—dropdowns, multi-selects, paragraphs, file uploads",
-                "Automated scoring and risk calculation based on vendor responses",
-                "Version control for questionnaires with audit trails of all changes"
+                "Cookie banner loads in <50ms with minimal impact on page performance",
+                "Optimized script size under 15KB for faster page loads and better SEO",
+                "CDN-distributed globally for consistent low-latency experience worldwide",
+                "Asynchronous loading ensures banner doesn't block page rendering",
+                "Cached on user devices for repeat visits with zero load time"
             ],
             color: "from-[#f59e0b] to-[#d97706]"
         },
         {
-            icon: Target,
-            title: "Define and Track Privacy Risks via Central Risk Library",
+            icon: Globe2,
+            title: "Multi-language Support & Customization",
             features: [
-                "Identify risks based on assessment responses with automated risk detection",
-                "Maintain centralized risk library and register across the entire organization",
-                "Manage risk mitigation tasks by attaching them to individual risk register entries",
-                "Real-time risk scoring with severity levels and business impact assessment",
-                "Integration with compliance module for holistic risk-compliance view"
+                "Support for 22 Indian regional languages for inclusive user experience",
+                "Fully customizable banner design to match your brand colors and style",
+                "Granular cookie categories: Essential, Functional, Analytics, Marketing",
+                "Pre-built templates for common use cases with one-click deployment",
+                "Mobile-optimized design for seamless experience across all devices"
             ],
             color: "from-[#6366f1] to-[#8b5cf6]"
         },
         {
-            icon: Bell,
-            title: "Breach Management for Third Parties",
+            icon: Shield,
+            title: "DPDP-Compliant Storage & Reporting",
             features: [
-                "Structured approach to detect, manage, and resolve data breaches involving vendors",
-                "Identification and containment workflows to minimize damage and exposure",
-                "Automated notification to affected users and regulatory authorities per DPDP requirements",
-                "Vendor breach impact assessment with downstream data flow analysis",
-                "Complete audit trail of breach response actions for regulatory compliance"
+                "Every cookie consent stored as MeitY-compliant consent artefact",
+                "Immutable audit trails with timestamp, IP address, and user agent",
+                "Real-time consent check API for verification before cookie placement",
+                "Automatic consent expiry and renewal workflows per retention policies",
+                "Exportable compliance reports for DPB audits and regulatory reviews"
             ],
             color: "from-[#14b8a6] to-[#0d9488]"
         }
     ];
 
-    const riskMetrics = [
-        { label: "Vendors Assessed", value: "47", icon: BarChart3, color: "text-[#f59e0b]" },
-        { label: "High Risk", value: "3", icon: AlertTriangle, color: "text-red-500" },
-        { label: "Active Assessments", value: "12", icon: ClipboardCheck, color: "text-[#6366f1]" },
-        { label: "Avg Risk Score", value: "72/100", icon: Target, color: "text-[#14b8a6]" }
+    const pricingFeatures = [
+        { icon: CheckCircle2, text: "10,000 cookie consents per month" },
+        { icon: CheckCircle2, text: "Zero storage charges" },
+        { icon: CheckCircle2, text: "Zero annual license fee" },
+        { icon: CheckCircle2, text: "Unlimited consent checks via API" },
+        { icon: CheckCircle2, text: "Multi-language support included" }
     ];
 
     const benefits = [
         {
-            icon: Lock,
-            title: "Vendor Compliance",
-            description: "Ensure all third parties meet DPDP standards before data sharing"
+            icon: Zap,
+            title: "Instant Setup",
+            description: "Go live in minutes with copy-paste integration"
+        },
+        {
+            icon: Cookie,
+            title: "User-Friendly",
+            description: "Minimal clicks for users, maximum compliance for you"
+        },
+        {
+            icon: BarChart3,
+            title: "Analytics Dashboard",
+            description: "Track acceptance rates and user preferences in real-time"
         },
         {
             icon: Shield,
-            title: "Risk Mitigation",
-            description: "Identify and address vendor risks before they become incidents"
-        },
-        {
-            icon: FileText,
-            title: "Audit Documentation",
-            description: "Complete records of vendor assessments for regulatory audits"
-        },
-        {
-            icon: Bell,
-            title: "Breach Readiness",
-            description: "Structured workflows for rapid vendor breach response"
+            title: "DPDP Compliant",
+            description: "Built for Indian data protection regulations"
         }
     ];
 
@@ -91,18 +119,18 @@ export default function ThirdPartyRiskPage() {
                             transition={{ duration: 0.6 }}
                         >
                             <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#f59e0b]/10 border border-[#f59e0b]/20 rounded-full mb-6">
-                                <AlertTriangle className="w-4 h-4 text-[#f59e0b]" />
-                                <span className="text-sm font-semibold text-[#f59e0b]">THIRD PARTY RISK MANAGEMENT</span>
+                                <Cookie className="w-4 h-4 text-[#f59e0b]" />
+                                <span className="text-sm font-semibold text-[#f59e0b]">COOKIE CONSENT</span>
                             </div>
                             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#152645] mb-6 leading-tight">
-                                Run DPIA, PIA, TPRA{" "}
+                                Deploy a Fast,{" "}
                                 <span className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] bg-clip-text text-transparent">
-                                    Assessments
+                                    Low-Latency
                                 </span>{" "}
-                                Through One Unified Module
+                                Cookie Banner on Your Website
                             </h1>
                             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                                Send DPIA, TPRA, PIA and other questionnaires to vendors. Get full customizability over questionnaires. Track vendor deletion and issue breach notices—all from one platform.
+                                DPDP is here—and you need to collect cookie consent from website visitors. Deploy a compliant but non-intrusive cookie banner across your websites in minutes.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <Link
@@ -110,7 +138,7 @@ export default function ThirdPartyRiskPage() {
                                     className="px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 cursor-pointer"
                                 >
                                     <Calendar className="w-5 h-5" />
-                                    Start Risk Assessment
+                                    Get Started Free
                                 </Link>
                                 <button className="px-8 py-4 bg-gray-100 hover:bg-gray-200 text-[#152645] font-semibold rounded-xl transition-all flex items-center justify-center gap-2 border border-gray-300 cursor-pointer">
                                     View Demo
@@ -127,20 +155,25 @@ export default function ThirdPartyRiskPage() {
                         >
                             <div className="bg-gray-50 border border-gray-200 rounded-3xl p-8 shadow-2xl">
                                 <div className="mb-6">
-                                    <h3 className="text-[#152645] font-bold text-lg mb-4">Third-Party Risk Dashboard</h3>
+                                    <h3 className="text-[#152645] font-bold text-lg mb-4">Cookie Collection Metrics</h3>
                                 </div>
-                                <div className="grid grid-cols-2 gap-4 mb-6">
-                                    {riskMetrics.map((metric, idx) => (
-                                        <div key={idx} className="p-4 bg-gray-100 rounded-xl">
-                                            <metric.icon className={`w-6 h-6 ${metric.color} mb-2`} />
-                                            <p className="text-gray-400 text-xs mb-1">{metric.label}</p>
-                                            <p className={`${metric.color} font-bold text-2xl`}>{metric.value}</p>
-                                        </div>
-                                    ))}
+                                <div className="space-y-4 mb-6">
+                                    <div className="flex items-center justify-between p-4 bg-gray-100 rounded-xl">
+                                        <span className="text-gray-500">Acceptance Rate</span>
+                                        <span className="text-2xl font-bold text-[#14b8a6]">87%</span>
+                                    </div>
+                                    <div className="flex items-center justify-between p-4 bg-gray-100 rounded-xl">
+                                        <span className="text-gray-500">Avg Load Time</span>
+                                        <span className="text-2xl font-bold text-[#f59e0b]">42ms</span>
+                                    </div>
+                                    <div className="flex items-center justify-between p-4 bg-gray-100 rounded-xl">
+                                        <span className="text-gray-500">Monthly Consents</span>
+                                        <span className="text-2xl font-bold text-[#6366f1]">8,234</span>
+                                    </div>
                                 </div>
                                 <div className="p-4 bg-gradient-to-r from-[#f59e0b]/10 to-[#d97706]/10 rounded-xl border border-[#f59e0b]/20">
-                                    <p className="text-[#152645] text-sm font-semibold mb-2">✨ Unified Risk Management</p>
-                                    <p className="text-gray-400 text-xs">Automated scoring • Central risk library • Breach workflows</p>
+                                    <p className="text-[#152645] text-sm font-semibold mb-2">✨ Simple & Fair Pricing</p>
+                                    <p className="text-gray-400 text-xs">10,000 consents/month free • No storage fees • No hidden costs</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -148,7 +181,7 @@ export default function ThirdPartyRiskPage() {
                 </div>
             </section>
 
-            {/* Key Features Section */}
+            {/* Implementation Steps */}
             <section className="py-20 px-4 bg-gray-50">
                 <div className="container mx-auto max-w-7xl">
                     <motion.div
@@ -158,13 +191,38 @@ export default function ThirdPartyRiskPage() {
                         className="text-center mb-16"
                     >
                         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#152645] mb-4">
-                            Complete Vendor Risk Lifecycle
+                            Go Live in 4 Simple Steps
                         </h2>
                         <p className="text-xl text-gray-500 max-w-3xl mx-auto">
-                            From assessment to breach management—protect your organization from third-party risks
+                            From configuration to monitoring—deploy DPDP-compliant cookies in minutes
                         </p>
                     </motion.div>
 
+                    <div className="grid md:grid-cols-2 gap-8">
+                        {implementationSteps.map((step, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className="relative bg-gray-50 border border-gray-200 rounded-3xl p-8 hover:border-gray-300 transition-all group"
+                            >
+                                <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-r from-[#f59e0b] to-[#d97706] rounded-2xl flex items-center justify-center text-2xl font-bold text-white shadow-lg">
+                                    {step.step}
+                                </div>
+                                <step.icon className="w-12 h-12 text-[#f59e0b] mb-6 mt-4 group-hover:scale-110 transition-transform" />
+                                <h3 className="text-xl font-bold text-[#152645] mb-3">{step.title}</h3>
+                                <p className="text-gray-500 leading-relaxed">{step.description}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Key Features Section */}
+            <section className="py-20 px-4 bg-white">
+                <div className="container mx-auto max-w-7xl">
                     <div className="space-y-12">
                         {keyFeatures.map((feature, index) => (
                             <motion.div
@@ -173,7 +231,7 @@ export default function ThirdPartyRiskPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="bg-white border border-gray-200 rounded-3xl p-8 md:p-12 hover:border-gray-300 transition-all"
+                                className="bg-gray-50 border border-gray-200 rounded-3xl p-8 md:p-12 hover:border-gray-300 transition-all"
                             >
                                 <div className="grid md:grid-cols-2 gap-8 items-start">
                                     <div>
@@ -187,7 +245,7 @@ export default function ThirdPartyRiskPage() {
                                     </div>
                                     <div className="space-y-3">
                                         {feature.features.map((item, idx) => (
-                                            <div key={idx} className="flex items-start gap-3 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
+                                            <div key={idx} className="flex items-start gap-3 p-3 bg-gray-100 rounded-xl hover:bg-gray-50 transition-all">
                                                 <CheckCircle2 className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" />
                                                 <span className="text-gray-600 text-sm leading-relaxed">{item}</span>
                                             </div>
@@ -201,7 +259,7 @@ export default function ThirdPartyRiskPage() {
             </section>
 
             {/* Benefits Grid */}
-            <section className="py-20 px-4 bg-white">
+            <section className="py-20 px-4 bg-gray-50">
                 <div className="container mx-auto max-w-7xl">
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {benefits.map((benefit, index) => (
@@ -211,7 +269,7 @@ export default function ThirdPartyRiskPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="bg-gray-50 border border-gray-200 rounded-2xl p-6 hover:border-[#f59e0b]/50 transition-all text-center"
+                                className="bg-white border border-gray-200 rounded-2xl p-6 hover:border-[#f59e0b]/50 transition-all text-center"
                             >
                                 <benefit.icon className="w-10 h-10 text-[#f59e0b] mx-auto mb-4" />
                                 <h4 className="text-lg font-bold text-[#152645] mb-2">{benefit.title}</h4>
@@ -222,7 +280,7 @@ export default function ThirdPartyRiskPage() {
                 </div>
             </section>
 
-            {/* CTA Section */}
+            {/* Pricing CTA Section */}
             <section className="py-20 px-4">
                 <div className="container mx-auto max-w-5xl">
                     <motion.div
@@ -236,24 +294,32 @@ export default function ThirdPartyRiskPage() {
                         
                         <div className="relative z-10">
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                                Start Managing Vendor Risks Today
+                                10,000 Cookie Consents/Month—₹0 Forever
                             </h2>
                             <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-                                Assess your first 5 vendors free. Get complete visibility into third-party compliance and risk exposure.
+                                Get started with our irresistible offer. Perfect for live pilots and small-to-medium websites.
                             </p>
+                            <div className="grid md:grid-cols-5 gap-4 mb-8 max-w-3xl mx-auto">
+                                {pricingFeatures.map((feature, idx) => (
+                                    <div key={idx} className="flex items-center gap-2 text-left">
+                                        <feature.icon className="w-5 h-5 text-white flex-shrink-0" />
+                                        <span className="text-white/90 text-sm">{feature.text}</span>
+                                    </div>
+                                ))}
+                            </div>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <Link
                                     href="/contact"
                                     className="px-8 py-4 bg-white hover:bg-gray-100 text-[#152645] font-bold rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
                                 >
                                     <Calendar className="w-5 h-5" />
-                                    Start Free Assessment
+                                    Get Started Free
                                 </Link>
                                 <Link
                                     href="/contact"
                                     className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl backdrop-blur-sm transition-all flex items-center justify-center gap-2 border border-white/20 cursor-pointer"
                                 >
-                                    Schedule Demo
+                                    Talk to Expert
                                     <ArrowRight className="w-5 h-5" />
                                 </Link>
                             </div>

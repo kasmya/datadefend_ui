@@ -2,78 +2,78 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { CheckCircle2, AlertTriangle, FileText, ClipboardCheck, Bell, Shield, ArrowRight, Calendar, Target, BarChart3, Lock } from "lucide-react";
+import { CheckCircle2, Shield, AlertTriangle, FileCheck, BarChart3, Lock, ArrowRight, Calendar, Activity, ClipboardCheck, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { Navbar } from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
 
-export default function ThirdPartyRiskPage() {
+export default function CompliancePrivacyPage() {
     const keyFeatures = [
         {
-            icon: ClipboardCheck,
-            title: "Use Pre-built or Custom Questionnaire Templates",
+            icon: Activity,
+            title: "Get Automated Risk Management",
             features: [
-                "Pre-populated questionnaire repository for DPIA, TPRA, ISO 27001, ISO 27701 assessments",
-                "Create and run your own templates with custom questionnaires tailored to your needs",
-                "Support for multiple question types—dropdowns, multi-selects, paragraphs, file uploads",
-                "Automated scoring and risk calculation based on vendor responses",
-                "Version control for questionnaires with audit trails of all changes"
-            ],
-            color: "from-[#f59e0b] to-[#d97706]"
-        },
-        {
-            icon: Target,
-            title: "Define and Track Privacy Risks via Central Risk Library",
-            features: [
-                "Identify risks based on assessment responses with automated risk detection",
-                "Maintain centralized risk library and register across the entire organization",
-                "Manage risk mitigation tasks by attaching them to individual risk register entries",
-                "Real-time risk scoring with severity levels and business impact assessment",
-                "Integration with compliance module for holistic risk-compliance view"
+                "Unified risk management system for comprehensive oversight across all data operations",
+                "Automate identification of potential risks across various processes and systems",
+                "Centralized risk repository ensuring all risks are logged and tracked in one place",
+                "Real-time risk scoring based on severity, likelihood, and business impact",
+                "Integration with consent, DSAR, and data lifecycle modules for holistic risk view"
             ],
             color: "from-[#6366f1] to-[#8b5cf6]"
         },
         {
-            icon: Bell,
-            title: "Breach Management for Third Parties",
+            icon: ClipboardCheck,
+            title: "Assessment Module with Support for PIA, DPIA, TPRA",
             features: [
-                "Structured approach to detect, manage, and resolve data breaches involving vendors",
-                "Identification and containment workflows to minimize damage and exposure",
-                "Automated notification to affected users and regulatory authorities per DPDP requirements",
-                "Vendor breach impact assessment with downstream data flow analysis",
-                "Complete audit trail of breach response actions for regulatory compliance"
+                "Privacy Impact Assessments (PIA) to identify risks to personal data privacy",
+                "Data Protection Impact Assessments (DPIA) for high-risk data processing activities",
+                "Third-Party Risk Assessments (TPRA) to evaluate vendor compliance and risks",
+                "Pre-built questionnaire templates for ISO 27001, ISO 27701, DPDP compliance",
+                "Custom assessment workflows with automated risk calculations and scoring"
+            ],
+            color: "from-[#f59e0b] to-[#d97706]"
+        },
+        {
+            icon: BarChart3,
+            title: "Comprehensive Reporting & Analytics",
+            features: [
+                "Generate actionable reports for risks, compliance status, and audit readiness",
+                "Real-time analytics dashboard tracking privacy compliance progress over time",
+                "Customizable reporting with filters for departments, risk types, and time periods",
+                "Data-driven decision-making with trend analysis and predictive insights",
+                "One-click export for regulators, auditors, and executive stakeholders"
             ],
             color: "from-[#14b8a6] to-[#0d9488]"
         }
     ];
 
-    const riskMetrics = [
-        { label: "Vendors Assessed", value: "47", icon: BarChart3, color: "text-[#f59e0b]" },
-        { label: "High Risk", value: "3", icon: AlertTriangle, color: "text-red-500" },
-        { label: "Active Assessments", value: "12", icon: ClipboardCheck, color: "text-[#6366f1]" },
-        { label: "Avg Risk Score", value: "72/100", icon: Target, color: "text-[#14b8a6]" }
+    const complianceMetrics = [
+        { label: "Compliance Score", value: "94%", icon: BarChart3, color: "text-[#14b8a6]" },
+        { label: "Data Processed", value: "847 GB", icon: Activity, color: "text-[#6366f1]" },
+        { label: "Active Alerts", value: "3", icon: AlertTriangle, color: "text-[#f59e0b]" },
+        { label: "Assessments Done", value: "28", icon: ClipboardCheck, color: "text-[#14b8a6]" }
     ];
 
     const benefits = [
         {
             icon: Lock,
-            title: "Vendor Compliance",
-            description: "Ensure all third parties meet DPDP standards before data sharing"
+            title: "Privacy by Design",
+            description: "Build privacy into every process from day one with automated checks"
         },
         {
             icon: Shield,
-            title: "Risk Mitigation",
-            description: "Identify and address vendor risks before they become incidents"
+            title: "Immutable Records",
+            description: "Audit trails for every action stored in tamper-proof format"
         },
         {
-            icon: FileText,
-            title: "Audit Documentation",
-            description: "Complete records of vendor assessments for regulatory audits"
+            icon: Sparkles,
+            title: "AI-Powered Insights",
+            description: "Predictive analytics to identify compliance gaps before they become risks"
         },
         {
-            icon: Bell,
-            title: "Breach Readiness",
-            description: "Structured workflows for rapid vendor breach response"
+            icon: FileCheck,
+            title: "Audit-Ready Reports",
+            description: "Generate compliance reports for DPB audits in seconds"
         }
     ];
 
@@ -90,19 +90,19 @@ export default function ThirdPartyRiskPage() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6 }}
                         >
-                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#f59e0b]/10 border border-[#f59e0b]/20 rounded-full mb-6">
-                                <AlertTriangle className="w-4 h-4 text-[#f59e0b]" />
-                                <span className="text-sm font-semibold text-[#f59e0b]">THIRD PARTY RISK MANAGEMENT</span>
+                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#6366f1]/10 border border-[#6366f1]/20 rounded-full mb-6">
+                                <Shield className="w-4 h-4 text-[#6366f1]" />
+                                <span className="text-sm font-semibold text-[#6366f1]">COMPLIANCE & PRIVACY</span>
                             </div>
                             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#152645] mb-6 leading-tight">
-                                Run DPIA, PIA, TPRA{" "}
-                                <span className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] bg-clip-text text-transparent">
-                                    Assessments
+                                Seamless{" "}
+                                <span className="bg-gradient-to-r from-[#6366f1] to-[#8b5cf6] bg-clip-text text-transparent">
+                                    Data Protection
                                 </span>{" "}
-                                Through One Unified Module
+                                with Built-in Compliance
                             </h1>
                             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                                Send DPIA, TPRA, PIA and other questionnaires to vendors. Get full customizability over questionnaires. Track vendor deletion and issue breach notices—all from one platform.
+                                Achieve compliance through automated risk management, advanced assessments, and immutable records—ensuring privacy by design at each step.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <Link
@@ -110,7 +110,7 @@ export default function ThirdPartyRiskPage() {
                                     className="px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 cursor-pointer"
                                 >
                                     <Calendar className="w-5 h-5" />
-                                    Start Risk Assessment
+                                    Get Compliance Assessment
                                 </Link>
                                 <button className="px-8 py-4 bg-gray-100 hover:bg-gray-200 text-[#152645] font-semibold rounded-xl transition-all flex items-center justify-center gap-2 border border-gray-300 cursor-pointer">
                                     View Demo
@@ -127,10 +127,10 @@ export default function ThirdPartyRiskPage() {
                         >
                             <div className="bg-gray-50 border border-gray-200 rounded-3xl p-8 shadow-2xl">
                                 <div className="mb-6">
-                                    <h3 className="text-[#152645] font-bold text-lg mb-4">Third-Party Risk Dashboard</h3>
+                                    <h3 className="text-[#152645] font-bold text-lg mb-4">Real-time Compliance Dashboard</h3>
                                 </div>
                                 <div className="grid grid-cols-2 gap-4 mb-6">
-                                    {riskMetrics.map((metric, idx) => (
+                                    {complianceMetrics.map((metric, idx) => (
                                         <div key={idx} className="p-4 bg-gray-100 rounded-xl">
                                             <metric.icon className={`w-6 h-6 ${metric.color} mb-2`} />
                                             <p className="text-gray-400 text-xs mb-1">{metric.label}</p>
@@ -138,9 +138,9 @@ export default function ThirdPartyRiskPage() {
                                         </div>
                                     ))}
                                 </div>
-                                <div className="p-4 bg-gradient-to-r from-[#f59e0b]/10 to-[#d97706]/10 rounded-xl border border-[#f59e0b]/20">
-                                    <p className="text-[#152645] text-sm font-semibold mb-2">✨ Unified Risk Management</p>
-                                    <p className="text-gray-400 text-xs">Automated scoring • Central risk library • Breach workflows</p>
+                                <div className="p-4 bg-gradient-to-r from-[#6366f1]/10 to-[#8b5cf6]/10 rounded-xl border border-[#6366f1]/20">
+                                    <p className="text-[#152645] text-sm font-semibold mb-2">✨ Centralized Risk Registry</p>
+                                    <p className="text-gray-400 text-xs">Automated risk tracking • Real-time alerts • Audit-ready reports</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -158,10 +158,10 @@ export default function ThirdPartyRiskPage() {
                         className="text-center mb-16"
                     >
                         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#152645] mb-4">
-                            Complete Vendor Risk Lifecycle
+                            Complete DPDP Compliance Features
                         </h2>
                         <p className="text-xl text-gray-500 max-w-3xl mx-auto">
-                            From assessment to breach management—protect your organization from third-party risks
+                            From risk identification to audit reporting—everything you need for continuous compliance
                         </p>
                     </motion.div>
 
@@ -188,7 +188,7 @@ export default function ThirdPartyRiskPage() {
                                     <div className="space-y-3">
                                         {feature.features.map((item, idx) => (
                                             <div key={idx} className="flex items-start gap-3 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
-                                                <CheckCircle2 className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" />
+                                                <CheckCircle2 className="w-5 h-5 text-[#6366f1] flex-shrink-0 mt-0.5" />
                                                 <span className="text-gray-600 text-sm leading-relaxed">{item}</span>
                                             </div>
                                         ))}
@@ -211,9 +211,9 @@ export default function ThirdPartyRiskPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="bg-gray-50 border border-gray-200 rounded-2xl p-6 hover:border-[#f59e0b]/50 transition-all text-center"
+                                className="bg-gray-50 border border-gray-200 rounded-2xl p-6 hover:border-[#6366f1]/50 transition-all text-center"
                             >
-                                <benefit.icon className="w-10 h-10 text-[#f59e0b] mx-auto mb-4" />
+                                <benefit.icon className="w-10 h-10 text-[#6366f1] mx-auto mb-4" />
                                 <h4 className="text-lg font-bold text-[#152645] mb-2">{benefit.title}</h4>
                                 <p className="text-gray-400 text-sm">{benefit.description}</p>
                             </motion.div>
@@ -229,17 +229,17 @@ export default function ThirdPartyRiskPage() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="bg-gradient-to-r from-[#f59e0b] via-[#d97706] to-[#f59e0b] rounded-[3rem] p-12 md:p-16 text-center relative overflow-hidden"
+                        className="bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#6366f1] rounded-[3rem] p-12 md:p-16 text-center relative overflow-hidden"
                     >
                         <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
                         <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
                         
                         <div className="relative z-10">
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                                Start Managing Vendor Risks Today
+                                Free Compliance Gap Assessment
                             </h2>
                             <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-                                Assess your first 5 vendors free. Get complete visibility into third-party compliance and risk exposure.
+                                Get a detailed analysis of your current compliance posture. Identify gaps and get a roadmap to DPDP readiness.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <Link
@@ -247,13 +247,13 @@ export default function ThirdPartyRiskPage() {
                                     className="px-8 py-4 bg-white hover:bg-gray-100 text-[#152645] font-bold rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
                                 >
                                     <Calendar className="w-5 h-5" />
-                                    Start Free Assessment
+                                    Get Free Assessment
                                 </Link>
                                 <Link
                                     href="/contact"
                                     className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl backdrop-blur-sm transition-all flex items-center justify-center gap-2 border border-white/20 cursor-pointer"
                                 >
-                                    Schedule Demo
+                                    Talk to Expert
                                     <ArrowRight className="w-5 h-5" />
                                 </Link>
                             </div>

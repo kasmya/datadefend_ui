@@ -60,14 +60,14 @@ export default function ContactPage() {
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.3 }}
-                            className="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
+                            className="bg-white p-8 rounded-[2.5rem] border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
                         >
                             <div className="w-12 h-12 bg-[#e0f2fe] rounded-2xl flex items-center justify-center mb-6 text-[#0e488b]">
                                 <Mail className="w-6 h-6" />
                             </div>
                             <h3 className="text-xl font-bold text-[#152645] mb-2">Chat to sales</h3>
                             <p className="text-gray-500 mb-4">Speak to our friendly team.</p>
-                            <a href="mailto:sales@datadefend.in" className="text-[#0e488b] font-semibold hover:underline">sales@datadefend.in</a>
+                            <a href="mailto:sales@datadefend.com" className="text-[#0e488b] font-semibold hover:underline">sales@datadefend.com</a>
                         </motion.div>
 
                         {/* Support Card */}
@@ -75,22 +75,37 @@ export default function ContactPage() {
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.4 }}
-                            className="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
+                            className="bg-white p-8 rounded-[2.5rem] border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
                         >
                             <div className="w-12 h-12 bg-[#fef3c7] rounded-2xl flex items-center justify-center mb-6 text-[#d97706]">
                                 <MessageSquare className="w-6 h-6" />
                             </div>
                             <h3 className="text-xl font-bold text-[#152645] mb-2">Chat to support</h3>
                             <p className="text-gray-500 mb-4">We're here to help.</p>
-                            <a href="mailto:support@datadefend.in" className="text-[#0e488b] font-semibold hover:underline">support@datadefend.in</a>
+                            <a href="mailto:support@cybersec.enterprises" className="text-[#0e488b] font-semibold hover:underline">support@cybersec.enterprises</a>
+                        </motion.div>
+
+                        {/* Phone Card */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.5 }}
+                            className="bg-white p-8 rounded-[2.5rem] border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+                        >
+                            <div className="w-12 h-12 bg-[#dbeafe] rounded-2xl flex items-center justify-center mb-6 text-[#0e488b]">
+                                <Phone className="w-6 h-6" />
+                            </div>
+                            <h3 className="text-xl font-bold text-[#152645] mb-2">Call us</h3>
+                            <p className="text-gray-500 mb-4">Mon-Fri from 9am to 6pm IST</p>
+                            <a href="tel:+911243534897" className="text-[#0e488b] font-semibold hover:underline">+91 0124 3534897</a>
                         </motion.div>
 
                         {/* Office Card */}
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.5 }}
-                            className="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
+                            transition={{ delay: 0.6 }}
+                            className="bg-white p-8 rounded-[2.5rem] border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
                         >
                             <div className="w-12 h-12 bg-[#dcfce7] rounded-2xl flex items-center justify-center mb-6 text-[#15803d]">
                                 <MapPin className="w-6 h-6" />
@@ -98,9 +113,9 @@ export default function ContactPage() {
                             <h3 className="text-xl font-bold text-[#152645] mb-2">Visit us</h3>
                             <p className="text-gray-500 mb-4">Visit our office HQ.</p>
                             <p className="text-[#0e488b] font-semibold">
-                                123, Cyber Hub,<br />
-                                Gurugram, Haryana,<br />
-                                India - 122002
+                                Kamla Palace, 2, 2nd Floor,<br />
+                                Old Jail Road, Near Sohna Chowk,<br />
+                                Gurugram, Haryana - 122001
                             </p>
                         </motion.div>
                     </div>
@@ -111,7 +126,7 @@ export default function ContactPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4 }}
-                            className="bg-white p-8 md:p-12 rounded-[3rem] border border-gray-100 shadow-xl h-full"
+                            className="bg-white p-8 md:p-12 rounded-[3rem] border border-gray-200 shadow-xl h-full"
                         >
                             <h2 className="text-2xl font-bold text-[#152645] mb-8">Send us a message</h2>
                             <form onSubmit={handleSubmit} className="space-y-6">
@@ -123,7 +138,7 @@ export default function ContactPage() {
                                             id="name"
                                             value={formState.name}
                                             onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                                            className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:border-[#0e488b] focus:ring-2 focus:ring-[#0e488b]/10 outline-none transition-all"
+                                            className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 shadow-sm focus:border-[#0e488b] focus:ring-2 focus:ring-[#0e488b]/10 outline-none transition-all"
                                             placeholder="John Doe"
                                             required
                                         />
@@ -135,7 +150,7 @@ export default function ContactPage() {
                                             id="email"
                                             value={formState.email}
                                             onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                                            className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:border-[#0e488b] focus:ring-2 focus:ring-[#0e488b]/10 outline-none transition-all"
+                                            className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 shadow-sm focus:border-[#0e488b] focus:ring-2 focus:ring-[#0e488b]/10 outline-none transition-all"
                                             placeholder="john@company.com"
                                             required
                                         />
@@ -149,7 +164,7 @@ export default function ContactPage() {
                                         id="subject"
                                         value={formState.subject}
                                         onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
-                                        className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:border-[#0e488b] focus:ring-2 focus:ring-[#0e488b]/10 outline-none transition-all"
+                                        className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 shadow-sm focus:border-[#0e488b] focus:ring-2 focus:ring-[#0e488b]/10 outline-none transition-all"
                                         placeholder="How can we help?"
                                         required
                                     />
@@ -162,7 +177,7 @@ export default function ContactPage() {
                                         rows={6}
                                         value={formState.message}
                                         onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                                        className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:border-[#0e488b] focus:ring-2 focus:ring-[#0e488b]/10 outline-none transition-all resize-none"
+                                        className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 shadow-sm focus:border-[#0e488b] focus:ring-2 focus:ring-[#0e488b]/10 outline-none transition-all resize-none"
                                         placeholder="Tell us about your requirements..."
                                         required
                                     />

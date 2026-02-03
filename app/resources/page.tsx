@@ -19,7 +19,7 @@ export const BLOGSPOT_CONFIG = {
 // Mock blog data - replace with Blogspot API data later
 const mockBlogs = [
     {
-        id: "1",
+        id: "dpdp-guide",
         title: "Understanding DPDPA: A Complete Guide for Indian Enterprises",
         excerpt: "The Digital Personal Data Protection Act 2023 marks a significant milestone in India's data privacy landscape. Learn what it means for your business and how to prepare for compliance.",
         thumbnail: "https://images.unsplash.com/photo-1633265486064-086b219458ec?w=800&h=500&fit=crop",
@@ -99,7 +99,7 @@ function BlogCard({ blog, featured = false }: BlogCardProps) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className={`group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-gray-200 hover:shadow-xl transition-all duration-300 ${featured ? "md:col-span-2 md:grid md:grid-cols-2" : ""
+            className={`group bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:border-gray-300 hover:shadow-xl transition-all duration-300 ${featured ? "md:col-span-2 md:grid md:grid-cols-2" : ""
                 }`}
         >
             {/* Thumbnail */}
@@ -141,7 +141,7 @@ function BlogCard({ blog, featured = false }: BlogCardProps) {
                 <div className="flex items-center justify-between mt-auto">
                     <span className="text-sm text-gray-500">By {blog.author}</span>
                     <Link
-                        href={`/resources/${blog.id}`}
+                        href={blog.id === "dpdp-guide" ? "/dpdp-guide" : `/resources/${blog.id}`}
                         className="flex items-center gap-1 text-sm font-semibold text-accent hover:gap-2 transition-all"
                     >
                         Read More <ArrowRight className="w-4 h-4" />
@@ -194,7 +194,7 @@ export default function ResourcesPage() {
                                 placeholder="Search articles..."
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
-                                className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all"
+                                className="w-full pl-12 pr-4 py-4 rounded-xl bg-white border border-gray-200 shadow-md focus:border-[#0e488b] focus:ring-2 focus:ring-[#0e488b]/20 outline-none transition-all placeholder:text-gray-400"
                             />
                         </div>
                     </div>
@@ -241,7 +241,7 @@ export default function ResourcesPage() {
                             <p className="text-gray-500 text-lg">No articles found matching your criteria.</p>
                             <button
                                 onClick={() => setSearchQuery("")}
-                                className="mt-4 text-accent font-medium hover:underline"
+                                className="mt-4 text-accent font-medium hover:underline cursor-pointer"
                             >
                                 Clear filters
                             </button>
@@ -253,21 +253,27 @@ export default function ResourcesPage() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="mt-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl p-8 md:p-12 text-center text-white"
+                        className="mt-16 bg-gradient-to-r from-[#6366f1] to-[#3b82f6] rounded-[2.5rem] p-10 md:p-16 text-center text-white relative overflow-hidden shadow-2xl"
                     >
-                        <h3 className="text-2xl md:text-3xl font-bold mb-4">Stay Updated</h3>
-                        <p className="text-white/80 mb-6 max-w-lg mx-auto">
-                            Subscribe to our newsletter for the latest DPDPA updates, compliance tips, and privacy insights.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                            <input
-                                type="email"
-                                placeholder="Enter your email"
-                                className="flex-1 px-4 py-3 rounded-xl text-primary outline-none"
-                            />
-                            <button className="px-6 py-3 bg-white text-purple-600 font-semibold rounded-xl hover:bg-gray-100 transition-colors">
-                                Subscribe
-                            </button>
+                        {/* Decorative background elements */}
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                        <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+                        
+                        <div className="relative z-10">
+                            <h3 className="text-3xl md:text-4xl font-bold mb-4">Stay Updated</h3>
+                            <p className="text-white/90 mb-8 max-w-xl mx-auto text-lg">
+                                Subscribe to our newsletter for the latest DPDPA updates, compliance tips, and privacy insights.
+                            </p>
+                            <div className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+                                <input
+                                    type="email"
+                                    placeholder="Enter your email address"
+                                    className="flex-1 px-6 py-4 rounded-xl text-[#152645] bg-white placeholder:text-gray-400 outline-none focus:ring-2 focus:ring-white/50 shadow-lg"
+                                />
+                                <button className="px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-xl whitespace-nowrap cursor-pointer">
+                                    Subscribe
+                                </button>
+                            </div>
                         </div>
                     </motion.div>
                 </div>

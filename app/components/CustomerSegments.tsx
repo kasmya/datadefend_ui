@@ -64,25 +64,25 @@ function GridIcon({ pattern, color }: { pattern: number[][]; color: string }) {
 
 export function CustomerSegments() {
     return (
-        <section className="py-24 bg-gradient-to-b from-white to-[#a4d4ff]/10">
+        <section className="py-16 md:py-20 bg-gradient-to-b from-white to-[#a4d4ff]/10">
             <div className="container mx-auto px-4 md:px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center max-w-3xl mx-auto mb-16"
+                    className="text-center max-w-3xl mx-auto mb-12"
                 >
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#152645] mb-6">
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#152645] mb-4">
                         Compliance Solutions for{" "}
                         <span className="text-[#0e488b]">Every Stage</span>
                     </h2>
-                    <p className="text-lg text-gray-600">
+                    <p className="text-base md:text-lg text-gray-600">
                         Whether you're seeking your first certification or scaling enterprise risk management,
                         DataDefend adapts to your unique challenges.
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                     {segments.map((segment, index) => (
                         <motion.div
                             key={segment.id}
@@ -90,20 +90,20 @@ export function CustomerSegments() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="group bg-white rounded-[2.5rem] border border-[#a4d4ff]/50 p-10 hover:shadow-2xl hover:border-[#f59e0b]/30 transition-all duration-300"
+                            className="group bg-white rounded-3xl border border-[#a4d4ff]/50 p-6 md:p-8 hover:shadow-2xl hover:border-[#f59e0b]/30 transition-all duration-300"
                         >
-                            <span className="inline-block px-4 py-1.5 text-xs font-bold tracking-wide text-[#152645] bg-[#f59e0b]/20 rounded-full mb-8">
+                            <span className="inline-block px-3 py-1 text-xs font-bold tracking-wide text-[#152645] bg-[#f59e0b]/20 rounded-full mb-6">
                                 {segment.label}
                             </span>
                             <GridIcon pattern={segment.gridPattern} color={segment.color} />
-                            <h3 className="text-2xl font-bold text-[#152645] mb-4">{segment.title}</h3>
-                            <p className="text-gray-600 mb-8 leading-relaxed text-lg">{segment.description}</p>
+                            <h3 className="text-lg md:text-xl font-bold text-[#152645] mb-3">{segment.title}</h3>
+                            <p className="text-gray-600 mb-6 leading-relaxed text-sm md:text-base">{segment.description}</p>
                             <a
                                 href={segment.link}
-                                className="inline-flex items-center gap-2 text-[#0e488b] font-bold hover:text-[#f59e0b] hover:gap-3 transition-all group-hover:underline text-lg"
+                                className="inline-flex items-center gap-2 text-[#0e488b] font-semibold hover:text-[#f59e0b] hover:gap-3 transition-all group-hover:underline text-sm md:text-base"
                             >
                                 Learn more
-                                <ArrowRight className="w-5 h-5" />
+                                <ArrowRight className="w-4 h-4" />
                             </a>
                         </motion.div>
                     ))}

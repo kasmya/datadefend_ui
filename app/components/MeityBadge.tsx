@@ -22,17 +22,17 @@ const stats = [
 
 export function MeityBadge() {
     return (
-        <section className="py-16 px-4 md:px-6 bg-[#ede9fe]">
+        <section className="py-12 md:py-16 px-4 md:px-6 bg-[#ede9fe]">
             <div className="container mx-auto max-w-7xl">
                 {/* Header Badge */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-12"
+                    className="text-center mb-10"
                 >
-                    <span className="inline-block text-xl md:text-2xl font-bold text-[#152645]">
-                        <span className="bg-[#f59e0b] px-3 py-1 rounded-lg text-[#152645]">Top</span>{" "}
+                    <span className="inline-block text-lg md:text-xl font-bold text-[#152645]">
+                        <span className="bg-[#f59e0b] px-2 py-0.5 md:px-3 md:py-1 rounded-lg text-[#152645]">Top</span>{" "}
                         3 in Meity Code for Consent
                     </span>
                 </motion.div>
