@@ -2,14 +2,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Star, Award, Shield, CheckCircle } from "lucide-react";
-
-const badges = [
-    { name: "G2 Leader", rating: "4.8", icon: Star },
-    { name: "Capterra", rating: "4.9", icon: Award },
-    { name: "GetApp", rating: "4.7", icon: Shield },
-    { name: "Software Advice", rating: "4.8", icon: CheckCircle },
-];
 
 const clients = [
     "HDFC Bank",
@@ -20,66 +12,80 @@ const clients = [
     "Wipro",
     "HCL Tech",
     "Tech Mahindra",
+    "Bajaj Finserv",
+    "Paytm",
+    "Razorpay",
+    "PhonePe",
 ];
 
 export function TrustBadges() {
     return (
-        <section className="py-16 bg-white border-y border-gray-100">
+        <section className="py-16 bg-white">
             <div className="container mx-auto px-4 md:px-6">
-                {/* Badges Row */}
-                <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12 mb-12">
-                    {badges.map((badge, index) => (
-                        <motion.div
-                            key={badge.name}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="flex items-center gap-3 px-4 py-3 rounded-xl bg-gray-50 border border-gray-100 hover:border-accent/30 hover:shadow-md transition-all duration-300"
-                        >
-                            <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
-                                <badge.icon className="w-5 h-5" />
+                {/* Customer Count */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-10"
+                >
+                    <span className="text-4xl md:text-5xl font-bold text-[#152645]">500+</span>
+                    <span className="text-lg text-gray-500 ml-3">companies trust DataDefend</span>
+                </motion.div>
+
+                {/* Client Logos - Horizontal Scroll */}
+                <div className="relative overflow-hidden mb-20">
+                    <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10" />
+                    <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10" />
+
+                    <motion.div
+                        className="flex items-center gap-12"
+                        animate={{ x: [0, -1200] }}
+                        transition={{
+                            x: {
+                                repeat: Infinity,
+                                repeatType: "loop",
+                                duration: 30,
+                                ease: "linear",
+                            },
+                        }}
+                    >
+                        {[...clients, ...clients].map((client, index) => (
+                            <div
+                                key={`${client}-${index}`}
+                                className="flex-shrink-0 px-6 py-3"
+                            >
+                                <span className="text-2xl font-bold text-[#a4d4ff]/60 hover:text-[#0e488b] transition-colors whitespace-nowrap">
+                                    {client}
+                                </span>
                             </div>
-                            <div>
-                                <p className="text-sm font-bold text-primary">{badge.name}</p>
-                                <div className="flex items-center gap-1">
-                                    <div className="flex">
-                                        {[...Array(5)].map((_, i) => (
-                                            <Star
-                                                key={i}
-                                                className={`w-3 h-3 ${i < 4 ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}`}
-                                            />
-                                        ))}
-                                    </div>
-                                    <span className="text-xs text-gray-500">{badge.rating}</span>
-                                </div>
-                            </div>
-                        </motion.div>
-                    ))}
+                        ))}
+                    </motion.div>
                 </div>
 
-                {/* Client Logos */}
-                <div className="text-center">
-                    <p className="text-sm text-gray-500 mb-6">Trusted by India's leading enterprises</p>
-                    <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-                        {clients.map((client, index) => (
-                            <motion.div
-                                key={client}
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.05 }}
-                                className="group"
-                            >
-                                <div className="px-4 py-2 rounded-lg bg-gray-50 border border-transparent hover:border-gray-200 transition-all duration-300">
-                                    <span className="text-sm font-semibold text-gray-400 group-hover:text-primary transition-colors">
-                                        {client}
-                                    </span>
-                                </div>
-                            </motion.div>
-                        ))}
+                {/* Video Section */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="max-w-5xl mx-auto"
+                >
+                    <div className="relative aspect-video rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-[#152645] to-[#0e488b] shadow-2xl border-4 border-white/20">
+                        <div className="absolute inset-0 grid-pattern opacity-30" />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <button className="w-24 h-24 bg-[#f59e0b] rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform group text-[#152645]">
+                                <svg className="w-10 h-10 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div className="absolute bottom-8 left-8">
+                            <span className="px-4 py-2 bg-[#a4d4ff]/20 backdrop-blur-md rounded-full text-white font-medium">
+                                See DataDefend in action • 2:34
+                            </span>
+                        </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

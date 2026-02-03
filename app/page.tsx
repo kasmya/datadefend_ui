@@ -1,27 +1,21 @@
-import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { TrustBadges } from "./components/TrustBadges";
-import { FeatureGrid } from "./components/FeatureGrid";
-import { FeatureShowcase } from "./components/FeatureShowcase";
-import { ComparisonTable } from "./components/ComparisonTable";
-import { IndustrySolutions } from "./components/IndustrySolutions";
-import { ValueGrid } from "./components/ValueGrid";
-import { TrustSection } from "./components/TrustSection";
+import { CustomerSegments } from "./components/CustomerSegments";
+import { ValueProposition } from "./components/ValueProposition";
+import { Navbar } from "./components/Navbar";
 import { CTABanner } from "./components/CTABanner";
 import { Footer } from "./components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-accent selection:text-primary">
-      <Navbar />
+    <main className="min-h-screen bg-white">
+      <div className="relative z-50">
+        <Navbar />
+      </div>
       <Hero />
       <TrustBadges />
-      <FeatureGrid />
-      <FeatureShowcase />
-      <ComparisonTable />
-      <IndustrySolutions />
-      <ValueGrid />
-      <TrustSection />
+      <CustomerSegments />
+      <ValueProposition />
       <CTABanner />
       <Footer />
     </main>

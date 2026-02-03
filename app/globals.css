@@ -1,61 +1,98 @@
 @import "tailwindcss";
 
 :root {
-  /* Common Colors */
-  --primary: #152645;
-  /* Dark Blue (User core color) */
-  --primary-light: #f0f7ff;
-  /* Very pale blue for backgrounds */
-  --accent: #2e66cc;
-  /* Vibrant Blue for buttons/highlights (derived to match) */
-  --accent-light: #a4d4ff;
-  /* Light Blue (User accent) */
-  --secondary: #64748b;
-  /* Slate for secondary text */
-  --text-main: #152645;
-  --text-muted: #64748b;
-  --white: #ffffff;
+    /* Primary Colors - Blue Theme */
+    --primary: #152645;
+    --primary-light: #a4d4ff;
+    --primary-medium: #0e488b;
 
-  --background: #ffffff;
-  /* Major portion white */
-  --foreground: #152645;
+    /* Contrast/Pop Color - Amber for professional contrast */
+    --pop: #f59e0b;
+    --pop-light: #fcd34d;
+
+    /* Hero Section - Dark Navy */
+    --hero-bg: #152645;
+    --hero-bg-dark: #0d1a30;
+
+    /* Neutral Colors */
+    --secondary: #64748b;
+    --text-main: #152645;
+    --text-muted: #64748b;
+    --white: #ffffff;
+
+    --background: #ffffff;
+    --foreground: #152645;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-primary-light: var(--primary-light);
-  --color-accent: var(--accent);
-  --color-accent-light: var(--accent-light);
-  --color-secondary: var(--secondary);
-  --color-text-main: var(--text-main);
-  --color-text-muted: var(--text-muted);
-  --color-white: var(--white);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-primary: var(--primary);
+    --color-primary-light: var(--primary-light);
+    --color-primary-medium: var(--primary-medium);
+    --color-pop: var(--pop);
+    --color-pop-light: var(--pop-light);
+    --color-secondary: var(--secondary);
+    --color-text-main: var(--text-main);
+    --color-text-muted: var(--text-muted);
+    --color-white: var(--white);
+    --color-hero-bg: var(--hero-bg);
+    --color-hero-bg-dark: var(--hero-bg-dark);
 
-  --font-sans: var(--font-inter);
+    --font-sans: var(--font-inter);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), sans-serif;
-  overflow-x: hidden;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans), sans-serif;
+    overflow-x: hidden;
 }
 
 ::selection {
-  background-color: var(--accent-light);
-  color: var(--primary);
+    background-color: var(--pop);
+    color: var(--primary);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), sans-serif;
-  overflow-x: hidden;
+/* Grid Pattern */
+.grid-pattern {
+    background-image:
+        linear-gradient(to right, rgba(164, 212, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(164, 212, 255, 0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
 }
 
-::selection {
-  background-color: var(--accent);
-  color: var(--primary);
+/* Hero Glow Effects */
+.hero-glow {
+    position: relative;
+}
+
+.hero-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(ellipse 80% 50% at 50% 100%, rgba(14, 72, 139, 0.2) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 0% 50%, rgba(164, 212, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 40% at 100% 50%, rgba(14, 72, 139, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+@keyframes glow-pulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.animate-glow {
+    animation: glow-pulse 4s ease-in-out infinite;
 }
