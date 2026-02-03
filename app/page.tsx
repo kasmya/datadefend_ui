@@ -1,5 +1,6 @@
 import { Hero } from "./components/Hero";
 import { TrustBadges } from "./components/TrustBadges";
+import { IndustryCompliance } from "./components/IndustryCompliance";
 import { CustomerSegments } from "./components/CustomerSegments";
 import { ValueProposition } from "./components/ValueProposition";
 import { Navbar } from "./components/Navbar";
@@ -9,11 +10,10 @@ import { Footer } from "./components/Footer";
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
-      <div className="relative z-50">
-        <Navbar />
-      </div>
+      <Navbar />
       <Hero />
       <TrustBadges />
+      <IndustryCompliance />
       <CustomerSegments />
       <ValueProposition />
       <CTABanner />

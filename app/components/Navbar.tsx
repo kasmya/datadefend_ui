@@ -26,10 +26,37 @@ export function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
+    const [timeLeft, setTimeLeft] = useState<{ months: number; days: number }>({ months: 0, days: 0 });
+
     useEffect(() => {
+        const calculateTimeLeft = () => {
+            const targetDate = new Date("2027-05-14");
+            const now = new Date();
+
+            let months = (targetDate.getFullYear() - now.getFullYear()) * 12 + (targetDate.getMonth() - now.getMonth());
+            let days = targetDate.getDate() - now.getDate();
+
+            if (days < 0) {
+                months--;
+                // Get days in previous month
+                const prevMonthDate = new Date(now.getFullYear(), now.getMonth(), 0);
+                days += prevMonthDate.getDate();
+            }
+
+            setTimeLeft({ months, days });
+        };
+
+        calculateTimeLeft();
+        // Update everyday at midnight (or simple interval is fine for this granularity)
+        const timer = setInterval(calculateTimeLeft, 60000 * 60);
+
         const handleScroll = () => setScrolled(window.scrollY > 20);
         window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            clearInterval(timer);
+        };
     }, []);
 
     return (
@@ -37,7 +64,7 @@ export function Navbar() {
             {/* Top Banner */}
             <div className="bg-[#b45309] text-white text-sm py-2 text-center">
                 <span className="font-medium">
-                    🎉 Deadline: 16 mo | 11 days until May 14, 2027{" "}
+                    🎉 Deadline: {timeLeft.months} mo | {timeLeft.days} days until May 14, 2027{" "}
                     <Link href="/resources" className="underline hover:no-underline ml-1 text-[#fcd34d]">
                         Learn More →
                     </Link>
@@ -45,7 +72,7 @@ export function Navbar() {
             </div>
 
             {/* Main Navbar - Floating Pill Logic */}
-            <div className={`sticky top-4 z-50 transition-all duration-300 ${scrolled ? "px-4 md:px-8" : "px-4 md:px-8"}`}>
+            <div className={`sticky z-50 transition-all duration-300 ${scrolled ? "top-0 px-4 md:px-8 pt-4" : "top-4 px-4 md:px-8"}`}>
                 <nav
                     className={`transition-all duration-300 mx-auto bg-white/95 backdrop-blur-md shadow-xl rounded-full max-w-7xl border border-gray-100/50`}
                 >

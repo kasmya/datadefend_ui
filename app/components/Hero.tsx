@@ -39,10 +39,9 @@ export function Hero() {
                             transition={{ duration: 0.6, delay: 0.2 }}
                             className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] mb-6"
                         >
-                            Data Privacy Compliance,
+                            DPDPA Compliance,
                             <br />
-                            powered by{" "}
-                            <span className="text-[#a4d4ff]">AI-native</span> Platform
+                            Powered by <span className="text-[#a4d4ff]">AI</span>.
                         </motion.h1>
 
                         {/* Subheadline */}
@@ -50,11 +49,27 @@ export function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.4 }}
-                            className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10"
+                            className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-4 font-medium"
                         >
-                            From your first audit to full DPDPA compliance, DataDefend AI adapts to your systems,
-                            automates consent workflows, and keeps you continuously audit-ready.
+                            Master your Data Governance, Vendor Risk, and ROPA in one click.
                         </motion.p>
+
+                        {/* Industry Badges */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.5 }}
+                            className="flex items-center justify-center gap-2 text-sm text-white/60 mb-10 flex-wrap"
+                        >
+                            <span className="font-semibold text-white/80">Industry-Tested:</span>
+                            <span>BFSI</span>
+                            <span className="text-[#f59e0b]">•</span>
+                            <span>Healthcare</span>
+                            <span className="text-[#f59e0b]">•</span>
+                            <span>Pharma</span>
+                            <span className="text-[#f59e0b]">•</span>
+                            <span>Manufacturing</span>
+                        </motion.div>
 
                         {/* CTA Buttons */}
                         <motion.div
