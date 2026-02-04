@@ -1,0 +1,870 @@
+"use client";
+
+import React from "react";
+import { Navbar } from "../components/Navbar";
+import { Footer } from "../components/Footer";
+import { motion } from "framer-motion";
+import {
+    Shield,
+    FileCheck,
+    Users,
+    Database,
+    Lock,
+    BarChart3,
+    ArrowRight,
+    CheckCircle,
+    Zap,
+    Bot,
+    Clock,
+    Target,
+    Code,
+    Scale,
+    Laptop,
+    RefreshCw,
+    FileText,
+    AlertCircle,
+    Workflow,
+    Sparkles,
+    LineChart,
+    Globe,
+    Phone,
+
+    Settings,
+    GraduationCap,
+    Headphones,
+    Award,
+    BadgeCheck,
+    Star,
+    Building2
+} from "lucide-react";
+import Link from "next/link";
+
+const platformFeatures = [
+    {
+        icon: Shield,
+        title: "Consent Management",
+        description: "Collect, manage, and document user consent with DPDPA-compliant workflows. Multi-language support for 22 Indian languages.",
+        highlights: ["Cookie consent banners", "Preference centers", "Consent receipts", "API integrations"]
+    },
+    {
+        icon: Database,
+        title: "Data Discovery & Mapping",
+        description: "AI-powered discovery of personal data across your entire infrastructure. Automatic classification and data flow mapping.",
+        highlights: ["7000+ integrations", "Real-time scanning", "Data lineage", "Risk scoring"]
+    },
+    {
+        icon: FileCheck,
+        title: "Privacy Impact Assessments",
+        description: "Automate PIAs and DPIAs with AI-assisted risk analysis. Ensure compliance before launching new initiatives.",
+        highlights: ["AI-filled assessments", "Risk recommendations", "Audit trails", "Template library"]
+    },
+    {
+        icon: Users,
+        title: "DSAR Automation",
+        description: "Handle Data Subject Access Requests efficiently with automated workflows and response tracking.",
+        highlights: ["Request portal", "Identity verification", "Auto-redaction", "Response tracking"]
+    },
+    {
+        icon: Lock,
+        title: "Vendor Risk Management",
+        description: "Assess and monitor third-party vendors for data privacy compliance. Continuous risk monitoring.",
+        highlights: ["Vendor assessments", "Risk scoring", "Contract management", "Continuous monitoring"]
+    },
+    {
+        icon: BarChart3,
+        title: "Compliance Dashboard",
+        description: "Real-time visibility into your compliance posture. Track progress, identify gaps, and generate reports.",
+        highlights: ["Real-time metrics", "Gap analysis", "Board reports", "Audit-ready exports"]
+    }
+];
+
+const aiCapabilities = [
+    {
+        icon: Bot,
+        title: "AI Auto-Fill",
+        description: "Automatically populate privacy assessments, vendor questionnaires, and compliance forms with intelligent data extraction.",
+        stat: "90%",
+        statLabel: "Time Saved"
+    },
+    {
+        icon: Sparkles,
+        title: "Smart Classification",
+        description: "AI-powered data discovery that automatically classifies personal data across databases, files, and cloud services.",
+        stat: "7000+",
+        statLabel: "Integrations"
+    },
+    {
+        icon: RefreshCw,
+        title: "Continuous Monitoring",
+        description: "Real-time compliance monitoring that automatically detects and alerts on policy violations and risk changes.",
+        stat: "24/7",
+        statLabel: "Monitoring"
+    },
+    {
+        icon: FileText,
+        title: "Auto Documentation",
+        description: "Automatically generate audit-ready documentation, consent receipts, and compliance reports.",
+        stat: "100%",
+        statLabel: "Audit Ready"
+    }
+];
+
+const teamBenefits = [
+    {
+        team: "For Tech Teams",
+        icon: Code,
+        color: "from-blue-500 to-cyan-500",
+        benefits: [
+            "API-first architecture for seamless integration",
+            "Pre-built SDKs for web, mobile, and backend",
+            "Webhooks for real-time event notifications",
+            "SSO and RBAC for enterprise security",
+            "CI/CD pipeline integrations"
+        ]
+    },
+    {
+        team: "For Compliance Teams",
+        icon: Scale,
+        color: "from-purple-500 to-pink-500",
+        benefits: [
+            "Ready-made DPDPA compliance templates",
+            "Automated regulatory change tracking",
+            "One-click audit report generation",
+            "Risk scoring and gap analysis",
+            "Regulatory deadline reminders"
+        ]
+    },
+    {
+        team: "For Legal Teams",
+        icon: FileCheck,
+        color: "from-amber-500 to-orange-500",
+        benefits: [
+            "Contract clause library for vendors",
+            "DSAR response workflow automation",
+            "Privacy notice and policy templates",
+            "Breach notification management",
+            "Legal hold and litigation support"
+        ]
+    }
+];
+
+const processSteps = [
+    {
+        step: 1,
+        title: "Connect",
+        description: "Integrate DataDefend with your existing infrastructure in minutes using our 7000+ pre-built connectors.",
+        icon: Globe
+    },
+    {
+        step: 2,
+        title: "Discover",
+        description: "AI automatically scans and classifies all personal data across your systems, creating a comprehensive data map.",
+        icon: Database
+    },
+    {
+        step: 3,
+        title: "Automate",
+        description: "Set up automated workflows for consent, DSARs, and vendor assessments with intelligent AI assistance.",
+        icon: Workflow
+    },
+    {
+        step: 4,
+        title: "Monitor",
+        description: "Get real-time visibility into your compliance posture with continuous monitoring and instant alerts.",
+        icon: LineChart
+    }
+];
+
+
+
+const expertTeam = [
+    {
+        name: "Dr. Rahul Sharma",
+        role: "Chief Privacy Architect",
+        credential: "DPDPA Advisory Committee Member",
+        experience: "Former Privacy Lead at RBI, 15+ years in data protection policy",
+        expertise: ["DPDPA Framework Design", "Regulatory Compliance", "Banking Privacy"]
+    },
+    {
+        name: "Priya Venkatesh",
+        role: "Head of Legal & Compliance",
+        credential: "MeitY DPDPA Working Group",
+        experience: "Ex-Microsoft India Privacy Counsel, Harvard Law School",
+        expertise: ["Cross-border Data Flows", "Contract Law", "GDPR-DPDPA Mapping"]
+    },
+    {
+        name: "Arun Krishnamurthy",
+        role: "VP of Product",
+        credential: "ISO 27701 Lead Auditor",
+        experience: "Built privacy products at TCS, Infosys. 20+ years in enterprise software",
+        expertise: ["Privacy by Design", "Enterprise Architecture", "AI/ML Privacy"]
+    },
+    {
+        name: "Dr. Sunita Patel",
+        role: "Chief Data Scientist",
+        credential: "AI Ethics Board Advisor",
+        experience: "Former IIT Professor, PhD in Data Privacy from Stanford",
+        expertise: ["AI-powered Data Discovery", "PII Classification", "Risk Algorithms"]
+    }
+];
+
+const additionalFeatures = [
+    {
+        title: "Multi-tenant Architecture",
+        description: "Enterprise-grade isolation with dedicated instances for sensitive industries",
+        icon: Shield
+    },
+    {
+        title: "Regulatory Updates",
+        description: "Automatic updates when DPDPA rules change, keeping you always compliant",
+        icon: RefreshCw
+    },
+    {
+        title: "Audit Trail",
+        description: "Complete immutable audit logs for every action, ready for regulatory inspection",
+        icon: FileText
+    },
+    {
+        title: "Custom Workflows",
+        description: "Build custom approval workflows that match your organization's processes",
+        icon: Workflow
+    },
+    {
+        title: "Real-time Alerts",
+        description: "Instant notifications for compliance issues, breaches, and deadline reminders",
+        icon: AlertCircle
+    },
+    {
+        title: "Executive Reports",
+        description: "Board-ready compliance reports with risk scoring and trend analysis",
+        icon: BarChart3
+    }
+];
+
+const certifications = [
+    "ISO 27001 Certified",
+    "SOC 2 Type II Compliant",
+    "GDPR Ready",
+    "MeitY Empaneled",
+    "CERT-In Registered"
+];
+
+export default function PlatformPage() {
+    return (
+        <main className="min-h-screen bg-white">
+            <Navbar />
+
+            {/* Hero Section - Plain Rounded Background */}
+            <section className="px-4 md:px-6 pt-4 pb-12">
+                <div className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#152645] rounded-[3rem]">
+
+                    <div className="container mx-auto px-4 md:px-6 relative z-10 py-20">
+                        <div className="text-center max-w-4xl mx-auto">
+                            {/* Badge */}
+                            <motion.span
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5 }}
+                                className="inline-block px-4 py-1.5 text-sm font-bold tracking-wide text-[#152645] bg-[#f59e0b] rounded-full mb-6"
+                            >
+                                ALL-IN-ONE PLATFORM
+                            </motion.span>
+
+                            {/* Main Headline */}
+                            <motion.h1
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.2 }}
+                                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4"
+                            >
+                                Complete DPDPA Compliance,
+                                <br />
+                                <span className="text-[#a4d4ff]">In One Platform</span>
+                            </motion.h1>
+
+                            {/* Subheadline */}
+                            <motion.p
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: 0.4 }}
+                                className="text-base md:text-lg text-white/90 max-w-2xl mx-auto mb-6"
+                            >
+                                From consent management to vendor risk, DataDefend provides everything you need
+                                to achieve and maintain DPDPA compliance.
+                            </motion.p>
+
+                            {/* CTA Buttons */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: 0.6 }}
+                                className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10"
+                            >
+                                <Link
+                                    href="/contact"
+                                    className="px-6 py-3 bg-[#f59e0b] hover:bg-[#d97706] text-[#152645] font-semibold rounded-full text-base shadow-xl shadow-amber-500/20 transition-all hover:scale-105 flex items-center gap-2 cursor-pointer"
+                                >
+                                    <Zap className="w-4 h-4" />
+                                    Get Started Free
+                                </Link>
+                                <Link
+                                    href="/pricing"
+                                    className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-medium rounded-full text-base backdrop-blur-sm transition-all flex items-center gap-2 group cursor-pointer"
+                                >
+                                    View Pricing
+                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                </Link>
+                            </motion.div>
+
+                            {/* Trust Indicators */}
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 0.8, delay: 0.8 }}
+                                className="flex flex-wrap justify-center gap-4 md:gap-8 text-xs md:text-sm text-white/50"
+                            >
+                                <div className="flex items-center gap-2">
+                                    <CheckCircle className="w-5 h-5 text-[#f59e0b]" />
+                                    <span>6 Powerful Modules</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <CheckCircle className="w-5 h-5 text-[#f59e0b]" />
+                                    <span>7000+ Integrations</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <CheckCircle className="w-5 h-5 text-[#f59e0b]" />
+                                    <span>AI-Powered Automation</span>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* AI Automation Section */}
+            <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+                <div className="container mx-auto max-w-7xl">
+                    <div className="text-center mb-16">
+                        <motion.span
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#0e488b]/10 text-[#0e488b] text-sm font-semibold rounded-full mb-4"
+                        >
+                            <Bot className="w-4 h-4" />
+                            AI-POWERED AUTOMATION
+                        </motion.span>
+                        <h2 className="text-3xl md:text-4xl font-bold text-[#152645] mb-4">
+                            Let AI Do the Heavy Lifting
+                        </h2>
+                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                            Our AI engine automates 90% of compliance tasks, reducing manual effort and eliminating human error.
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {aiCapabilities.map((cap, index) => (
+                            <motion.div
+                                key={cap.title}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className="relative bg-white p-6 rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl transition-all group overflow-hidden"
+                            >
+                                {/* Decorative gradient */}
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#0e488b]/5 to-transparent rounded-bl-full" />
+
+                                <div className="relative">
+                                    <div className="w-12 h-12 bg-gradient-to-br from-[#0e488b] to-[#152645] rounded-xl flex items-center justify-center mb-4 text-white">
+                                        <cap.icon className="w-6 h-6" />
+                                    </div>
+                                    <h3 className="text-lg font-bold text-[#152645] mb-2">{cap.title}</h3>
+                                    <p className="text-sm text-gray-600 mb-4">{cap.description}</p>
+                                    <div className="flex items-baseline gap-2">
+                                        <span className="text-3xl font-bold text-[#f59e0b]">{cap.stat}</span>
+                                        <span className="text-sm text-gray-500">{cap.statLabel}</span>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+
+                    {/* Visual Graphic - AI Flow */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="mt-16 bg-gradient-to-br from-[#152645] to-[#0e488b] rounded-3xl p-8 md:p-12 relative overflow-hidden"
+                    >
+                        {/* Background pattern */}
+                        <div className="absolute inset-0 opacity-10">
+                            <div className="absolute top-10 left-10 w-40 h-40 border border-white rounded-full" />
+                            <div className="absolute bottom-10 right-10 w-60 h-60 border border-white rounded-full" />
+                            <div className="absolute top-1/2 left-1/2 w-80 h-80 border border-white rounded-full -translate-x-1/2 -translate-y-1/2" />
+                        </div>
+
+                        <div className="relative grid md:grid-cols-2 gap-8 items-center">
+                            <div>
+                                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                                    Compliance on Autopilot
+                                </h3>
+                                <p className="text-white/80 mb-6">
+                                    DataDefend's AI continuously monitors your data landscape, automatically detecting new data sources,
+                                    classifying personal information, and flagging compliance risks before they become problems.
+                                </p>
+                                <div className="space-y-3">
+                                    {["Auto-detect sensitive data in real-time", "Predict compliance risks before they occur", "Generate audit reports with one click", "Learn from your organization's patterns"].map((item, i) => (
+                                        <div key={i} className="flex items-center gap-3">
+                                            <CheckCircle className="w-5 h-5 text-[#f59e0b]" />
+                                            <span className="text-white/90">{item}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Visual Dashboard Graphic */}
+                            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                                <div className="flex items-center gap-2 mb-4">
+                                    <div className="w-3 h-3 rounded-full bg-red-400" />
+                                    <div className="w-3 h-3 rounded-full bg-yellow-400" />
+                                    <div className="w-3 h-3 rounded-full bg-green-400" />
+                                </div>
+                                <div className="space-y-3">
+                                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+                                        <span className="text-white/90 text-sm">Data Sources Scanned</span>
+                                        <span className="text-[#f59e0b] font-bold">2,847</span>
+                                    </div>
+                                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+                                        <span className="text-white/90 text-sm">PII Records Classified</span>
+                                        <span className="text-[#f59e0b] font-bold">1.2M+</span>
+                                    </div>
+                                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+                                        <span className="text-white/90 text-sm">Compliance Score</span>
+                                        <span className="text-green-400 font-bold">94%</span>
+                                    </div>
+                                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
+                                        <span className="text-white/90 text-sm">Active Alerts</span>
+                                        <span className="text-amber-400 font-bold">3</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* How It Works - Process Flow */}
+            <section className="py-20 px-4">
+                <div className="container mx-auto max-w-7xl">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold text-[#152645] mb-4">
+                            How DataDefend Works
+                        </h2>
+                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                            Get compliance-ready in 4 simple steps. Our AI handles the complexity so you can focus on your business.
+                        </p>
+                    </div>
+
+                    <div className="relative">
+                        {/* Connection Line */}
+                        <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#0e488b] via-[#f59e0b] to-[#0e488b] -translate-y-1/2 rounded-full" />
+
+                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                            {processSteps.map((step, index) => (
+                                <motion.div
+                                    key={step.step}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.15 }}
+                                    className="relative bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center"
+                                >
+                                    {/* Step Number */}
+                                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-10 bg-gradient-to-br from-[#f59e0b] to-[#d97706] rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                                        {step.step}
+                                    </div>
+
+                                    <div className="mt-6">
+                                        <div className="w-16 h-16 mx-auto bg-[#e0f2fe] rounded-2xl flex items-center justify-center mb-4 text-[#0e488b]">
+                                            <step.icon className="w-8 h-8" />
+                                        </div>
+                                        <h3 className="text-xl font-bold text-[#152645] mb-2">{step.title}</h3>
+                                        <p className="text-gray-600 text-sm">{step.description}</p>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Team Benefits Section */}
+            <section className="py-20 px-4 bg-gray-50">
+                <div className="container mx-auto max-w-7xl">
+                    <div className="text-center mb-16">
+                        <motion.span
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#f59e0b]/10 text-[#f59e0b] text-sm font-semibold rounded-full mb-4"
+                        >
+                            <Users className="w-4 h-4" />
+                            BUILT FOR EVERY TEAM
+                        </motion.span>
+                        <h2 className="text-3xl md:text-4xl font-bold text-[#152645] mb-4">
+                            One Platform for All Your Teams
+                        </h2>
+                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                            Whether you're in tech, compliance, or legal – DataDefend speaks your language and fits your workflow.
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-8">
+                        {teamBenefits.map((team, index) => (
+                            <motion.div
+                                key={team.team}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow"
+                            >
+                                <div className={`w-14 h-14 bg-gradient-to-br ${team.color} rounded-2xl flex items-center justify-center mb-6 text-white`}>
+                                    <team.icon className="w-7 h-7" />
+                                </div>
+                                <h3 className="text-xl font-bold text-[#152645] mb-4">{team.team}</h3>
+                                <ul className="space-y-3">
+                                    {team.benefits.map((benefit, i) => (
+                                        <li key={i} className="flex items-start gap-3">
+                                            <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                                            <span className="text-gray-600 text-sm">{benefit}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Features Grid */}
+            <section className="py-20 px-4">
+                <div className="container mx-auto max-w-7xl">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold text-[#152645] mb-4">
+                            Everything You Need for DPDPA Compliance
+                        </h2>
+                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                            Six powerful modules working together to give you complete control over your data privacy operations.
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {platformFeatures.map((feature, index) => (
+                            <motion.div
+                                key={feature.title}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-lg hover:shadow-xl transition-shadow group"
+                            >
+                                <div className="w-14 h-14 bg-[#e0f2fe] rounded-2xl flex items-center justify-center mb-6 text-[#0e488b] group-hover:bg-[#f59e0b] group-hover:text-white transition-colors">
+                                    <feature.icon className="w-7 h-7" />
+                                </div>
+                                <h3 className="text-xl font-bold text-[#152645] mb-3">{feature.title}</h3>
+                                <p className="text-gray-600 mb-4">{feature.description}</p>
+                                <div className="space-y-2">
+                                    {feature.highlights.map((highlight) => (
+                                        <div key={highlight} className="flex items-center gap-2 text-sm text-gray-500">
+                                            <CheckCircle className="w-4 h-4 text-[#0e488b]" />
+                                            {highlight}
+                                        </div>
+                                    ))}
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Integration Visual */}
+            <section className="py-20 px-4 bg-gradient-to-b from-white to-gray-50">
+                <div className="container mx-auto max-w-6xl">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-gray-100"
+                    >
+                        <div className="grid md:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-green-100 text-green-700 text-sm font-semibold rounded-full mb-4">
+                                    <Clock className="w-4 h-4" />
+                                    QUICK SETUP
+                                </span>
+                                <h3 className="text-2xl md:text-3xl font-bold text-[#152645] mb-4">
+                                    Go Live in Under 2 Weeks
+                                </h3>
+                                <p className="text-gray-600 mb-6">
+                                    With our guided onboarding, pre-built templates, and 7000+ integrations, you'll be compliance-ready
+                                    faster than you ever thought possible.
+                                </p>
+                                <div className="space-y-4">
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-12 h-12 bg-[#e0f2fe] rounded-xl flex items-center justify-center text-[#0e488b]">
+                                            <Target className="w-6 h-6" />
+                                        </div>
+                                        <div>
+                                            <h4 className="font-semibold text-[#152645]">Dedicated Onboarding Manager</h4>
+                                            <p className="text-sm text-gray-500">Personal guidance through every step</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-12 h-12 bg-[#e0f2fe] rounded-xl flex items-center justify-center text-[#0e488b]">
+                                            <Laptop className="w-6 h-6" />
+                                        </div>
+                                        <div>
+                                            <h4 className="font-semibold text-[#152645]">White-Glove Implementation</h4>
+                                            <p className="text-sm text-gray-500">We configure everything for you</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-12 h-12 bg-[#e0f2fe] rounded-xl flex items-center justify-center text-[#0e488b]">
+                                            <AlertCircle className="w-6 h-6" />
+                                        </div>
+                                        <div>
+                                            <h4 className="font-semibold text-[#152645]">24/7 Support</h4>
+                                            <p className="text-sm text-gray-500">Expert help whenever you need it</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Integration Visual */}
+                            <div className="relative">
+                                <div className="grid grid-cols-4 gap-4">
+                                    {["Salesforce", "AWS", "MongoDB", "Slack", "HubSpot", "Azure", "PostgreSQL", "Teams", "Shopify", "GCP", "MySQL", "Jira"].map((name, i) => (
+                                        <motion.div
+                                            key={name}
+                                            initial={{ opacity: 0, scale: 0.8 }}
+                                            whileInView={{ opacity: 1, scale: 1 }}
+                                            viewport={{ once: true }}
+                                            transition={{ delay: i * 0.05 }}
+                                            className="aspect-square bg-gray-50 rounded-xl border border-gray-200 flex items-center justify-center text-xs font-medium text-gray-600 hover:border-[#0e488b] hover:bg-[#e0f2fe] transition-colors cursor-pointer"
+                                        >
+                                            {name}
+                                        </motion.div>
+                                    ))}
+                                </div>
+                                <div className="text-center mt-6">
+                                    <p className="text-sm text-gray-500">
+                                        And <span className="font-bold text-[#0e488b]">7000+ more</span> integrations
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* Onboarding Journey Teaser */}
+            <section className="py-20 px-4">
+                <div className="container mx-auto max-w-5xl">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        className="bg-gradient-to-r from-[#152645] to-[#0e488b] rounded-3xl p-8 md:p-12 text-center text-white shadow-2xl relative overflow-hidden"
+                    >
+                        {/* Background Pattern */}
+                        <div className="absolute inset-0 opacity-10">
+                            <div className="absolute top-10 left-10 w-40 h-40 border border-white rounded-full" />
+                            <div className="absolute bottom-10 right-10 w-60 h-60 border border-white rounded-full" />
+                        </div>
+
+                        <div className="relative z-10">
+                            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                                Your Journey to Compliance
+                            </h2>
+                            <p className="text-lg text-white/80 max-w-2xl mx-auto mb-8">
+                                Discover how we take you from zero to compliant in weeks, with a special consultation track for large enterprises involving C-Suite systematic planning.
+                            </p>
+                            <Link
+                                href="/onboarding"
+                                className="inline-flex items-center gap-2 px-8 py-3 bg-[#f59e0b] hover:bg-[#d97706] text-[#152645] font-bold rounded-full transition-all shadow-lg hover:scale-105"
+                            >
+                                View Onboarding Process
+                                <ArrowRight className="w-5 h-5" />
+                            </Link>
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* Expert Team Section */}
+            <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+                <div className="container mx-auto max-w-7xl">
+                    <div className="text-center mb-16">
+                        <motion.span
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#f59e0b]/10 text-[#f59e0b] text-sm font-semibold rounded-full mb-4"
+                        >
+                            <Award className="w-4 h-4" />
+                            INDUSTRY-LEADING EXPERTISE
+                        </motion.span>
+                        <h2 className="text-3xl md:text-4xl font-bold text-[#152645] mb-4">
+                            Built by DPDPA Experts, For You
+                        </h2>
+                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                            Our leadership team includes members of the DPDPA Advisory Committee who helped shape India's data protection framework.
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {expertTeam.map((expert, index) => (
+                            <motion.div
+                                key={expert.name}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow text-center"
+                            >
+                                {/* Avatar Placeholder */}
+                                <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-[#152645] to-[#0e488b] rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                                    {expert.name.split(' ').map(n => n[0]).join('')}
+                                </div>
+
+                                <h3 className="text-lg font-bold text-[#152645] mb-1">{expert.name}</h3>
+                                <p className="text-sm text-[#0e488b] font-medium mb-2">{expert.role}</p>
+
+                                {/* Credential Badge */}
+                                <div className="inline-flex items-center gap-1 px-3 py-1 bg-[#f59e0b]/10 text-[#f59e0b] text-xs font-semibold rounded-full mb-3">
+                                    <BadgeCheck className="w-3 h-3" />
+                                    {expert.credential}
+                                </div>
+
+                                <p className="text-sm text-gray-500 mb-4">{expert.experience}</p>
+
+                                <div className="flex flex-wrap justify-center gap-1">
+                                    {expert.expertise.map((skill, i) => (
+                                        <span key={i} className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
+                                            {skill}
+                                        </span>
+                                    ))}
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+
+                    {/* Trust Statement */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="mt-12 bg-[#152645] rounded-2xl p-8 text-center"
+                    >
+                        <div className="flex items-center justify-center gap-3 mb-4">
+                            <Star className="w-6 h-6 text-[#f59e0b]" />
+                            <Star className="w-6 h-6 text-[#f59e0b]" />
+                            <Star className="w-6 h-6 text-[#f59e0b]" />
+                            <Star className="w-6 h-6 text-[#f59e0b]" />
+                            <Star className="w-6 h-6 text-[#f59e0b]" />
+                        </div>
+                        <p className="text-xl text-white font-medium mb-2">
+                            "The team at DataDefend didn't just build a tool – they built the framework that DPDPA is based on."
+                        </p>
+                        <p className="text-white/60 text-sm">
+                            — Chief Compliance Officer, Leading Indian Bank
+                        </p>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* Additional Enterprise Features */}
+            <section className="py-20 px-4">
+                <div className="container mx-auto max-w-7xl">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold text-[#152645] mb-4">
+                            Enterprise-Grade Features
+                        </h2>
+                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                            Built for scale, security, and compliance. Everything you need for enterprise data protection.
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {additionalFeatures.map((feature, index) => (
+                            <motion.div
+                                key={feature.title}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className="flex items-start gap-4 p-6 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
+                            >
+                                <div className="w-12 h-12 bg-[#e0f2fe] rounded-xl flex items-center justify-center text-[#0e488b] flex-shrink-0">
+                                    <feature.icon className="w-6 h-6" />
+                                </div>
+                                <div>
+                                    <h3 className="font-bold text-[#152645] mb-1">{feature.title}</h3>
+                                    <p className="text-sm text-gray-600">{feature.description}</p>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Certifications Bar */}
+            <section className="py-12 px-4 bg-gray-50">
+                <div className="container mx-auto max-w-6xl">
+                    <div className="text-center mb-8">
+                        <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide">Trusted & Certified</p>
+                    </div>
+                    <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12">
+                        {certifications.map((cert, index) => (
+                            <motion.div
+                                key={cert}
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200"
+                            >
+                                <CheckCircle className="w-5 h-5 text-green-500" />
+                                <span className="text-sm font-medium text-[#152645]">{cert}</span>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* CTA Section */}
+            <section className="py-20 px-4 bg-gradient-to-br from-[#152645] via-[#0e488b] to-[#152645]">
+                <div className="container mx-auto max-w-4xl text-center">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                        Ready to Simplify Your Compliance?
+                    </h2>
+                    <p className="text-xl text-white/80 mb-8">
+                        Join 500+ enterprises already using DataDefend for DPDPA compliance.
+                    </p>
+                    <Link
+                        href="/contact"
+                        className="inline-flex items-center gap-2 px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-[#152645] font-bold rounded-full transition-all shadow-lg"
+                    >
+                        Book a Demo
+                        <ArrowRight className="w-5 h-5" />
+                    </Link>
+                </div>
+            </section>
+
+            <Footer />
+        </main>
+    );
+}
+

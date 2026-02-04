@@ -54,7 +54,6 @@ const pricingPlans = [
         ],
         notIncluded: [
             "Unlimited data sources",
-            "White-label solution",
             "24/7 phone support"
         ],
         cta: "Start 14-Day Trial",
@@ -72,7 +71,6 @@ const pricingPlans = [
             "Unlimited vendor assessments",
             "Unlimited PIAs/DPIAs",
             "On-premise deployment option",
-            "White-label solution",
             "24/7 phone support",
             "Dedicated compliance team",
             "Custom integrations",
@@ -100,7 +98,7 @@ export default function PricingPage() {
     return (
         <main className="min-h-screen bg-white">
             <Navbar />
-            
+
             {/* Hero Section */}
             <section className="pt-24 pb-16 px-4 bg-gradient-to-b from-gray-50 to-white">
                 <div className="container mx-auto max-w-7xl text-center">
@@ -133,22 +131,20 @@ export default function PricingPage() {
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className={`relative rounded-3xl p-8 ${
-                                    plan.highlight 
-                                        ? 'bg-gradient-to-b from-[#152645] to-[#0e488b] text-white shadow-2xl scale-105 border-2 border-[#f59e0b]' 
+                                className={`relative rounded-3xl p-8 ${plan.highlight
+                                        ? 'bg-gradient-to-b from-[#152645] to-[#0e488b] text-white shadow-2xl scale-105 border-2 border-[#f59e0b]'
                                         : 'bg-white border border-gray-200 shadow-lg hover:shadow-xl transition-shadow'
-                                }`}
+                                    }`}
                             >
                                 {plan.badge && (
-                                    <div className={`absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-sm font-bold ${
-                                        plan.highlight 
-                                            ? 'bg-[#f59e0b] text-white' 
+                                    <div className={`absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-sm font-bold ${plan.highlight
+                                            ? 'bg-[#f59e0b] text-white'
                                             : 'bg-[#152645] text-white'
-                                    }`}>
+                                        }`}>
                                         {plan.badge}
                                     </div>
                                 )}
-                                
+
                                 <div className="mb-6">
                                     <h3 className={`text-2xl font-bold mb-2 ${plan.highlight ? 'text-white' : 'text-[#152645]'}`}>
                                         {plan.name}
@@ -168,11 +164,10 @@ export default function PricingPage() {
 
                                 <Link
                                     href="/contact"
-                                    className={`block w-full text-center py-3 rounded-xl font-bold transition-all mb-6 cursor-pointer ${
-                                        plan.highlight
+                                    className={`block w-full text-center py-3 rounded-xl font-bold transition-all mb-6 cursor-pointer ${plan.highlight
                                             ? 'bg-[#f59e0b] hover:bg-[#d97706] text-white shadow-lg'
                                             : 'bg-[#152645] hover:bg-[#0e488b] text-white'
-                                    }`}
+                                        }`}
                                 >
                                     {plan.cta}
                                 </Link>
@@ -183,9 +178,8 @@ export default function PricingPage() {
                                     </p>
                                     {plan.features.map((feature, idx) => (
                                         <div key={idx} className="flex items-start gap-3">
-                                            <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
-                                                plan.highlight ? 'text-[#f59e0b]' : 'text-green-500'
-                                            }`} />
+                                            <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.highlight ? 'text-[#f59e0b]' : 'text-green-500'
+                                                }`} />
                                             <span className={`text-sm ${plan.highlight ? 'text-white/90' : 'text-gray-700'}`}>
                                                 {feature}
                                             </span>
@@ -200,9 +194,8 @@ export default function PricingPage() {
                                         </p>
                                         {plan.notIncluded.map((feature, idx) => (
                                             <div key={idx} className="flex items-start gap-3">
-                                                <X className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
-                                                    plan.highlight ? 'text-white/40' : 'text-gray-400'
-                                                }`} />
+                                                <X className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.highlight ? 'text-white/40' : 'text-gray-400'
+                                                    }`} />
                                                 <span className={`text-sm ${plan.highlight ? 'text-white/60' : 'text-gray-500'}`}>
                                                     {feature}
                                                 </span>

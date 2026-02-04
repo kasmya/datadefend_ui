@@ -94,60 +94,37 @@ export function Footer() {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 mb-16">
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-12 mb-16">
                         {/* Brand Column */}
-                        <div className="lg:col-span-2 text-left lg:text-center">
-                            <Link href="/" className="inline-flex items-center gap-2 mb-6 group lg:mx-auto">
+                        <div className="col-span-2">
+                            <Link href="/" className="inline-flex items-center gap-2 mb-6 group">
                                 <img src="/dad.svg" alt="DataDefend Logo" className="h-10 w-auto brightness-0 invert group-hover:scale-105 transition-transform" />
                             </Link>
-                            <p className="text-white/90 mb-4 lg:mx-auto max-w-sm leading-relaxed text-sm">
+                            <p className="text-white/90 mb-6 max-w-sm leading-relaxed text-sm">
                                 India's #1 AI-Powered DPDPA Compliance Platform. Trusted by 500+ enterprises to protect data and ensure compliance.
                             </p>
-                            <div className="mb-6 p-4 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 lg:mx-auto max-w-sm">
-                                <p className="text-sm text-white/70 mb-3 font-semibold">A product of</p>
-                                <p className="text-[#a4d4ff] font-bold text-base mb-4 lg:whitespace-nowrap">Cybersecure Digital Intelligence Private Limited</p>
-                                
-                                <div className="space-y-3 text-sm text-white/80">
-                                    <div className="flex items-start gap-3 lg:justify-center">
-                                        <MapPin className="w-4 h-4 mt-0.5 text-[#f59e0b] flex-shrink-0" />
-                                        <p className="leading-relaxed text-left">Kamla Palace, 2, 2nd Floor, Old Jail Road,<br />Near Sohna Chowk, Gurugram, Haryana - 122001</p>
-                                    </div>
-                                    <div className="flex items-center gap-3 lg:justify-center">
-                                        <Mail className="w-4 h-4 text-[#f59e0b] flex-shrink-0" />
-                                        <a href="mailto:support@cybersec.enterprises" className="text-[#a4d4ff] hover:text-white transition-colors hover:underline">
-                                            support@cybersec.enterprises
-                                        </a>
-                                    </div>
-                                    <div className="flex items-center gap-3 lg:justify-center">
-                                        <Phone className="w-4 h-4 text-[#f59e0b] flex-shrink-0" />
-                                        <a href="tel:+911243534897" className="text-[#a4d4ff] hover:text-white transition-colors hover:underline">
-                                            +91 0124 3534897
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            
+
                             {/* Social Media Links */}
                             <div className="space-y-3">
                                 <p className="text-white/70 text-sm font-semibold">Follow Us</p>
-                                <div className="flex flex-wrap gap-3 lg:justify-center">
-                                    <a href="https://linkedin.com/company/datadefend" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#0077b5] hover:scale-110 transition-all border border-white/10 group">
-                                        <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                                <div className="flex flex-wrap gap-3">
+                                    <a href="https://linkedin.com/company/datadefend" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#0077b5] hover:scale-110 transition-all border border-white/10 group">
+                                        <Linkedin className="w-4 h-4 group-hover:scale-110 transition-transform" />
                                     </a>
-                                    <a href="https://twitter.com/datadefend" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#1DA1F2] hover:scale-110 transition-all border border-white/10 group">
-                                        <Twitter className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                                    <a href="https://twitter.com/datadefend" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#1DA1F2] hover:scale-110 transition-all border border-white/10 group">
+                                        <Twitter className="w-4 h-4 group-hover:scale-110 transition-transform" />
                                     </a>
-                                    <a href="https://facebook.com/datadefend" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#1877F2] hover:scale-110 transition-all border border-white/10 group">
-                                        <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                                    <a href="https://facebook.com/datadefend" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#1877F2] hover:scale-110 transition-all border border-white/10 group">
+                                        <Facebook className="w-4 h-4 group-hover:scale-110 transition-transform" />
                                     </a>
-                                    <a href="https://instagram.com/datadefend" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-gradient-to-br hover:from-[#F58529] hover:via-[#DD2A7B] hover:to-[#8134AF] hover:scale-110 transition-all border border-white/10 group">
-                                        <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                                    <a href="https://instagram.com/datadefend" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-gradient-to-br hover:from-[#F58529] hover:via-[#DD2A7B] hover:to-[#8134AF] hover:scale-110 transition-all border border-white/10 group">
+                                        <Instagram className="w-4 h-4 group-hover:scale-110 transition-transform" />
                                     </a>
-                                    <a href="https://youtube.com/@datadefend" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#FF0000] hover:scale-110 transition-all border border-white/10 group">
-                                        <Youtube className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                                    <a href="https://youtube.com/@datadefend" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#FF0000] hover:scale-110 transition-all border border-white/10 group">
+                                        <Youtube className="w-4 h-4 group-hover:scale-110 transition-transform" />
                                     </a>
-                                    <a href="https://www.datadefend.com" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#f59e0b] hover:scale-110 transition-all border border-white/10 group">
-                                        <Globe className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                                    <a href="https://www.datadefend.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#f59e0b] hover:scale-110 transition-all border border-white/10 group">
+                                        <Globe className="w-4 h-4 group-hover:scale-110 transition-transform" />
                                     </a>
                                 </div>
                             </div>
@@ -155,21 +132,16 @@ export function Footer() {
 
                         {/* Links Columns */}
                         {Object.entries(footerLinks).map(([section, links]) => (
-                            <div key={section} className="text-left lg:text-center">
-                                <h4 className="text-white font-bold mb-6 text-base">{section}</h4>
-                                <ul className="space-y-3 lg:flex lg:flex-col lg:items-center">
+                            <div key={section}>
+                                <h4 className="text-white font-bold mb-5 text-sm uppercase tracking-wider">{section}</h4>
+                                <ul className="space-y-3">
                                     {links.map((link) => (
-                                        <li key={link.name} className="lg:flex lg:justify-center">
+                                        <li key={link.name}>
                                             <Link
                                                 href={link.href}
-                                                className="text-white/70 hover:text-[#a4d4ff] transition-colors text-sm inline-flex items-center gap-2 font-medium hover:translate-x-1 lg:hover:translate-x-0 transition-all"
+                                                className="text-white/70 hover:text-[#a4d4ff] transition-colors text-sm font-medium"
                                             >
                                                 {link.name}
-                                                {link.badge && (
-                                                    <span className="text-[10px] font-bold px-2 py-0.5 bg-[#f59e0b] text-[#152645] rounded-full animate-pulse">
-                                                        {link.badge}
-                                                    </span>
-                                                )}
                                             </Link>
                                         </li>
                                     ))}
@@ -182,7 +154,7 @@ export function Footer() {
 
                     {/* Bottom Bar */}
                     <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/60 font-medium">
-                        <p className="text-center md:text-left">© 2026 <span className="lg:whitespace-nowrap">Cybersecure Digital Intelligence Private Limited</span>. DataDefend™ is a registered trademark. All rights reserved.</p>
+                        <p className="text-center md:text-left">© 2026 <a href="https://www.cybersec.enterprises/" target="_blank" rel="noopener noreferrer" className="text-[#a4d4ff] hover:text-white transition-colors">CYBERSEC</a> All rights reserved.</p>
                         <div className="flex flex-wrap justify-center gap-6 md:gap-8">
                             <Link href="/privacy" className="hover:text-[#a4d4ff] transition-colors">Privacy Policy</Link>
                             <Link href="/terms" className="hover:text-[#a4d4ff] transition-colors">Terms of Service</Link>

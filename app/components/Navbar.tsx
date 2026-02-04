@@ -7,20 +7,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
     { name: "Home", href: "/" },
-    {
-        name: "Products",
-        href: "#",
-        dropdown: [
-            { name: "Consent Management", href: "/products/consent-manager" },
-            { name: "Data Lifecycle Management", href: "/products/data-lifecycle" },
-            { name: "Compliance & Privacy", href: "/products/compliance-privacy" },
-            { name: "Third Party Risk Management", href: "/products/vendor-risk" },
-            { name: "Cookie Consent", href: "/products/cookie-consent" },
-        ],
-    },
+    { name: "Platform", href: "/platform" },
     { name: "Pricing", href: "/pricing" },
-    { name: "Integrations", href: "/integrations" },
-    { name: "Resources", href: "/resources" },
     { name: "Contact Us", href: "/contact" },
 ];
 
@@ -116,44 +104,13 @@ export function Navbar() {
                             {/* Desktop Navigation */}
                             <div className="hidden md:flex items-center gap-8">
                                 {navItems.map((item) => (
-                                    <div
+                                    <Link
                                         key={item.name}
-                                        className="relative"
-                                        onMouseEnter={() => item.dropdown && setActiveDropdown(item.name)}
-                                        onMouseLeave={() => setActiveDropdown(null)}
+                                        href={item.href}
+                                        className="font-medium transition-colors text-gray-700 hover:text-[#0e488b]"
                                     >
-                                        <Link
-                                            href={item.href}
-                                            className={`flex items-center gap-1 font-medium transition-colors text-gray-700 hover:text-[#0e488b]`}
-                                        >
-                                            {item.name}
-                                            {item.dropdown && <ChevronDown className="w-4 h-4" />}
-                                        </Link>
-
-                                        {/* Dropdown */}
-                                        {item.dropdown && (
-                                            <AnimatePresence>
-                                                {activeDropdown === item.name && (
-                                                    <motion.div
-                                                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                                                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                                                        exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                                                        className="absolute top-full left-0 mt-4 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 py-3 overflow-hidden p-2"
-                                                    >
-                                                        {item.dropdown.map((subItem) => (
-                                                            <Link
-                                                                key={subItem.name}
-                                                                href={subItem.href}
-                                                                className="block px-4 py-3 text-gray-700 hover:bg-[#a4d4ff]/10 hover:text-[#0e488b] transition-colors rounded-xl font-medium"
-                                                            >
-                                                                {subItem.name}
-                                                            </Link>
-                                                        ))}
-                                                    </motion.div>
-                                                )}
-                                            </AnimatePresence>
-                                        )}
-                                    </div>
+                                        {item.name}
+                                    </Link>
                                 ))}
                             </div>
 
@@ -193,62 +150,17 @@ export function Navbar() {
                             >
                                 <div className="px-4 py-4 space-y-1 max-h-[calc(100vh-120px)] overflow-y-auto">
                                     {navItems.map((item) => (
-                                        <div key={item.name}>
-                                            {item.dropdown ? (
-                                                <div className="space-y-1">
-                                                    <button
-                                                        onClick={() => setMobileDropdown(mobileDropdown === item.name ? null : item.name)}
-                                                        className="w-full flex items-center justify-between text-gray-800 font-semibold py-3 px-4 hover:bg-gray-50 rounded-lg transition-all active:scale-[0.98] cursor-pointer"
-                                                    >
-                                                        <span className="text-base">{item.name}</span>
-                                                        <ChevronDown 
-                                                            className={`w-5 h-5 transition-transform duration-300 text-gray-500 ${
-                                                                mobileDropdown === item.name ? "rotate-180 text-[#0e488b]" : ""
-                                                            }`} 
-                                                        />
-                                                    </button>
-                                                    <AnimatePresence>
-                                                        {mobileDropdown === item.name && (
-                                                            <motion.div
-                                                                initial={{ opacity: 0, height: 0 }}
-                                                                animate={{ opacity: 1, height: "auto" }}
-                                                                exit={{ opacity: 0, height: 0 }}
-                                                                transition={{ duration: 0.2 }}
-                                                                className="space-y-1 overflow-hidden bg-gray-50 rounded-lg p-2"
-                                                            >
-                                                                {item.dropdown.map((subItem, index) => (
-                                                                    <Link
-                                                                        key={subItem.name}
-                                                                        href={subItem.href}
-                                                                        className="block text-gray-700 font-medium py-2.5 px-4 hover:bg-white hover:text-[#0e488b] rounded-md transition-all active:scale-[0.98]"
-                                                                        onClick={() => {
-                                                                            setIsOpen(false);
-                                                                            setMobileDropdown(null);
-                                                                        }}
-                                                                    >
-                                                                        <span className="flex items-center gap-2">
-                                                                            <span className="w-1.5 h-1.5 rounded-full bg-[#0e488b]"></span>
-                                                                            {subItem.name}
-                                                                        </span>
-                                                                    </Link>
-                                                                ))}
-                                                            </motion.div>
-                                                        )}
-                                                    </AnimatePresence>
-                                                </div>
-                                            ) : (
-                                                <Link
-                                                    href={item.href}
-                                                    className="block text-gray-800 font-semibold py-3 px-4 hover:bg-gray-50 rounded-lg transition-all text-base active:scale-[0.98]"
-                                                    onClick={() => {
-                                                        setIsOpen(false);
-                                                        setMobileDropdown(null);
-                                                    }}
-                                                >
-                                                    {item.name}
-                                                </Link>
-                                            )}
-                                        </div>
+                                        <Link
+                                            key={item.name}
+                                            href={item.href}
+                                            className="block text-gray-800 font-semibold py-3 px-4 hover:bg-gray-50 rounded-lg transition-all text-base active:scale-[0.98]"
+                                            onClick={() => {
+                                                setIsOpen(false);
+                                                setMobileDropdown(null);
+                                            }}
+                                        >
+                                            {item.name}
+                                        </Link>
                                     ))}
                                     <div className="pt-3 mt-3 border-t border-gray-100">
                                         <Link

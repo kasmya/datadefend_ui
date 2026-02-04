@@ -43,7 +43,7 @@ export function TrustBadges() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 text-center mb-10"
+          className="flex flex-col sm:flex-row items-center justify-start gap-3 sm:gap-4 text-left mb-10"
         >
           <span className="text-gray-300 text-2xl sm:text-3xl font-light">{`{`}</span>
           <span className="text-lg sm:text-xl md:text-2xl font-semibold text-[#152645] tracking-tight">

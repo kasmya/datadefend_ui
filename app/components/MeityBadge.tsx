@@ -93,7 +93,7 @@ export function MeityBadge() {
                         </div>
 
                         <blockquote className="text-lg md:text-xl italic text-[#152645] mb-6 leading-relaxed">
-                            "They've truly built a modern, AI-first platform that delivers on every front. Since we started using them, we've gone from spending days or even weeks on vendor assessments to getting them done in minutes. It's been a complete game-changer for our team."
+                            "Implementing DPDPA requirements felt like a mountain until we found this platform. The AI-driven integration with our existing ERP and POS was seamless, providing us with instant, automated data mapping. We've moved from reactive manual assessments to a proactive, real-time compliance posture. It's a total game-changer for any high-volume business."
                         </blockquote>
 
                         <div>
