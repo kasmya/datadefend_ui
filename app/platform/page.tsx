@@ -177,46 +177,9 @@ const processSteps = [
 
 
 
-const additionalFeatures = [
-    {
-        title: "Multi-tenant Architecture",
-        description: "Enterprise-grade isolation with dedicated instances for sensitive industries",
-        icon: Shield
-    },
-    {
-        title: "Regulatory Updates",
-        description: "Automatic updates when DPDPA rules change, keeping you always compliant",
-        icon: RefreshCw
-    },
-    {
-        title: "Audit Trail",
-        description: "Complete immutable audit logs for every action, ready for regulatory inspection",
-        icon: FileText
-    },
-    {
-        title: "Custom Workflows",
-        description: "Build custom approval workflows that match your organization's processes",
-        icon: Workflow
-    },
-    {
-        title: "Real-time Alerts",
-        description: "Instant notifications for compliance issues, breaches, and deadline reminders",
-        icon: AlertCircle
-    },
-    {
-        title: "Executive Reports",
-        description: "Board-ready compliance reports with risk scoring and trend analysis",
-        icon: BarChart3
-    }
-];
 
-const certifications = [
-    "ISO 27001 Certified",
-    "SOC 2 Type II Compliant",
-    "GDPR Ready",
-    "MeitY Empaneled",
-    "CERT-In Registered"
-];
+
+
 
 export default function PlatformPage() {
     return (
@@ -674,83 +637,9 @@ export default function PlatformPage() {
 
 
 
-            {/* Additional Enterprise Features */}
-            <section className="py-20 px-4">
-                <div className="container mx-auto max-w-7xl">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-[#152645] mb-4">
-                            Enterprise-Grade Features
-                        </h2>
-                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                            Built for scale, security, and compliance. Everything you need for enterprise data protection.
-                        </p>
-                    </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {additionalFeatures.map((feature, index) => (
-                            <motion.div
-                                key={feature.title}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className="flex items-start gap-4 p-6 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
-                            >
-                                <div className="w-12 h-12 bg-[#e0f2fe] rounded-xl flex items-center justify-center text-[#0e488b] flex-shrink-0">
-                                    <feature.icon className="w-6 h-6" />
-                                </div>
-                                <div>
-                                    <h3 className="font-bold text-[#152645] mb-1">{feature.title}</h3>
-                                    <p className="text-sm text-gray-600">{feature.description}</p>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
 
-            {/* Certifications Bar */}
-            <section className="py-12 px-4 bg-gray-50">
-                <div className="container mx-auto max-w-6xl">
-                    <div className="text-center mb-8">
-                        <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide">Trusted & Certified</p>
-                    </div>
-                    <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12">
-                        {certifications.map((cert, index) => (
-                            <motion.div
-                                key={cert}
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200"
-                            >
-                                <CheckCircle className="w-5 h-5 text-green-500" />
-                                <span className="text-sm font-medium text-[#152645]">{cert}</span>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
 
-            {/* CTA Section */}
-            <section className="py-20 px-4 bg-gradient-to-br from-[#152645] via-[#0e488b] to-[#152645]">
-                <div className="container mx-auto max-w-4xl text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                        Ready to Simplify Your Compliance?
-                    </h2>
-                    <p className="text-xl text-white/80 mb-8">
-                        Join 500+ enterprises already using DataDefend for DPDPA compliance.
-                    </p>
-                    <Link
-                        href="/contact"
-                        className="inline-flex items-center gap-2 px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-[#152645] font-bold rounded-full transition-all shadow-lg"
-                    >
-                        Book a Demo
-                        <ArrowRight className="w-5 h-5" />
-                    </Link>
-                </div>
-            </section>
 
             <Footer />
         </main>
