@@ -32,9 +32,7 @@ import {
     Settings,
     GraduationCap,
     Headphones,
-    Award,
-    BadgeCheck,
-    Star,
+
     Building2
 } from "lucide-react";
 import Link from "next/link";
@@ -177,36 +175,7 @@ const processSteps = [
 
 
 
-const expertTeam = [
-    {
-        name: "Dr. Rahul Sharma",
-        role: "Chief Privacy Architect",
-        credential: "DPDPA Advisory Committee Member",
-        experience: "Former Privacy Lead at RBI, 15+ years in data protection policy",
-        expertise: ["DPDPA Framework Design", "Regulatory Compliance", "Banking Privacy"]
-    },
-    {
-        name: "Priya Venkatesh",
-        role: "Head of Legal & Compliance",
-        credential: "MeitY DPDPA Working Group",
-        experience: "Ex-Microsoft India Privacy Counsel, Harvard Law School",
-        expertise: ["Cross-border Data Flows", "Contract Law", "GDPR-DPDPA Mapping"]
-    },
-    {
-        name: "Arun Krishnamurthy",
-        role: "VP of Product",
-        credential: "ISO 27701 Lead Auditor",
-        experience: "Built privacy products at TCS, Infosys. 20+ years in enterprise software",
-        expertise: ["Privacy by Design", "Enterprise Architecture", "AI/ML Privacy"]
-    },
-    {
-        name: "Dr. Sunita Patel",
-        role: "Chief Data Scientist",
-        credential: "AI Ethics Board Advisor",
-        experience: "Former IIT Professor, PhD in Data Privacy from Stanford",
-        expertise: ["AI-powered Data Discovery", "PII Classification", "Risk Algorithms"]
-    }
-];
+
 
 const additionalFeatures = [
     {
@@ -703,87 +672,7 @@ export default function PlatformPage() {
                 </div>
             </section>
 
-            {/* Expert Team Section */}
-            <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
-                <div className="container mx-auto max-w-7xl">
-                    <div className="text-center mb-16">
-                        <motion.span
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true }}
-                            className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#f59e0b]/10 text-[#f59e0b] text-sm font-semibold rounded-full mb-4"
-                        >
-                            <Award className="w-4 h-4" />
-                            INDUSTRY-LEADING EXPERTISE
-                        </motion.span>
-                        <h2 className="text-3xl md:text-4xl font-bold text-[#152645] mb-4">
-                            Built by DPDPA Experts, For You
-                        </h2>
-                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                            Our leadership team includes members of the DPDPA Advisory Committee who helped shape India's data protection framework.
-                        </p>
-                    </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {expertTeam.map((expert, index) => (
-                            <motion.div
-                                key={expert.name}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow text-center"
-                            >
-                                {/* Avatar Placeholder */}
-                                <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-[#152645] to-[#0e488b] rounded-full flex items-center justify-center text-white text-2xl font-bold">
-                                    {expert.name.split(' ').map(n => n[0]).join('')}
-                                </div>
-
-                                <h3 className="text-lg font-bold text-[#152645] mb-1">{expert.name}</h3>
-                                <p className="text-sm text-[#0e488b] font-medium mb-2">{expert.role}</p>
-
-                                {/* Credential Badge */}
-                                <div className="inline-flex items-center gap-1 px-3 py-1 bg-[#f59e0b]/10 text-[#f59e0b] text-xs font-semibold rounded-full mb-3">
-                                    <BadgeCheck className="w-3 h-3" />
-                                    {expert.credential}
-                                </div>
-
-                                <p className="text-sm text-gray-500 mb-4">{expert.experience}</p>
-
-                                <div className="flex flex-wrap justify-center gap-1">
-                                    {expert.expertise.map((skill, i) => (
-                                        <span key={i} className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
-                                            {skill}
-                                        </span>
-                                    ))}
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-
-                    {/* Trust Statement */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="mt-12 bg-[#152645] rounded-2xl p-8 text-center"
-                    >
-                        <div className="flex items-center justify-center gap-3 mb-4">
-                            <Star className="w-6 h-6 text-[#f59e0b]" />
-                            <Star className="w-6 h-6 text-[#f59e0b]" />
-                            <Star className="w-6 h-6 text-[#f59e0b]" />
-                            <Star className="w-6 h-6 text-[#f59e0b]" />
-                            <Star className="w-6 h-6 text-[#f59e0b]" />
-                        </div>
-                        <p className="text-xl text-white font-medium mb-2">
-                            "The team at DataDefend didn't just build a tool – they built the framework that DPDPA is based on."
-                        </p>
-                        <p className="text-white/60 text-sm">
-                            — Chief Compliance Officer, Leading Indian Bank
-                        </p>
-                    </motion.div>
-                </div>
-            </section>
 
             {/* Additional Enterprise Features */}
             <section className="py-20 px-4">

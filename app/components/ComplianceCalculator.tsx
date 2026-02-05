@@ -66,7 +66,7 @@ export function ComplianceCalculator() {
             // Calculate score
             const totalScore = questions.reduce((acc, q, idx) => {
                 const answer = newAnswers[idx];
-                return acc + (q.weight[answer] || 0);
+                return acc + ((q.weight as any)[answer] || 0);
             }, 0);
             const finalScore = Math.round((totalScore / (questions.length * 100)) * 100);
             setScore(finalScore);
@@ -212,7 +212,7 @@ export function ComplianceCalculator() {
                             <div className="space-y-3">
                                 {questions.map((q, idx) => {
                                     const answer = answers[idx];
-                                    const answerScore = q.weight[answer];
+                                    const answerScore = (q.weight as any)[answer];
                                     return (
                                         <div key={q.id} className="flex items-center gap-3">
                                             {answerScore === 100 ? (
