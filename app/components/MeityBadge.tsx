@@ -6,9 +6,9 @@ import { Star } from "lucide-react";
 
 const stats = [
     {
-        value: "7000+",
-        label: "Consent Integration in days (not months)!",
-        subtext: "7K+ Plugins to integrate with your consent stack"
+        value: "9000+",
+        label: "Integrations",
+        subtext: "9K+ Plugins to integrate with your consent stack"
     },
     {
         value: "5X",

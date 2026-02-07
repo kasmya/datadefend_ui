@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { AnimatedProductDemo } from "./AnimatedProductDemo";
 
 const logos = [
   {
@@ -97,25 +98,7 @@ export function TrustBadges() {
           viewport={{ once: true }}
           className="max-w-5xl mx-auto mt-16"
         >
-          <div className="relative aspect-video rounded-3xl overflow-hidden bg-linear-to-br from-[#152645] to-[#0e488b] shadow-2xl border-4 border-white/20">
-            <div className="absolute inset-0 grid-pattern opacity-30" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <button className="w-16 h-16 md:w-20 md:h-20 bg-[#f59e0b] rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform group text-[#152645]">
-                <svg
-                  className="w-7 h-7 md:w-9 md:h-9 ml-1"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </button>
-            </div>
-            <div className="absolute bottom-4 md:bottom-8 left-4 md:left-8">
-              <span className="px-3 py-1.5 md:px-4 md:py-2 bg-[#a4d4ff]/20 backdrop-blur-md rounded-full text-white text-xs md:text-sm font-medium">
-                See DataDefend in action • 2:34
-              </span>
-            </div>
-          </div>
+          <AnimatedProductDemo />
         </motion.div>
       </div>
     </section>
