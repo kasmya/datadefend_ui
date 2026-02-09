@@ -59,7 +59,7 @@ export default function AboutPage() {
     return (
         <main className="min-h-screen bg-white">
             <Navbar />
-            
+
             {/* Hero Section */}
             <section className="pt-24 pb-16 px-4 bg-gradient-to-b from-[#152645] via-[#0e488b] to-[#152645]">
                 <div className="container mx-auto max-w-7xl">
@@ -165,97 +165,6 @@ export default function AboutPage() {
                                 <p className="text-gray-600">
                                     {value.desc}
                                 </p>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Milestones */}
-            <section className="py-20 px-4">
-                <div className="container mx-auto max-w-5xl">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-[#152645] mb-4">
-                            Our Journey
-                        </h2>
-                        <p className="text-lg text-gray-600">
-                            Key milestones in our growth
-                        </p>
-                    </div>
-
-                    <div className="relative">
-                        {milestones.map((milestone, idx) => (
-                            <motion.div
-                                key={idx}
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                                className="flex gap-6 mb-8 last:mb-0"
-                            >
-                                <div className="flex flex-col items-center">
-                                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#0e488b] to-[#152645] flex items-center justify-center text-white font-bold flex-shrink-0">
-                                        <CheckCircle className="w-6 h-6" />
-                                    </div>
-                                    {idx !== milestones.length - 1 && (
-                                        <div className="w-0.5 h-full bg-gradient-to-b from-[#0e488b] to-gray-200 mt-2" />
-                                    )}
-                                </div>
-                                <div className="pb-8">
-                                    <div className="text-2xl font-bold text-[#f59e0b] mb-1">
-                                        {milestone.year}
-                                    </div>
-                                    <div className="text-lg text-gray-700">
-                                        {milestone.event}
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Team */}
-            <section className="py-20 px-4 bg-gray-50">
-                <div className="container mx-auto max-w-7xl">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-[#152645] mb-4">
-                            Meet Our Leadership
-                        </h2>
-                        <p className="text-lg text-gray-600">
-                            The team building India's privacy infrastructure
-                        </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {team.map((member, idx) => (
-                            <motion.div
-                                key={idx}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                                className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200"
-                            >
-                                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#0e488b] to-[#152645] flex items-center justify-center mx-auto mb-4 text-3xl">
-                                    👤
-                                </div>
-                                <h3 className="text-xl font-bold text-[#152645] mb-1 text-center">
-                                    {member.name}
-                                </h3>
-                                <div className="text-sm text-[#f59e0b] font-semibold mb-3 text-center">
-                                    {member.role}
-                                </div>
-                                <p className="text-sm text-gray-600 text-center mb-4">
-                                    {member.bio}
-                                </p>
-                                <a
-                                    href={member.linkedin}
-                                    className="flex items-center justify-center gap-2 text-[#0e488b] hover:text-[#152645] transition-colors"
-                                >
-                                    <Linkedin className="w-4 h-4" />
-                                    <span className="text-sm font-semibold">Connect</span>
-                                </a>
                             </motion.div>
                         ))}
                     </div>

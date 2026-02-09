@@ -1,27 +1,110 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, MessageSquare, Clock } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Mail, Phone, MapPin, Send, MessageSquare, Clock, CheckCircle, XCircle, X } from "lucide-react";
+
+interface ToastMessage {
+    type: "success" | "error";
+    text: string;
+}
+
+// Email validation regex
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 export default function ContactPage() {
     const [formState, setFormState] = useState({
         name: "",
         email: "",
+        phone: "",
         subject: "",
         message: "",
     });
+    const [isLoading, setIsLoading] = useState(false);
+    const [toast, setToast] = useState<ToastMessage | null>(null);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    // Auto-dismiss toast after 5 seconds
+    useEffect(() => {
+        if (toast) {
+            const timer = setTimeout(() => setToast(null), 5000);
+            return () => clearTimeout(timer);
+        }
+    }, [toast]);
+
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Handle form submission logic here
-        console.log("Form submitted:", formState);
-        alert("Thanks for contacting us! We'll get back to you shortly.");
-        setFormState({ name: "", email: "", subject: "", message: "" });
+        setToast(null);
+
+        // Validate email format
+        if (!emailRegex.test(formState.email)) {
+            setToast({ type: "error", text: "Please enter a valid email address." });
+            return;
+        }
+
+        // Validate phone number (at least 10 digits)
+        const phoneDigits = formState.phone.replace(/\D/g, "");
+        if (phoneDigits.length < 10) {
+            setToast({ type: "error", text: "Please enter a valid phone number (at least 10 digits)." });
+            return;
+        }
+
+        setIsLoading(true);
+
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formState),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                setToast({ type: "success", text: "Thanks for contacting us! We'll get back to you shortly." });
+                setFormState({ name: "", email: "", phone: "", subject: "", message: "" });
+            } else {
+                setToast({ type: "error", text: data.message || "Failed to send message. Please try again." });
+            }
+        } catch (error) {
+            console.error("Contact form error:", error);
+            setToast({ type: "error", text: "Something went wrong. Please try again." });
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     return (
         <main className="min-h-screen bg-gray-50 pt-32 pb-24 px-4 md:px-6">
+            {/* Toast Notification */}
+            <AnimatePresence>
+                {toast && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -50, x: "-50%" }}
+                        animate={{ opacity: 1, y: 0, x: "-50%" }}
+                        exit={{ opacity: 0, y: -50, x: "-50%" }}
+                        className={`fixed top-24 left-1/2 z-50 flex items-center gap-3 px-6 py-4 rounded-2xl shadow-2xl ${toast.type === "success"
+                            ? "bg-emerald-50 border border-emerald-200"
+                            : "bg-red-50 border border-red-200"
+                            }`}
+                    >
+                        {toast.type === "success" ? (
+                            <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0" />
+                        ) : (
+                            <XCircle className="w-5 h-5 text-red-500 flex-shrink-0" />
+                        )}
+                        <p className={`font-medium ${toast.type === "success" ? "text-emerald-800" : "text-red-800"}`}>
+                            {toast.text}
+                        </p>
+                        <button
+                            onClick={() => setToast(null)}
+                            className={`ml-2 p-1 rounded-full hover:bg-black/5 transition-colors ${toast.type === "success" ? "text-emerald-600" : "text-red-600"
+                                }`}
+                        >
+                            <X className="w-4 h-4" />
+                        </button>
+                    </motion.div>
+                )}
+            </AnimatePresence>
             <div className="container mx-auto max-w-7xl">
 
                 {/* Header Section */}
@@ -139,22 +222,35 @@ export default function ContactPage() {
                                             value={formState.name}
                                             onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                                             className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 shadow-sm focus:border-[#0e488b] focus:ring-2 focus:ring-[#0e488b]/10 outline-none transition-all"
-                                            placeholder="John Doe"
+                                            placeholder="Sandeep"
                                             required
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <label htmlFor="email" className="text-sm font-semibold text-gray-700">Email Address</label>
+                                        <label htmlFor="email" className="text-sm font-semibold text-gray-700">Email Address <span className="text-red-500">*</span></label>
                                         <input
                                             type="email"
                                             id="email"
                                             value={formState.email}
                                             onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                                             className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 shadow-sm focus:border-[#0e488b] focus:ring-2 focus:ring-[#0e488b]/10 outline-none transition-all"
-                                            placeholder="john@company.com"
+                                            placeholder="sandeep@company.com"
                                             required
                                         />
                                     </div>
+                                </div>
+
+                                <div className="space-y-2">
+                                    <label htmlFor="phone" className="text-sm font-semibold text-gray-700">Phone Number <span className="text-red-500">*</span></label>
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        value={formState.phone}
+                                        onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
+                                        className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 shadow-sm focus:border-[#0e488b] focus:ring-2 focus:ring-[#0e488b]/10 outline-none transition-all"
+                                        placeholder="+91 98765 43210"
+                                        required
+                                    />
                                 </div>
 
                                 <div className="space-y-2">
@@ -185,10 +281,17 @@ export default function ContactPage() {
 
                                 <button
                                     type="submit"
-                                    className="w-full py-4 bg-[#f59e0b] hover:bg-[#d97706] text-[#152645] font-bold rounded-full shadow-lg shadow-amber-500/20 transition-all hover:scale-[1.02] flex items-center justify-center gap-2"
+                                    disabled={isLoading}
+                                    className="w-full py-4 bg-[#f59e0b] hover:bg-[#d97706] text-[#152645] font-bold rounded-full shadow-lg shadow-amber-500/20 transition-all hover:scale-[1.02] flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                                 >
-                                    <Send className="w-5 h-5" />
-                                    Send Message
+                                    {isLoading ? (
+                                        "Sending..."
+                                    ) : (
+                                        <>
+                                            <Send className="w-5 h-5" />
+                                            Send Message
+                                        </>
+                                    )}
                                 </button>
                             </form>
                         </motion.div>

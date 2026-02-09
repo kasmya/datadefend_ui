@@ -1,8 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
-import { Linkedin, Twitter, ArrowRight, Mail, Facebook, Instagram, Youtube, MapPin, Phone, Globe } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { Linkedin, Twitter, ArrowRight, Mail, Facebook, Instagram, Youtube, MapPin, Phone, Globe, CheckCircle, XCircle, X } from "lucide-react";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+
+interface ToastMessage {
+    type: "success" | "error";
+    text: string;
+}
 
 const footerLinks = {
     Platform: [
@@ -42,16 +48,77 @@ const g2Badges = [
 
 export function Footer() {
     const [email, setEmail] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
+    const [toast, setToast] = useState<ToastMessage | null>(null);
 
-    const handleSubscribe = (e: React.FormEvent) => {
+    // Auto-dismiss toast after 5 seconds
+    useEffect(() => {
+        if (toast) {
+            const timer = setTimeout(() => setToast(null), 5000);
+            return () => clearTimeout(timer);
+        }
+    }, [toast]);
+
+    const handleSubscribe = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log("Subscribed:", email);
-        alert("Thanks for subscribing!");
-        setEmail("");
+        setIsLoading(true);
+        setToast(null);
+
+        try {
+            const response = await fetch("/api/subscribe", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                setToast({ type: "success", text: "Thanks for subscribing!" });
+                setEmail("");
+            } else {
+                setToast({ type: "error", text: data.message || "Failed to subscribe. Please try again." });
+            }
+        } catch (error) {
+            console.error("Subscribe error:", error);
+            setToast({ type: "error", text: "Something went wrong. Please try again." });
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     return (
         <footer className="px-4 md:px-6 pb-6 mt-20">
+            {/* Toast Notification */}
+            <AnimatePresence>
+                {toast && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -50, x: "-50%" }}
+                        animate={{ opacity: 1, y: 0, x: "-50%" }}
+                        exit={{ opacity: 0, y: -50, x: "-50%" }}
+                        className={`fixed top-24 left-1/2 z-50 flex items-center gap-3 px-6 py-4 rounded-2xl shadow-2xl ${toast.type === "success"
+                            ? "bg-emerald-50 border border-emerald-200"
+                            : "bg-red-50 border border-red-200"
+                            }`}
+                    >
+                        {toast.type === "success" ? (
+                            <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0" />
+                        ) : (
+                            <XCircle className="w-5 h-5 text-red-500 flex-shrink-0" />
+                        )}
+                        <p className={`font-medium ${toast.type === "success" ? "text-emerald-800" : "text-red-800"}`}>
+                            {toast.text}
+                        </p>
+                        <button
+                            onClick={() => setToast(null)}
+                            className={`ml-2 p-1 rounded-full hover:bg-black/5 transition-colors ${toast.type === "success" ? "text-emerald-600" : "text-red-600"
+                                }`}
+                        >
+                            <X className="w-4 h-4" />
+                        </button>
+                    </motion.div>
+                )}
+            </AnimatePresence>
             <div className="relative bg-gradient-to-br from-[#152645] via-[#0e488b] to-[#152645] pt-20 pb-10 rounded-[3rem] overflow-hidden shadow-2xl">
                 {/* Enhanced Background effects */}
                 <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#a4d4ff]/20 rounded-full blur-[150px] pointer-events-none" />
@@ -85,10 +152,11 @@ export function Footer() {
                                 </div>
                                 <button
                                     type="submit"
-                                    className="px-8 py-3.5 bg-[#f59e0b] hover:bg-[#d97706] text-[#152645] font-bold rounded-full transition-all flex items-center justify-center gap-2 shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50 hover:scale-105"
+                                    disabled={isLoading}
+                                    className="px-8 py-3.5 bg-[#f59e0b] hover:bg-[#d97706] text-[#152645] font-bold rounded-full transition-all flex items-center justify-center gap-2 shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
-                                    Subscribe
-                                    <ArrowRight className="w-4 h-4" />
+                                    {isLoading ? "Subscribing..." : "Subscribe"}
+                                    {!isLoading && <ArrowRight className="w-4 h-4" />}
                                 </button>
                             </form>
                         </div>
@@ -103,31 +171,6 @@ export function Footer() {
                             <p className="text-white/90 mb-6 max-w-sm leading-relaxed text-sm">
                                 India's #1 AI-Powered DPDPA Compliance Platform. Trusted by 500+ enterprises to protect data and ensure compliance.
                             </p>
-
-                            {/* Social Media Links */}
-                            <div className="space-y-3">
-                                <p className="text-white/70 text-sm font-semibold">Follow Us</p>
-                                <div className="flex flex-wrap gap-3">
-                                    <a href="https://linkedin.com/company/datadefend" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#0077b5] hover:scale-110 transition-all border border-white/10 group">
-                                        <Linkedin className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                                    </a>
-                                    <a href="https://twitter.com/datadefend" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#1DA1F2] hover:scale-110 transition-all border border-white/10 group">
-                                        <Twitter className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                                    </a>
-                                    <a href="https://facebook.com/datadefend" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#1877F2] hover:scale-110 transition-all border border-white/10 group">
-                                        <Facebook className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                                    </a>
-                                    <a href="https://instagram.com/datadefend" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-gradient-to-br hover:from-[#F58529] hover:via-[#DD2A7B] hover:to-[#8134AF] hover:scale-110 transition-all border border-white/10 group">
-                                        <Instagram className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                                    </a>
-                                    <a href="https://youtube.com/@datadefend" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#FF0000] hover:scale-110 transition-all border border-white/10 group">
-                                        <Youtube className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                                    </a>
-                                    <a href="https://www.datadefend.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#f59e0b] hover:scale-110 transition-all border border-white/10 group">
-                                        <Globe className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                                    </a>
-                                </div>
-                            </div>
                         </div>
 
                         {/* Links Columns */}
