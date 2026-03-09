@@ -76,7 +76,7 @@ export default function CustomersPage() {
                         transition={{ duration: 0.5 }}
                     >
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6">
-                            <Users className="w-4 h-4 text-[#f59e0b]" />
+                            <Users className="w-4 h-4 text-[#3b82f6]" />
                             <span className="text-sm font-semibold text-white">Our Customers</span>
                         </div>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
@@ -97,7 +97,7 @@ export default function CustomersPage() {
                                 transition={{ duration: 0.5, delay: 0.2 + idx * 0.1 }}
                                 className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20"
                             >
-                                <div className="text-3xl md:text-4xl font-bold text-[#f59e0b] mb-2">
+                                <div className="text-3xl md:text-4xl font-bold text-[#3b82f6] mb-2">
                                     {stat.value}
                                 </div>
                                 <div className="text-sm text-white/70">{stat.label}</div>
@@ -132,7 +132,7 @@ export default function CustomersPage() {
                                 <div className="text-5xl mb-3">{customer.logo}</div>
                                 <h3 className="font-bold text-[#152645] mb-1">{customer.name}</h3>
                                 <div className="text-sm text-gray-500 mb-2">{customer.industry}</div>
-                                <div className="text-xs text-[#f59e0b] font-semibold">{customer.size}</div>
+                                <div className="text-xs text-[#3b82f6] font-semibold">{customer.size}</div>
                             </motion.div>
                         ))}
                     </div>
@@ -199,7 +199,7 @@ export default function CustomersPage() {
                             >
                                 <div className="flex gap-1 mb-4">
                                     {[...Array(testimonial.rating)].map((_, i) => (
-                                        <Star key={i} className="w-5 h-5 fill-[#f59e0b] text-[#f59e0b]" />
+                                        <Star key={i} className="w-5 h-5 fill-[#3b82f6] text-[#3b82f6]" />
                                     ))}
                                 </div>
                                 <p className="text-lg mb-6 leading-relaxed">
@@ -208,7 +208,7 @@ export default function CustomersPage() {
                                 <div className="border-t border-white/20 pt-4">
                                     <div className="font-bold">{testimonial.author}</div>
                                     <div className="text-sm text-white/70">{testimonial.role}</div>
-                                    <div className="text-sm text-[#f59e0b] mt-1">{testimonial.company}</div>
+                                    <div className="text-sm text-[#3b82f6] mt-1">{testimonial.company}</div>
                                 </div>
                             </motion.div>
                         ))}
@@ -228,7 +228,7 @@ export default function CustomersPage() {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link
                             href="/contact"
-                            className="px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold rounded-xl transition-all shadow-lg cursor-pointer inline-flex items-center justify-center gap-2"
+                            className="px-8 py-4 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-bold rounded-xl transition-all shadow-lg cursor-pointer inline-flex items-center justify-center gap-2"
                         >
                             <CheckCircle className="w-5 h-5" />
                             Get Started

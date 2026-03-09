@@ -6,9 +6,11 @@
     --primary-light: #a4d4ff;
     --primary-medium: #0e488b;
 
-    /* Contrast/Pop Color - Amber for professional contrast */
-    --pop: #f59e0b;
-    --pop-light: #fcd34d;
+    /* Contrast/Pop Color - Blue for clean professional look */
+    --pop: #3b82f6;
+    /* Blue-500 */
+    --pop-light: #60a5fa;
+    /* Blue-400 */
 
     /* Hero Section - Dark Navy */
     --hero-bg: #152645;
@@ -22,6 +24,30 @@
 
     --background: #ffffff;
     --foreground: #152645;
+
+    /* ==================== HIGH-SECURITY CYBER-INTELLIGENCE THEME ==================== */
+    
+    /* Global Background - Midnight Navy */
+    --cyber-bg: #0B0F19;
+    
+    /* Sidebar - Darker shade */
+    --cyber-sidebar: #020617;
+    --cyber-sidebar-border: #1E293B;
+    
+    /* Card Style - Cyber-Glass */
+    --cyber-card-bg: #161B22;
+    --cyber-card-border: #1E293B;
+    
+    /* Accent Colors */
+    --cyber-emerald: #10B981;
+    --cyber-blue: #3B82F6;
+    --cyber-amber: #F59E0B;
+    --cyber-red: #EF4444;
+    
+    /* Text Colors */
+    --cyber-text-primary: #F8FAFC;
+    --cyber-text-secondary: #94A3B8;
+    --cyber-text-muted: #64748B;
 }
 
 @theme inline {
@@ -40,6 +66,15 @@
     --color-hero-bg-dark: var(--hero-bg-dark);
 
     --font-sans: var(--font-inter);
+
+    /* Cyber Theme Colors */
+    --color-cyber-bg: var(--cyber-bg);
+    --color-cyber-sidebar: var(--cyber-sidebar);
+    --color-cyber-card: var(--cyber-card-bg);
+    --color-cyber-emerald: var(--cyber-emerald);
+    --color-cyber-blue: var(--cyber-blue);
+    --color-cyber-amber: var(--cyber-amber);
+    --color-cyber-red: var(--cyber-red);
 }
 
 body {
@@ -95,4 +130,201 @@ body {
 
 .animate-glow {
     animation: glow-pulse 4s ease-in-out infinite;
+}
+
+/* ==================== HIGH-SECURITY CYBER-INTELLIGENCE THEME STYLES ==================== */
+
+/* Cyber Background */
+.cyber-bg {
+    background-color: var(--cyber-bg);
+}
+
+/* Cyber Sidebar */
+.cyber-sidebar {
+    background-color: var(--cyber-sidebar);
+    border-right: 1px solid var(--cyber-sidebar-border);
+}
+
+/* Cyber Glass Card */
+.cyber-glass {
+    background-color: var(--cyber-card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--cyber-card-border);
+    box-shadow: inset 0 0 20px rgba(59, 130, 246, 0.05);
+}
+
+.cyber-glass:hover {
+    box-shadow: inset 0 0 30px rgba(59, 130, 246, 0.1), 0 0 20px rgba(59, 130, 246, 0.1);
+}
+
+/* Ghost Text Numbers */
+.ghost-text {
+    font-size: 120px;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.08);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Progress Bar Styles */
+.progress-segmented {
+    display: flex;
+    gap: 4px;
+}
+
+.progress-segment {
+    height: 8px;
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-segment.filled {
+    background: linear-gradient(90deg, var(--cyber-emerald), #34D399);
+}
+
+.progress-segment.filled-amber {
+    background: linear-gradient(90deg, var(--cyber-amber), #FBBF24);
+}
+
+/* Radial Progress Ring */
+.radial-progress {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.radial-progress circle {
+    fill: none;
+    stroke-width: 8;
+    transform: rotate(-90deg);
+    transform-origin: center;
+}
+
+.radial-progress .bg {
+    stroke: rgba(255, 255, 255, 0.1);
+}
+
+.radial-progress .progress {
+    stroke: var(--cyber-emerald);
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s ease;
+}
+
+.radial-progress .value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--cyber-text-primary);
+}
+
+/* Live Pulse Animation */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(239, 68, 68, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(239, 68, 68, 0.8), 0 0 30px rgba(239, 68, 68, 0.4);
+    }
+}
+
+.live-pulse {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Glowing Button */
+.btn-glow {
+    background-color: var(--cyber-card-bg);
+    border: 1px solid var(--cyber-card-border);
+    color: var(--cyber-text-primary);
+    transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+    border-color: var(--cyber-blue);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3), inset 0 0 10px rgba(59, 130, 246, 0.1);
+}
+
+/* Timeline Glowing Icons */
+.timeline-icon {
+    position: relative;
+}
+
+.timeline-icon::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--cyber-emerald);
+    box-shadow: 0 0 10px var(--cyber-emerald), 0 0 20px var(--cyber-emerald);
+}
+
+.timeline-icon.warning::before {
+    background: var(--cyber-amber);
+    box-shadow: 0 0 10px var(--cyber-amber), 0 0 20px var(--cyber-amber);
+}
+
+.timeline-icon.error::before {
+    background: var(--cyber-red);
+    box-shadow: 0 0 10px var(--cyber-red), 0 0 20px var(--cyber-red);
+}
+
+/* Sparkline */
+.sparkline {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 30px;
+}
+
+.sparkline-bar {
+    width: 4px;
+    background: linear-gradient(to top, var(--cyber-emerald), #34D399);
+    border-radius: 2px;
+    opacity: 0.8;
+}
+
+/* Dark Action Buttons */
+.action-btn {
+    background-color: #1F2937;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+    border-color: var(--cyber-blue);
+    background-color: #374151;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
 }

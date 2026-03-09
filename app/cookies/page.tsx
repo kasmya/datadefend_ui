@@ -123,22 +123,22 @@ export default function CookiePolicy() {
                         <div className="mb-6">
                             <h3 className="text-xl font-semibold text-[#152645] mb-3">2.4 Targeting/Advertising Cookies</h3>
                             <p className="text-gray-700 mb-2">These cookies are used to deliver relevant advertisements and track campaign performance.</p>
-                            <div className="bg-amber-50 p-4 rounded-lg border border-amber-200 mt-3">
+                            <div className="bg-blue-50 p-4 rounded-lg border border-blue-200 mt-3">
                                 <table className="w-full text-sm">
                                     <thead>
-                                        <tr className="border-b border-amber-300">
+                                        <tr className="border-b border-blue-300">
                                             <th className="text-left py-2 text-[#152645]">Cookie Name</th>
                                             <th className="text-left py-2 text-[#152645]">Purpose</th>
                                             <th className="text-left py-2 text-[#152645]">Duration</th>
                                         </tr>
                                     </thead>
                                     <tbody className="text-gray-700">
-                                        <tr className="border-b border-amber-200">
+                                        <tr className="border-b border-blue-200">
                                             <td className="py-2">_fbp</td>
                                             <td className="py-2">Facebook Pixel</td>
                                             <td className="py-2">3 months</td>
                                         </tr>
-                                        <tr className="border-b border-amber-200">
+                                        <tr className="border-b border-blue-200">
                                             <td className="py-2">_gcl_au</td>
                                             <td className="py-2">Google Ads conversion</td>
                                             <td className="py-2">3 months</td>

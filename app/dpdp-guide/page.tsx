@@ -127,7 +127,7 @@ export default function DPDPGuidePage() {
             {/* Hero Section */}
             <section className="pt-32 pb-16 px-4 bg-gradient-to-br from-[#152645] to-[#0e488b]">
                 <div className="container mx-auto max-w-6xl text-center">
-                    <div className="inline-flex items-center gap-2 bg-[#f59e0b] text-[#152645] px-4 py-2 rounded-full font-bold text-sm mb-6">
+                    <div className="inline-flex items-center gap-2 bg-[#3b82f6] text-[#152645] px-4 py-2 rounded-full font-bold text-sm mb-6">
                         <Calendar className="w-4 h-4" />
                         Compliance Deadline: May 13, 2027
                     </div>
@@ -138,7 +138,7 @@ export default function DPDPGuidePage() {
                         Everything Indian businesses need to know about Digital Personal Data Protection Act compliance, obligations, timelines, and penalties.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link href="/contact" className="px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-[#152645] font-bold rounded-xl transition-all inline-flex items-center justify-center gap-2">
+                        <Link href="/contact" className="px-8 py-4 bg-[#3b82f6] hover:bg-[#2563eb] text-[#152645] font-bold rounded-xl transition-all inline-flex items-center justify-center gap-2">
                             Get Compliance Roadmap
                             <ArrowRight className="w-5 h-5" />
                         </Link>
@@ -153,19 +153,19 @@ export default function DPDPGuidePage() {
             {/* Summary Section */}
             <section className="py-16 px-4">
                 <div className="container mx-auto max-w-6xl">
-                    <div className="bg-gradient-to-br from-amber-50 to-orange-50 border border-gray-200 border-l-4 border-l-[#f59e0b] p-8 rounded-2xl shadow-sm">
+                    <div className="bg-gradient-to-br from-amber-50 to-orange-50 border border-gray-200 border-l-4 border-l-[#3b82f6] p-8 rounded-2xl shadow-sm">
                         <h2 className="text-2xl font-bold text-[#152645] mb-4">Executive Summary</h2>
                         <ul className="space-y-3 text-gray-700">
                             <li className="flex items-start gap-3">
-                                <CheckCircle className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" />
+                                <CheckCircle className="w-5 h-5 text-[#3b82f6] flex-shrink-0 mt-0.5" />
                                 <span><strong>MeitY has notified the final DPDP Rules</strong> — an 18-month compliance countdown has begun for all Indian businesses processing digital personal data.</span>
                             </li>
                             <li className="flex items-start gap-3">
-                                <CheckCircle className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" />
+                                <CheckCircle className="w-5 h-5 text-[#3b82f6] flex-shrink-0 mt-0.5" />
                                 <span><strong>This guide consolidates all official documents</strong> and explains key differences between draft and final rules, so you don't need to piece together information from multiple sources.</span>
                             </li>
                             <li className="flex items-start gap-3">
-                                <CheckCircle className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" />
+                                <CheckCircle className="w-5 h-5 text-[#3b82f6] flex-shrink-0 mt-0.5" />
                                 <span><strong>Practical implementation roadmap included</strong> — know what to prioritize now, what can wait, and what must be ready before the May 2027 deadline.</span>
                             </li>
                         </ul>
@@ -235,7 +235,7 @@ export default function DPDPGuidePage() {
                     <div className="grid md:grid-cols-2 gap-6">
                         {keyChanges.map((change, index) => (
                             <div key={index} className="bg-white p-6 rounded-2xl border border-gray-200 hover:shadow-lg transition-all">
-                                <change.icon className="w-10 h-10 text-[#f59e0b] mb-4" />
+                                <change.icon className="w-10 h-10 text-[#3b82f6] mb-4" />
                                 <h3 className="text-xl font-bold text-[#152645] mb-3">{change.title}</h3>
                                 <p className="text-gray-700">{change.description}</p>
                             </div>
@@ -335,7 +335,7 @@ export default function DPDPGuidePage() {
             {/* CTA Section */}
             <section className="py-20 px-4 bg-gradient-to-br from-[#152645] to-[#0e488b]">
                 <div className="container mx-auto max-w-4xl text-center">
-                    <Shield className="w-16 h-16 text-[#f59e0b] mx-auto mb-6" />
+                    <Shield className="w-16 h-16 text-[#3b82f6] mx-auto mb-6" />
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                         Achieve DPDP Compliance with DataDefend
                     </h2>
@@ -343,7 +343,7 @@ export default function DPDPGuidePage() {
                         Our AI-powered platform helps you implement consent management, data discovery, DSAR automation, and breach management — all in one integrated solution.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link href="/contact" className="px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-[#152645] font-bold rounded-xl transition-all inline-flex items-center justify-center gap-2">
+                        <Link href="/contact" className="px-8 py-4 bg-[#3b82f6] hover:bg-[#2563eb] text-[#152645] font-bold rounded-xl transition-all inline-flex items-center justify-center gap-2">
                             <Calendar className="w-5 h-5" />
                             Schedule Compliance Demo
                         </Link>

@@ -112,7 +112,7 @@ export default function ContactPage() {
                     <motion.span
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="inline-block px-4 py-1.5 text-sm font-bold tracking-wide text-[#152645] bg-[#f59e0b]/20 rounded-full mb-6"
+                        className="inline-block px-4 py-1.5 text-sm font-bold tracking-wide text-[#152645] bg-[#3b82f6]/20 rounded-full mb-6"
                     >
                         GET IN TOUCH
                     </motion.span>
@@ -160,7 +160,7 @@ export default function ContactPage() {
                             transition={{ delay: 0.4 }}
                             className="bg-white p-8 rounded-[2.5rem] border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
                         >
-                            <div className="w-12 h-12 bg-[#fef3c7] rounded-2xl flex items-center justify-center mb-6 text-[#d97706]">
+                            <div className="w-12 h-12 bg-[#fef3c7] rounded-2xl flex items-center justify-center mb-6 text-[#2563eb]">
                                 <MessageSquare className="w-6 h-6" />
                             </div>
                             <h3 className="text-xl font-bold text-[#152645] mb-2">Chat to support</h3>
@@ -282,7 +282,7 @@ export default function ContactPage() {
                                 <button
                                     type="submit"
                                     disabled={isLoading}
-                                    className="w-full py-4 bg-[#f59e0b] hover:bg-[#d97706] text-[#152645] font-bold rounded-full shadow-lg shadow-amber-500/20 transition-all hover:scale-[1.02] flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                                    className="w-full py-4 bg-[#3b82f6] hover:bg-[#2563eb] text-[#152645] font-bold rounded-full shadow-lg shadow-amber-500/20 transition-all hover:scale-[1.02] flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                                 >
                                     {isLoading ? (
                                         "Sending..."

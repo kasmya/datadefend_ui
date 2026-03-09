@@ -8,10 +8,10 @@ export function CTABanner() {
   return (
     <section className="py-16 md:py-20 px-4 md:px-6">
       <div className="container mx-auto">
-        <div className="relative overflow-hidden bg-linear-to-br from-[#2d3e5f] via-[#4a4a7f] to-[#7b5a9f] rounded-3xl shadow-2xl">
+        <div className="relative overflow-hidden bg-linear-to-br from-[#152645] via-[#0e488b] to-[#2563eb] rounded-3xl shadow-2xl">
           {/* Glowing orbs */}
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-[120px]" />
-          <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-pink-500/20 rounded-full blur-[100px]" />
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-400/20 rounded-full blur-[120px]" />
+          <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-600/20 rounded-full blur-[100px]" />
 
           <div className="relative z-10 py-12 md:py-16 px-6 md:px-12 text-center">
             <motion.div
@@ -22,7 +22,7 @@ export function CTABanner() {
             >
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-6">
-                <Gift className="w-4 h-4 text-[#f59e0b]" />
+                <Gift className="w-4 h-4 text-blue-200" />
                 <span className="text-white text-sm font-medium">
                   We have an irresistible starter offer for you
                 </span>
@@ -38,11 +38,11 @@ export function CTABanner() {
               {/* Subtext */}
               <p className="text-base md:text-lg text-white/80 mb-8 max-w-3xl mx-auto">
                 With our{" "}
-                <span className="text-[#f59e0b] font-semibold">
+                <span className="text-blue-200 font-semibold">
                   Starter Pack
                 </span>
                 , you can collect{" "}
-                <span className="text-[#f59e0b] font-semibold">
+                <span className="text-blue-200 font-semibold">
                   3,000 consents per month at ₹0
                 </span>
                 —forever.

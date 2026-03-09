@@ -10,11 +10,11 @@ export default function Security() {
             {/* Hero Section */}
             <section className="bg-gradient-to-br from-[#152645] to-[#0e488b] py-20">
                 <div className="container mx-auto px-4 md:px-6 text-center">
-                    <Shield className="w-16 h-16 text-[#f59e0b] mx-auto mb-6" />
+                    <Shield className="w-16 h-16 text-[#3b82f6] mx-auto mb-6" />
                     <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Security & Compliance</h1>
                     <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto">
                         Enterprise-grade security built into every layer of DataDefend, a product of{" "}
-                        <span className="text-[#f59e0b] font-semibold">
+                        <span className="text-[#3b82f6] font-semibold">
                             Cybersecure Digital Intelligence Private Limited
                         </span>
                     </p>
@@ -201,15 +201,15 @@ export default function Security() {
 
                 {/* Responsible Disclosure */}
                 <section className="mb-16">
-                    <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-8 rounded-2xl border-2 border-amber-200">
+                    <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-8 rounded-2xl border-2 border-blue-200">
                         <div className="flex items-start gap-4">
-                            <AlertTriangle className="w-10 h-10 text-[#f59e0b] flex-shrink-0" />
+                            <AlertTriangle className="w-10 h-10 text-[#3b82f6] flex-shrink-0" />
                             <div>
                                 <h2 className="text-2xl font-bold text-[#152645] mb-3">Responsible Disclosure Program</h2>
                                 <p className="text-gray-700 mb-4">
                                     We value the security community's efforts in helping us maintain the security of our platform. If you discover a security vulnerability, please report it responsibly.
                                 </p>
-                                <div className="bg-white p-4 rounded-xl border border-amber-200">
+                                <div className="bg-white p-4 rounded-xl border border-blue-200">
                                     <h3 className="font-bold text-[#152645] mb-2">How to Report</h3>
                                     <p className="text-gray-700 text-sm mb-2">Email: <a href="mailto:security@datadefend.com" className="text-[#0e488b] hover:underline font-medium">security@datadefend.com</a></p>
                                     <p className="text-gray-700 text-sm mb-2">PGP Key: Available upon request</p>
@@ -227,7 +227,7 @@ export default function Security() {
                         <p className="text-white/80 mb-6 max-w-2xl mx-auto">
                             Access our security documentation, compliance reports, and certifications in our Trust Center.
                         </p>
-                        <a href="/trust-center" className="inline-flex items-center gap-2 px-6 py-3 bg-[#f59e0b] hover:bg-[#d97706] text-[#152645] font-semibold rounded-full transition-colors">
+                        <a href="/trust-center" className="inline-flex items-center gap-2 px-6 py-3 bg-[#3b82f6] hover:bg-[#2563eb] text-[#152645] font-semibold rounded-full transition-colors">
                             Visit Trust Center
                             <Shield className="w-5 h-5" />
                         </a>

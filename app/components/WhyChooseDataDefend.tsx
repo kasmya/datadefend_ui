@@ -34,7 +34,7 @@ export function WhyChooseDataDefend() {
                 >
                     <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#152645] mb-4">
                         Why choose{" "}
-                        <span className="bg-[#f59e0b] px-3 py-1 rounded-xl">DataDefend</span>?
+                        <span className="bg-blue-500 text-white px-3 py-1 rounded-xl">DataDefend</span>?
                     </h2>
                     <p className="text-base md:text-lg lg:text-xl text-[#152645] max-w-4xl mx-auto">
                         <span className="bg-[#a4d4ff] px-2 py-0.5 rounded-lg font-semibold">
@@ -46,6 +46,8 @@ export function WhyChooseDataDefend() {
 
                 {/* Comparison Cards */}
                 <div className="grid lg:grid-cols-2 gap-6 md:gap-8 items-start mt-12 relative">
+                    {/* Timeline Line */}
+                    <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#0e488b] via-blue-500 to-transparent -translate-x-1/2" />
                     {/* VS Badge - Positioned absolutely in center */}
                     <div className="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
                         <div className="w-16 h-16 bg-[#0e488b] rounded-full flex items-center justify-center text-white font-bold text-xl shadow-2xl border-4 border-white">

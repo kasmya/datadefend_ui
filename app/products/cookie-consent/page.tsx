@@ -46,7 +46,7 @@ export default function CookieConsentPage() {
                 "Asynchronous loading ensures banner doesn't block page rendering",
                 "Cached on user devices for repeat visits with zero load time"
             ],
-            color: "from-[#f59e0b] to-[#d97706]"
+            color: "from-[#3b82f6] to-[#2563eb]"
         },
         {
             icon: Globe2,
@@ -118,13 +118,13 @@ export default function CookieConsentPage() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6 }}
                         >
-                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#f59e0b]/10 border border-[#f59e0b]/20 rounded-full mb-6">
-                                <Cookie className="w-4 h-4 text-[#f59e0b]" />
-                                <span className="text-sm font-semibold text-[#f59e0b]">COOKIE CONSENT</span>
+                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#3b82f6]/10 border border-[#3b82f6]/20 rounded-full mb-6">
+                                <Cookie className="w-4 h-4 text-[#3b82f6]" />
+                                <span className="text-sm font-semibold text-[#3b82f6]">COOKIE CONSENT</span>
                             </div>
                             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#152645] mb-6 leading-tight">
                                 Deploy a Fast,{" "}
-                                <span className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] bg-clip-text text-transparent">
+                                <span className="bg-gradient-to-r from-[#3b82f6] to-[#2563eb] bg-clip-text text-transparent">
                                     Low-Latency
                                 </span>{" "}
                                 Cookie Banner on Your Website
@@ -135,7 +135,7 @@ export default function CookieConsentPage() {
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <Link
                                     href="/contact"
-                                    className="px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 cursor-pointer"
+                                    className="px-8 py-4 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 cursor-pointer"
                                 >
                                     <Calendar className="w-5 h-5" />
                                     Get Started Free
@@ -164,14 +164,14 @@ export default function CookieConsentPage() {
                                     </div>
                                     <div className="flex items-center justify-between p-4 bg-gray-100 rounded-xl">
                                         <span className="text-gray-500">Avg Load Time</span>
-                                        <span className="text-2xl font-bold text-[#f59e0b]">42ms</span>
+                                        <span className="text-2xl font-bold text-[#3b82f6]">42ms</span>
                                     </div>
                                     <div className="flex items-center justify-between p-4 bg-gray-100 rounded-xl">
                                         <span className="text-gray-500">Monthly Consents</span>
                                         <span className="text-2xl font-bold text-[#6366f1]">8,234</span>
                                     </div>
                                 </div>
-                                <div className="p-4 bg-gradient-to-r from-[#f59e0b]/10 to-[#d97706]/10 rounded-xl border border-[#f59e0b]/20">
+                                <div className="p-4 bg-gradient-to-r from-[#3b82f6]/10 to-[#2563eb]/10 rounded-xl border border-[#3b82f6]/20">
                                     <p className="text-[#152645] text-sm font-semibold mb-2">✨ Simple & Fair Pricing</p>
                                     <p className="text-gray-400 text-xs">10,000 consents/month free • No storage fees • No hidden costs</p>
                                 </div>
@@ -208,10 +208,10 @@ export default function CookieConsentPage() {
                                 transition={{ delay: index * 0.1 }}
                                 className="relative bg-gray-50 border border-gray-200 rounded-3xl p-8 hover:border-gray-300 transition-all group"
                             >
-                                <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-r from-[#f59e0b] to-[#d97706] rounded-2xl flex items-center justify-center text-2xl font-bold text-white shadow-lg">
+                                <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-r from-[#3b82f6] to-[#2563eb] rounded-2xl flex items-center justify-center text-2xl font-bold text-white shadow-lg">
                                     {step.step}
                                 </div>
-                                <step.icon className="w-12 h-12 text-[#f59e0b] mb-6 mt-4 group-hover:scale-110 transition-transform" />
+                                <step.icon className="w-12 h-12 text-[#3b82f6] mb-6 mt-4 group-hover:scale-110 transition-transform" />
                                 <h3 className="text-xl font-bold text-[#152645] mb-3">{step.title}</h3>
                                 <p className="text-gray-500 leading-relaxed">{step.description}</p>
                             </motion.div>
@@ -246,7 +246,7 @@ export default function CookieConsentPage() {
                                     <div className="space-y-3">
                                         {feature.features.map((item, idx) => (
                                             <div key={idx} className="flex items-start gap-3 p-3 bg-gray-100 rounded-xl hover:bg-gray-50 transition-all">
-                                                <CheckCircle2 className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" />
+                                                <CheckCircle2 className="w-5 h-5 text-[#3b82f6] flex-shrink-0 mt-0.5" />
                                                 <span className="text-gray-600 text-sm leading-relaxed">{item}</span>
                                             </div>
                                         ))}
@@ -269,9 +269,9 @@ export default function CookieConsentPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="bg-white border border-gray-200 rounded-2xl p-6 hover:border-[#f59e0b]/50 transition-all text-center"
+                                className="bg-white border border-gray-200 rounded-2xl p-6 hover:border-[#3b82f6]/50 transition-all text-center"
                             >
-                                <benefit.icon className="w-10 h-10 text-[#f59e0b] mx-auto mb-4" />
+                                <benefit.icon className="w-10 h-10 text-[#3b82f6] mx-auto mb-4" />
                                 <h4 className="text-lg font-bold text-[#152645] mb-2">{benefit.title}</h4>
                                 <p className="text-gray-400 text-sm">{benefit.description}</p>
                             </motion.div>
@@ -287,7 +287,7 @@ export default function CookieConsentPage() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="bg-gradient-to-r from-[#f59e0b] via-[#d97706] to-[#f59e0b] rounded-[3rem] p-12 md:p-16 text-center relative overflow-hidden"
+                        className="bg-gradient-to-r from-[#3b82f6] via-[#2563eb] to-[#3b82f6] rounded-[3rem] p-12 md:p-16 text-center relative overflow-hidden"
                     >
                         <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
                         <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>

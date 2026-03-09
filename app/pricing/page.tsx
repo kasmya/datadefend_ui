@@ -107,8 +107,8 @@ export default function PricingPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#f59e0b]/10 rounded-full mb-6">
-                            <Sparkles className="w-4 h-4 text-[#f59e0b]" />
+                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#3b82f6]/10 rounded-full mb-6">
+                            <Sparkles className="w-4 h-4 text-[#3b82f6]" />
                             <span className="text-sm font-semibold text-[#152645]">Simple, Transparent Pricing</span>
                         </div>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#152645] mb-6">
@@ -132,13 +132,13 @@ export default function PricingPage() {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 className={`relative rounded-3xl p-8 ${plan.highlight
-                                        ? 'bg-gradient-to-b from-[#152645] to-[#0e488b] text-white shadow-2xl scale-105 border-2 border-[#f59e0b]'
+                                        ? 'bg-gradient-to-b from-[#152645] to-[#0e488b] text-white shadow-2xl scale-105 border-2 border-[#3b82f6]'
                                         : 'bg-white border border-gray-200 shadow-lg hover:shadow-xl transition-shadow'
                                     }`}
                             >
                                 {plan.badge && (
                                     <div className={`absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-sm font-bold ${plan.highlight
-                                            ? 'bg-[#f59e0b] text-white'
+                                            ? 'bg-[#3b82f6] text-white'
                                             : 'bg-[#152645] text-white'
                                         }`}>
                                         {plan.badge}
@@ -165,7 +165,7 @@ export default function PricingPage() {
                                 <Link
                                     href="/contact"
                                     className={`block w-full text-center py-3 rounded-xl font-bold transition-all mb-6 cursor-pointer ${plan.highlight
-                                            ? 'bg-[#f59e0b] hover:bg-[#d97706] text-white shadow-lg'
+                                            ? 'bg-[#3b82f6] hover:bg-[#2563eb] text-white shadow-lg'
                                             : 'bg-[#152645] hover:bg-[#0e488b] text-white'
                                         }`}
                                 >
@@ -178,7 +178,7 @@ export default function PricingPage() {
                                     </p>
                                     {plan.features.map((feature, idx) => (
                                         <div key={idx} className="flex items-start gap-3">
-                                            <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.highlight ? 'text-[#f59e0b]' : 'text-green-500'
+                                            <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.highlight ? 'text-[#3b82f6]' : 'text-green-500'
                                                 }`} />
                                             <span className={`text-sm ${plan.highlight ? 'text-white/90' : 'text-gray-700'}`}>
                                                 {feature}
@@ -228,7 +228,7 @@ export default function PricingPage() {
                                     <tr>
                                         <th className="px-6 py-4 text-left font-semibold">Features</th>
                                         <th className="px-6 py-4 text-center font-semibold">Starter</th>
-                                        <th className="px-6 py-4 text-center font-semibold bg-[#f59e0b]/20">Professional</th>
+                                        <th className="px-6 py-4 text-center font-semibold bg-[#3b82f6]/20">Professional</th>
                                         <th className="px-6 py-4 text-center font-semibold">Enterprise</th>
                                     </tr>
                                 </thead>
@@ -236,55 +236,55 @@ export default function PricingPage() {
                                     <tr className="bg-gray-50">
                                         <td className="px-6 py-3 font-semibold text-[#152645]">Consent Management</td>
                                         <td></td>
-                                        <td className="bg-[#f59e0b]/5"></td>
+                                        <td className="bg-[#3b82f6]/5"></td>
                                         <td></td>
                                     </tr>
                                     <tr>
                                         <td className="px-6 py-3 text-gray-700">Consent collections/month</td>
                                         <td className="px-6 py-3 text-center">3,000</td>
-                                        <td className="px-6 py-3 text-center bg-[#f59e0b]/5">50,000</td>
+                                        <td className="px-6 py-3 text-center bg-[#3b82f6]/5">50,000</td>
                                         <td className="px-6 py-3 text-center">Unlimited</td>
                                     </tr>
                                     <tr>
                                         <td className="px-6 py-3 text-gray-700">Multi-language support</td>
                                         <td className="px-6 py-3 text-center"><Check className="w-5 h-5 text-green-500 mx-auto" /></td>
-                                        <td className="px-6 py-3 text-center bg-[#f59e0b]/5"><Check className="w-5 h-5 text-green-500 mx-auto" /></td>
+                                        <td className="px-6 py-3 text-center bg-[#3b82f6]/5"><Check className="w-5 h-5 text-green-500 mx-auto" /></td>
                                         <td className="px-6 py-3 text-center"><Check className="w-5 h-5 text-green-500 mx-auto" /></td>
                                     </tr>
                                     <tr className="bg-gray-50">
                                         <td className="px-6 py-3 font-semibold text-[#152645]">Data Governance</td>
                                         <td></td>
-                                        <td className="bg-[#f59e0b]/5"></td>
+                                        <td className="bg-[#3b82f6]/5"></td>
                                         <td></td>
                                     </tr>
                                     <tr>
                                         <td className="px-6 py-3 text-gray-700">Data discovery sources</td>
                                         <td className="px-6 py-3 text-center"><X className="w-5 h-5 text-gray-400 mx-auto" /></td>
-                                        <td className="px-6 py-3 text-center bg-[#f59e0b]/5">10</td>
+                                        <td className="px-6 py-3 text-center bg-[#3b82f6]/5">10</td>
                                         <td className="px-6 py-3 text-center">Unlimited</td>
                                     </tr>
                                     <tr>
                                         <td className="px-6 py-3 text-gray-700">DSAR automation</td>
                                         <td className="px-6 py-3 text-center"><X className="w-5 h-5 text-gray-400 mx-auto" /></td>
-                                        <td className="px-6 py-3 text-center bg-[#f59e0b]/5"><Check className="w-5 h-5 text-green-500 mx-auto" /></td>
+                                        <td className="px-6 py-3 text-center bg-[#3b82f6]/5"><Check className="w-5 h-5 text-green-500 mx-auto" /></td>
                                         <td className="px-6 py-3 text-center"><Check className="w-5 h-5 text-green-500 mx-auto" /></td>
                                     </tr>
                                     <tr className="bg-gray-50">
                                         <td className="px-6 py-3 font-semibold text-[#152645]">Support</td>
                                         <td></td>
-                                        <td className="bg-[#f59e0b]/5"></td>
+                                        <td className="bg-[#3b82f6]/5"></td>
                                         <td></td>
                                     </tr>
                                     <tr>
                                         <td className="px-6 py-3 text-gray-700">Support channels</td>
                                         <td className="px-6 py-3 text-center text-sm">Email</td>
-                                        <td className="px-6 py-3 text-center text-sm bg-[#f59e0b]/5">Email & Chat</td>
+                                        <td className="px-6 py-3 text-center text-sm bg-[#3b82f6]/5">Email & Chat</td>
                                         <td className="px-6 py-3 text-center text-sm">24/7 Phone</td>
                                     </tr>
                                     <tr>
                                         <td className="px-6 py-3 text-gray-700">Account manager</td>
                                         <td className="px-6 py-3 text-center"><X className="w-5 h-5 text-gray-400 mx-auto" /></td>
-                                        <td className="px-6 py-3 text-center bg-[#f59e0b]/5"><Check className="w-5 h-5 text-green-500 mx-auto" /></td>
+                                        <td className="px-6 py-3 text-center bg-[#3b82f6]/5"><Check className="w-5 h-5 text-green-500 mx-auto" /></td>
                                         <td className="px-6 py-3 text-center"><Check className="w-5 h-5 text-green-500 mx-auto" /></td>
                                     </tr>
                                 </tbody>
@@ -344,7 +344,7 @@ export default function PricingPage() {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link
                             href="/contact"
-                            className="px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
+                            className="px-8 py-4 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-bold rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
                         >
                             <Calendar className="w-5 h-5" />
                             Book a Demo

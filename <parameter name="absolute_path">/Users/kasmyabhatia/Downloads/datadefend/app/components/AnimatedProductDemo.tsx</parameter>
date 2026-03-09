@@ -1,0 +1,464 @@
+<parameter name="content">
+"use client";
+
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+    Shield,
+    Database,
+    Users,
+    FileCheck,
+    BarChart3,
+    Lock,
+    Bell,
+    CheckCircle,
+    AlertTriangle,
+    TrendingUp,
+    Zap,
+    Globe,
+    ShoppingCart,
+    Building2,
+    Laptop,
+    Cloud,
+    Server,
+    FileText,
+    Scale,
+    Clock,
+    Search,
+    Settings,
+    PieChart,
+    FileText as FileTextIcon,
+    ClipboardList,
+    Activity,
+    LogOut,
+    Menu,
+    ChevronDown
+} from "lucide-react";
+
+// Sidebar Navigation Items
+const sidebarItems = [
+    { icon: BarChart3, label: "Dashboard", active: true },
+    { icon: Shield, label: "Policy Assessment" },
+    { icon: Database, label: "Data Discovery" },
+    { icon: Users, label: "Consent" },
+    { icon: FileTextIcon, label: "Audit Logs" },
+    { icon: ClipboardList, label: "DSAR" },
+    { icon: PieChart, label: "Analytics" },
+    { icon: Activity, label: "Compliance" },
+    { icon: FileText, label: "Reports" },
+    { icon: Lock, label: "Vendor Risk" },
+    { icon: Settings, label: "Settings" }
+];
+
+// Quick Actions
+const quickActions = [
+    { label: "Consent Templates", icon: Users },
+    { label: "API & Keys", icon: Lock },
+    { label: "View Violations", icon: AlertTriangle },
+    { label: "New DSAR Request", icon: ClipboardList },
+    { label: "Run Scan", icon: Database },
+    { label: "Generate Report", icon: FileTextIcon }
+];
+
+// Recent Activity
+const recentActivities = [
+    { text: 'Consent template "KYC Data Collection" updated', time: 'Just now' },
+    { text: 'DSAR request DSR-2026-009 auto-approved', time: '12m ago' },
+    { text: 'New violation detected in Section 6', time: '28m ago' },
+    { text: 'Audit log export completed (JSON)', time: '1h ago' },
+    { text: 'Data discovery scan finished - 3 new PII fields', time: '2h ago' }
+];
+
+// Top 3 Meity Sections
+const topSections = [
+    { 
+        rank: 1,
+        title: "Section 4 - Data Principal Rights", 
+        score: 98, 
+        type: "segmented",
+        color: "emerald"
+    },
+    { 
+        rank: 2,
+        title: "Section 5 - Obligations of Data Fiduciary", 
+        score: 94, 
+        type: "trend",
+        color: "emerald"
+    },
+    { 
+        rank: 3,
+        title: "Section 7 - Significant Data Fiduciary", 
+        score: 89, 
+        type: "progress",
+        color: "amber"
+    }
+];
+
+// Radial Progress Ring Component
+function RadialProgress({ value, size = "normal" }: { value: number; size?: "normal" | "small" }) {
+    const circumference = 2 * Math.PI * 28;
+    const offset = circumference - (value / 100) * circumference;
+    
+    const dimensions = size === "small" ? { w: 48, r: 20 } : { w: 64, r: 28 };
+    
+    return (
+        <div className={`relative w-${dimensions.w} h-${dimensions.w}`}>
+            <svg width={dimensions.w} height={dimensions.w} viewBox={`0 0 ${dimensions.w} ${dimensions.w}`} className="transform -rotate-90">
+                <circle
+                    cx={dimensions.r}
+                    cy={dimensions.r}
+                    r={dimensions.r}
+                    fill="none"
+                    stroke="rgba(255,255,255,0.1)"
+                    strokeWidth="4"
+                />
+                <circle
+                    cx={dimensions.r}
+                    cy={dimensions.r}
+                    r={dimensions.r}
+                    fill="none"
+                    stroke="#10B981"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    strokeDasharray={circumference}
+                    strokeDashoffset={offset}
+                    className="transition-all duration-1000"
+                />
+            </svg>
+            <div className="absolute inset-0 flex items-center justify-center">
+                <span className={`font-bold text-${size === "small" ? "xs" : "sm"} text-white`}>{value}%</span>
+            </div>
+    );
+}
+
+// Segmented Progress Bar
+function SegmentedProgress({ segments = 5, filled = 5 }: { segments?: number; filled?: number }) {
+    return (
+        <div className="flex gap-1">
+            {Array.from({ length: segments }).map((_, i) => (
+                <div 
+                    key={i} 
+                    className={`h-2 flex-1 rounded-full ${i < filled ? 'bg-emerald-400 shadow-lg shadow-emerald-400/50' : 'bg-white/10'}`}
+                />
+            ))}
+        </div>
+    );
+}
+
+// Trend Line Component
+function TrendLine() {
+    const heights = [30, 45, 35, 60, 50, 75, 65, 85];
+    return (
+        <div className="flex items-end gap-0.5 h-6">
+            {heights.map((h, i) => (
+                <div 
+                    key={i} 
+                    className="flex-1 bg-emerald-400 rounded-sm"
+                    style={{ height: `${h}%` }}
+                />
+            ))}
+        </div>
+    );
+}
+
+export function AnimatedProductDemo() {
+    const [activeFeature, setActiveFeature] = useState(0);
+    const [complianceScore, setComplianceScore] = useState(0);
+
+    // Auto-cycle through features
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveFeature((prev) => (prev + 1) % 4);
+        }, 5000);
+        return () => clearInterval(interval);
+    }, []);
+
+    // Animate compliance score
+    useEffect(() => {
+        const targetScore = 88;
+        const duration = 2000;
+        const steps = 60;
+        const increment = targetScore / steps;
+        let current = 0;
+
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= targetScore) {
+                setComplianceScore(targetScore);
+                clearInterval(timer);
+            } else {
+                setComplianceScore(Math.floor(current));
+            }
+        }, duration / steps);
+
+        return () => clearInterval(timer);
+    }, []);
+
+    return (
+        <div className="relative aspect-[16/10] md:aspect-[16/9] rounded-3xl overflow-hidden cyber-bg border border-gray-800">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-10">
+                <div className="absolute inset-0" style={{
+                    backgroundImage: `radial-gradient(circle at 25% 25%, #3b82f6 1px, transparent 1px),
+                                      radial-gradient(circle at 75% 75%, #10B981 1px, transparent 1px)`,
+                    backgroundSize: '30px 30px'
+                }}></div>
+
+            {/* Glow Effects */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+
+            {/* Full Dashboard Layout */}
+            <div className="absolute inset-0 flex">
+                {/* Sidebar */}
+                <div className="w-12 md:w-14 lg:w-16 cyber-sidebar flex flex-col">
+                    {/* Logo */}
+                    <div className="p-2 md:p-3 border-b border-gray-800">
+                        <div className="flex items-center gap-2">
+                            <div className="w-6 h-6 md:w-8 md:h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center">
+                                <Zap className="w-3 h-3 md:w-4 md:h-4 text-white" />
+                            </div>
+                            <span className="text-white font-bold text-xs md:text-sm hidden lg:block">DataDefend</span>
+                        </div>
+
+                    {/* Nav Items */}
+                    <div className="flex-1 py-2 overflow-y-auto">
+                        {sidebarItems.map((item, idx) => (
+                            <motion.div
+                                key={item.label}
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: idx * 0.05 }}
+                                className={`relative px-2 py-2 mx-1 my-0.5 rounded-lg flex items-center gap-2 cursor-pointer transition-all ${item.active 
+                                    ? 'bg-emerald-500/10 text-emerald-400' 
+                                    : 'text-gray-500 hover:bg-white/5 hover:text-gray-300'
+                                }`}
+                            >
+                                {item.active && (
+                                    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-4 bg-emerald-400 rounded-r-full shadow-lg shadow-emerald-400/50" />
+                                )}
+                                <item.icon className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" />
+                                <span className="text-[10px] md:text-xs font-medium hidden lg:block truncate">{item.label}</span>
+                            </motion.div>
+                        ))}
+                    </div>
+
+                    {/* Bottom - Logout */}
+                    <div className="p-2 border-t border-gray-800">
+                        <div className="px-2 py-2 text-gray-500 hover:text-gray-300 cursor-pointer flex items-center gap-2">
+                            <LogOut className="w-4 h-4" />
+                            <span className="text-[10px] hidden lg:block">Logout</span>
+                        </div>
+                </div>
+
+                {/* Main Content */}
+                <div className="flex-1 flex flex-col overflow-hidden">
+                    {/* Top Header */}
+                    <div className="h-12 md:h-14 border-b border-gray-800 cyber-glass flex items-center justify-between px-3 md:px-4">
+                        <div className="flex items-center gap-2">
+                            <span className="text-white font-semibold text-xs md:text-sm">DPDPA Compliance Platform</span>
+                            <span className="text-gray-500 text-[10px] md:text-xs">— Last updated 09:38 am</span>
+                        </div>
+                        <div className="flex items-center gap-2 md:gap-3">
+                            {/* Search */}
+                            <div className="relative hidden md:block">
+                                <Search className="w-4 h-4 text-gray-500 absolute left-3 top-1/2 -translate-y-1/2" />
+                                <input 
+                                    type="text" 
+                                    placeholder="Search anything.." 
+                                    className="bg-white/5 border border-gray-700 rounded-full pl-9 pr-4 py-1.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500/50 w-40 lg:w-56"
+                                />
+                            </div>
+                            {/* Notifications */}
+                            <div className="relative">
+                                <Bell className="w-4 h-4 text-gray-400" />
+                                <div className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full" />
+                            </div>
+                            {/* User */}
+                            <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600" />
+                        </div>
+
+                    {/* Scrollable Content */}
+                    <div className="flex-1 overflow-y-auto p-3 md:p-4">
+                        {/* Tabs */}
+                        <div className="flex gap-4 md:gap-6 mb-4 border-b border-gray-800">
+                            {['Overview', 'Consent', 'DSAR', 'Data Discovery', 'Compliance'].map((tab, idx) => (
+                                <button 
+                                    key={tab}
+                                    className={`pb-2 text-[10px] md:text-xs font-medium transition-colors relative ${idx === 0 ? 'text-emerald-400' : 'text-gray-500 hover:text-gray-300'}`}
+                                >
+                                    {tab}
+                                    {idx === 0 && <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-400 rounded-full" />}
+                                </button>
+                            ))}
+                        </div>
+
+                        {/* Metrics Grid */}
+                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 mb-4">
+                            {/* Compliance Score - Radial */}
+                            <motion.div 
+                                className="cyber-glass rounded-xl p-3"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                            >
+                                <div className="flex items-center justify-between mb-2">
+                                    <span className="text-[10px] text-gray-400">Compliance Score</span>
+                                </div>
+                                <div className="flex items-center gap-3">
+                                    <RadialProgress value={complianceScore} size="small" />
+                                    <div>
+                                        <div className="text-lg font-bold text-white">{complianceScore}/100</div>
+                                        <div className="text-[9px] text-emerald-400">+2.5% from last month</div>
+                                </div>
+                            </motion.div>
+
+                            {/* Active Consents */}
+                            <motion.div 
+                                className="cyber-glass rounded-xl p-3"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.1 }}
+                            >
+                                <div className="text-[10px] text-gray-400 mb-1">Active Consents</div>
+                                <div className="text-xl font-bold text-white">12,847</div>
+                                <div className="text-[9px] text-emerald-400">+12% from last month</div>
+                            </motion.div>
+
+                            {/* Pending DSAR */}
+                            <motion.div 
+                                className="cyber-glass rounded-xl p-3"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.2 }}
+                            >
+                                <div className="text-[10px] text-gray-400 mb-1">Pending DSAR</div>
+                                <div className="text-xl font-bold text-white">23</div>
+                                <div className="text-[9px] text-amber-400">- this week from last month</div>
+                            </motion.div>
+
+                            {/* Open Violations - Live Pulse */}
+                            <motion.div 
+                                className="cyber-glass rounded-xl p-3"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.3 }}
+                            >
+                                <div className="flex items-center justify-between mb-1">
+                                    <span className="text-[10px] text-gray-400">Open Violations</span>
+                                    <div className="live-pulse rounded-full w-2 h-2" />
+                                </div>
+                                <div className="text-xl font-bold text-red-400">3</div>
+                                <div className="text-[9px] text-amber-400">+1 new from last month</div>
+                            </motion.div>
+                        </div>
+
+                        {/* Quick Actions */}
+                        <div className="mb-4">
+                            <div className="text-[10px] text-gray-400 mb-2">Jump to frequently used features</div>
+                            <div className="flex flex-wrap gap-2">
+                                {quickActions.map((action, idx) => (
+                                    <button 
+                                        key={action.label}
+                                        className="action-btn flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[9px] md:text-xs text-gray-300"
+                                    >
+                                        <action.icon className="w-3 h-3" />
+                                        {action.label}
+                                    </button>
+                                ))}
+                            </div>
+
+                        {/* Top 3 Meity Sections */}
+                        <div className="mb-4">
+                            <div className="text-[10px] text-gray-400 mb-2">Top 3 in Meity Code for Consent</div>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-3">
+                                {topSections.map((section, idx) => (
+                                    <motion.div
+                                        key={section.rank}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: idx * 0.1 }}
+                                        className="cyber-glass rounded-xl p-3 relative overflow-hidden min-h-[80px]"
+                                    >
+                                        {/* Ghost Number */}
+                                        <span className="absolute -bottom-2 -right-2 text-5xl font-black text-white/5 select-none">
+                                            {section.rank}
+                                        </span>
+                                        
+                                        <div className="relative z-10">
+                                            <div className="flex items-center justify-between mb-2">
+                                                <span className={`text-lg font-bold ${section.color === 'emerald' ? 'text-emerald-400' : 'text-amber-400'}`}>
+                                                    {section.score}%
+                                                </span>
+                                                {section.type === 'segmented' && <div className="w-16"><SegmentedProgress /></div>}
+                                                {section.type === 'trend' && <div className="w-12"><TrendLine /></div>}
+                                                {section.type === 'progress' && (
+                                                    <div className="w-16 h-2 bg-white/10 rounded-full overflow-hidden">
+                                                        <div className="h-full bg-amber-400 rounded-full" style={{ width: '89%' }} />
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div className="text-[9px] text-gray-300 leading-tight">{section.title}</div>
+                                    </motion.div>
+                                ))}
+                            </div>
+
+                        {/* Recent Activity */}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+                            {/* Activity Feed */}
+                            <div className="cyber-glass rounded-xl p-3">
+                                <div className="text-[10px] text-gray-400 mb-3 flex items-center gap-2">
+                                    <Clock className="w-3 h-3" />
+                                    Recent Activity
+                                </div>
+                                <div className="space-y-2">
+                                    {recentActivities.map((activity, idx) => (
+                                        <div key={idx} className="flex items-start gap-2">
+                                            <div className="timeline-icon w-2 h-2 rounded-full mt-1 flex-shrink-0" />
+                                            <div className="flex-1 min-w-0">
+                                                <div className="text-[9px] text-gray-300 truncate">{activity.text}</div>
+                                                <div className="text-[8px] text-gray-500">{activity.time}</div>
+                                        </div>
+                                    ))}
+                                </div>
+
+                            {/* Vendor Risk */}
+                            <div className="cyber-glass rounded-xl p-3">
+                                <div className="text-[10px] text-gray-400 mb-3 flex items-center gap-2">
+                                    <Lock className="w-3 h-3" />
+                                    Vendor Risk Assessment
+                                </div>
+                                <div className="grid grid-cols-3 gap-2 mb-3">
+                                    <div className="text-center">
+                                        <div className="text-sm font-bold text-white">342</div>
+                                        <div className="text-[8px] text-gray-400">Vendors</div>
+                                    <div className="text-center">
+                                        <div className="text-sm font-bold text-red-400">3</div>
+                                        <div className="text-[8px] text-gray-400">High Risk</div>
+                                    <div className="text-center">
+                                        <div className="text-sm font-bold text-emerald-400">97%</div>
+                                        <div className="text-[8px] text-gray-400">Compliant</div>
+                                </div>
+                                <div className="space-y-1">
+                                    <div className="text-[9px] text-gray-300">COMPLIANCE RULES</div>
+                                    {['DPDPA Art. 17 - Processor obligations', 'SOC 2 Type II - Vendor security', 'ISO 27001 - Third-party risks'].map((rule, idx) => (
+                                        <div key={idx} className="flex items-center gap-1 text-[8px] text-gray-400">
+                                            <CheckCircle className="w-2.5 h-2.5 text-emerald-400" />
+                                            {rule}
+                                        </div>
+                                    ))}
+                                </div>
+                        </div>
+
+                        {/* Bottom Integrations */}
+                        <div className="mt-4 flex items-center justify-center gap-4 md:gap-8">
+                            {['SAP', 'Oracle', 'Shopify', 'Tally', 'AWS', 'Azure'].map((logo, idx) => (
+                                <span key={logo} className="text-[8px] md:text-[10px] text-gray-600">{logo}</span>
+                            ))}
+                            <span className="text-[8px] md:text-[10px] text-emerald-400">+9000 more</span>
+                        </div>
+                </div>
+        </div>
+    );
+}
+
+</parameter>

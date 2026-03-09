@@ -66,7 +66,7 @@ export default function PartnersPage() {
                         transition={{ duration: 0.5 }}
                     >
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6">
-                            <Handshake className="w-4 h-4 text-[#f59e0b]" />
+                            <Handshake className="w-4 h-4 text-[#3b82f6]" />
                             <span className="text-sm font-semibold text-white">Partnership Program</span>
                         </div>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
@@ -77,7 +77,7 @@ export default function PartnersPage() {
                         </p>
                         <Link
                             href="/contact"
-                            className="inline-flex items-center gap-2 px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold rounded-xl transition-all shadow-lg cursor-pointer"
+                            className="inline-flex items-center gap-2 px-8 py-4 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-bold rounded-xl transition-all shadow-lg cursor-pointer"
                         >
                             <Mail className="w-5 h-5" />
                             Become a Partner
@@ -239,7 +239,7 @@ export default function PartnersPage() {
                     </p>
                     <Link
                         href="/contact"
-                        className="inline-flex items-center gap-2 px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold rounded-xl transition-all shadow-lg cursor-pointer"
+                        className="inline-flex items-center gap-2 px-8 py-4 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-bold rounded-xl transition-all shadow-lg cursor-pointer"
                     >
                         Apply for Partnership
                         <ArrowRight className="w-5 h-5" />

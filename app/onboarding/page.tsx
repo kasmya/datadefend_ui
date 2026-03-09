@@ -120,14 +120,14 @@ export default function OnboardingPage() {
             <section className="pt-32 pb-20 px-4 bg-[#152645] relative overflow-hidden">
                 {/* Background blobes */}
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0e488b] rounded-full blur-[120px] opacity-30 pointer-events-none" />
-                <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#f59e0b] rounded-full blur-[100px] opacity-10 pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500 rounded-full blur-[100px] opacity-10 pointer-events-none" />
 
                 <div className="container mx-auto max-w-7xl relative z-10 text-center">
                     <motion.span
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="inline-block px-4 py-1.5 text-sm font-bold tracking-wide text-[#f59e0b] bg-[#f59e0b]/10 rounded-full mb-6 border border-[#f59e0b]/20"
+                        className="inline-block px-4 py-1.5 text-sm font-bold tracking-wide text-blue-300 bg-blue-500/10 rounded-full mb-6 border border-blue-400/20"
                     >
                         UNMATCHED SUPPORT
                     </motion.span>
@@ -167,7 +167,7 @@ export default function OnboardingPage() {
 
                     <div className="relative">
                         {/* Timeline Line */}
-                        <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#0e488b] via-[#f59e0b] to-transparent -translate-x-1/2" />
+                        <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#0e488b] via-blue-500 to-transparent -translate-x-1/2" />
 
                         <div className="space-y-12">
                             {onboardingSteps.map((step, index) => (
@@ -223,7 +223,7 @@ export default function OnboardingPage() {
                 <div className="container mx-auto max-w-7xl relative z-10">
                     <div className="flex flex-col md:flex-row gap-12 items-center mb-16">
                         <div className="flex-1">
-                            <span className="text-[#f59e0b] font-bold tracking-wider text-sm uppercase mb-2 block">For Large Enterprises</span>
+                            <span className="text-blue-300 font-bold tracking-wider text-sm uppercase mb-2 block">For Large Enterprises</span>
                             <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
                                 Strategic Executive <br /> Consultation Month
                             </h2>
@@ -236,7 +236,7 @@ export default function OnboardingPage() {
                         <div className="flex-1 flex justify-center">
                             <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl max-w-md">
                                 <div className="flex items-start gap-4">
-                                    <div className="bg-[#f59e0b] p-3 rounded-lg text-[#152645]">
+                                    <div className="bg-blue-600 p-3 rounded-lg text-white">
                                         <Building2 className="w-8 h-8" />
                                     </div>
                                     <div>
@@ -258,11 +258,11 @@ export default function OnboardingPage() {
                                 transition={{ delay: index * 0.1 }}
                                 className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl hover:bg-white/10 transition-colors"
                             >
-                                <div className="w-12 h-12 bg-gradient-to-br from-[#f59e0b] to-[#d97706] rounded-lg flex items-center justify-center mb-4 text-[#152645]">
+                                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mb-4 text-white">
                                     <consult.icon className="w-6 h-6" />
                                 </div>
                                 <h3 className="text-xl font-bold text-white mb-1">{consult.role}</h3>
-                                <span className="text-xs font-semibold text-[#f59e0b] uppercase tracking-wide mb-3 block">{consult.focus}</span>
+                                <span className="text-xs font-semibold text-blue-300 uppercase tracking-wide mb-3 block">{consult.focus}</span>
                                 <p className="text-sm text-white/70">{consult.description}</p>
                             </motion.div>
                         ))}
@@ -282,7 +282,7 @@ export default function OnboardingPage() {
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <Link
                             href="/contact"
-                            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-[#152645] font-bold rounded-full transition-all shadow-lg hover:scale-105"
+                            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full transition-all shadow-lg hover:scale-105"
                         >
                             <Phone className="w-5 h-5" />
                             Book Consultation

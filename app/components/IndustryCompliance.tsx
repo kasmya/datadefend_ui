@@ -44,7 +44,7 @@ export function IndustryCompliance() {
                     className="text-center mb-12"
                 >
                     <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#152645] mb-4">
-                        <span className="bg-[#f59e0b] px-3 py-1 rounded-lg">DPDPA</span>{" "}
+                        <span className="bg-[#3b82f6] px-3 py-1 rounded-lg">DPDPA</span>{" "}
                         Affects All Industry
                     </h2>
                 </motion.div>
@@ -56,7 +56,7 @@ export function IndustryCompliance() {
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="bg-linear-to-br from-[#f59e0b] to-[#d97706] p-8 md:p-10 rounded-3xl shadow-2xl flex flex-col justify-between"
+                        className="bg-linear-to-br from-[#3b82f6] to-[#2563eb] p-8 md:p-10 rounded-3xl shadow-2xl flex flex-col justify-between"
                     >
                         <div className="mb-6">
                             <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-[#152645] italic mb-4 leading-tight">

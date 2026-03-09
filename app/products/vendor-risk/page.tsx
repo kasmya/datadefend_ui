@@ -19,7 +19,7 @@ export default function ThirdPartyRiskPage() {
                 "Automated scoring and risk calculation based on vendor responses",
                 "Version control for questionnaires with audit trails of all changes"
             ],
-            color: "from-[#f59e0b] to-[#d97706]"
+            color: "from-[#3b82f6] to-[#2563eb]"
         },
         {
             icon: Target,
@@ -48,7 +48,7 @@ export default function ThirdPartyRiskPage() {
     ];
 
     const riskMetrics = [
-        { label: "Vendors Assessed", value: "47", icon: BarChart3, color: "text-[#f59e0b]" },
+        { label: "Vendors Assessed", value: "47", icon: BarChart3, color: "text-[#3b82f6]" },
         { label: "High Risk", value: "3", icon: AlertTriangle, color: "text-red-500" },
         { label: "Active Assessments", value: "12", icon: ClipboardCheck, color: "text-[#6366f1]" },
         { label: "Avg Risk Score", value: "72/100", icon: Target, color: "text-[#14b8a6]" }
@@ -90,13 +90,13 @@ export default function ThirdPartyRiskPage() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6 }}
                         >
-                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#f59e0b]/10 border border-[#f59e0b]/20 rounded-full mb-6">
-                                <AlertTriangle className="w-4 h-4 text-[#f59e0b]" />
-                                <span className="text-sm font-semibold text-[#f59e0b]">THIRD PARTY RISK MANAGEMENT</span>
+                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#3b82f6]/10 border border-[#3b82f6]/20 rounded-full mb-6">
+                                <AlertTriangle className="w-4 h-4 text-[#3b82f6]" />
+                                <span className="text-sm font-semibold text-[#3b82f6]">THIRD PARTY RISK MANAGEMENT</span>
                             </div>
                             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#152645] mb-6 leading-tight">
                                 Run DPIA, PIA, TPRA{" "}
-                                <span className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] bg-clip-text text-transparent">
+                                <span className="bg-gradient-to-r from-[#3b82f6] to-[#2563eb] bg-clip-text text-transparent">
                                     Assessments
                                 </span>{" "}
                                 Through One Unified Module
@@ -107,7 +107,7 @@ export default function ThirdPartyRiskPage() {
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <Link
                                     href="/contact"
-                                    className="px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 cursor-pointer"
+                                    className="px-8 py-4 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 cursor-pointer"
                                 >
                                     <Calendar className="w-5 h-5" />
                                     Start Risk Assessment
@@ -138,7 +138,7 @@ export default function ThirdPartyRiskPage() {
                                         </div>
                                     ))}
                                 </div>
-                                <div className="p-4 bg-gradient-to-r from-[#f59e0b]/10 to-[#d97706]/10 rounded-xl border border-[#f59e0b]/20">
+                                <div className="p-4 bg-gradient-to-r from-[#3b82f6]/10 to-[#2563eb]/10 rounded-xl border border-[#3b82f6]/20">
                                     <p className="text-[#152645] text-sm font-semibold mb-2">✨ Unified Risk Management</p>
                                     <p className="text-gray-400 text-xs">Automated scoring • Central risk library • Breach workflows</p>
                                 </div>
@@ -188,7 +188,7 @@ export default function ThirdPartyRiskPage() {
                                     <div className="space-y-3">
                                         {feature.features.map((item, idx) => (
                                             <div key={idx} className="flex items-start gap-3 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
-                                                <CheckCircle2 className="w-5 h-5 text-[#f59e0b] flex-shrink-0 mt-0.5" />
+                                                <CheckCircle2 className="w-5 h-5 text-[#3b82f6] flex-shrink-0 mt-0.5" />
                                                 <span className="text-gray-600 text-sm leading-relaxed">{item}</span>
                                             </div>
                                         ))}
@@ -211,9 +211,9 @@ export default function ThirdPartyRiskPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="bg-gray-50 border border-gray-200 rounded-2xl p-6 hover:border-[#f59e0b]/50 transition-all text-center"
+                                className="bg-gray-50 border border-gray-200 rounded-2xl p-6 hover:border-[#3b82f6]/50 transition-all text-center"
                             >
-                                <benefit.icon className="w-10 h-10 text-[#f59e0b] mx-auto mb-4" />
+                                <benefit.icon className="w-10 h-10 text-[#3b82f6] mx-auto mb-4" />
                                 <h4 className="text-lg font-bold text-[#152645] mb-2">{benefit.title}</h4>
                                 <p className="text-gray-400 text-sm">{benefit.description}</p>
                             </motion.div>
@@ -229,7 +229,7 @@ export default function ThirdPartyRiskPage() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="bg-gradient-to-r from-[#f59e0b] via-[#d97706] to-[#f59e0b] rounded-[3rem] p-12 md:p-16 text-center relative overflow-hidden"
+                        className="bg-gradient-to-r from-[#3b82f6] via-[#2563eb] to-[#3b82f6] rounded-[3rem] p-12 md:p-16 text-center relative overflow-hidden"
                     >
                         <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
                         <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>

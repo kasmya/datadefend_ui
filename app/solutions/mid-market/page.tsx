@@ -70,7 +70,7 @@ export default function MidMarketPage() {
                                     <p className="text-sm text-gray-600">Endless screenshot requests distracting engineering.</p>
                                 </div>
                                 <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-                                    <Layers className="w-8 h-8 text-[#f59e0b] mb-4" />
+                                    <Layers className="w-8 h-8 text-[#3b82f6] mb-4" />
                                     <h4 className="font-bold text-[#152645] mb-2">Framework Chaos</h4>
                                     <p className="text-sm text-gray-600">Managing DPDPA, ISO, and GDPR in separate silos.</p>
                                 </div>
@@ -119,7 +119,7 @@ export default function MidMarketPage() {
                             <p className="text-white/70">Connect AWS, Azure, Jira, and HRIS. We pull evidence automatically.</p>
                         </div>
                         <div className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-colors">
-                            <div className="w-16 h-16 bg-[#f59e0b] rounded-2xl flex items-center justify-center mx-auto mb-6 text-[#152645] text-2xl font-bold">2</div>
+                            <div className="w-16 h-16 bg-[#3b82f6] rounded-2xl flex items-center justify-center mx-auto mb-6 text-[#152645] text-2xl font-bold">2</div>
                             <h3 className="text-xl font-bold mb-4">Automate</h3>
                             <p className="text-white/70">Tests run 24/7. Failing controls trigger alerts to Slack/Teams instantly.</p>
                         </div>

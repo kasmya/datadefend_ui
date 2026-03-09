@@ -30,7 +30,7 @@ export default function EnterprisePage() {
                         className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
                     >
                         Uncompromised Security & <br />
-                        <span className="text-[#f59e0b]">Defensible Governance.</span>
+                        <span className="text-[#3b82f6]">Defensible Governance.</span>
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -49,7 +49,7 @@ export default function EnterprisePage() {
                     >
                         <Link
                             href="/contact"
-                            className="px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-[#152645] font-bold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center gap-2"
+                            className="px-8 py-4 bg-[#3b82f6] hover:bg-[#2563eb] text-[#152645] font-bold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center gap-2"
                         >
                             Request Enterprise Demo
                             <ArrowRight className="w-5 h-5" />

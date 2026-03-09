@@ -40,10 +40,10 @@ export function ValueProposition() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="group p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-[#a4d4ff]/20 shadow-sm hover:bg-white/10 hover:border-[#f59e0b]/40 transition-all duration-300 hover:-translate-y-1"
+                                className="group p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-[#a4d4ff]/20 shadow-sm hover:bg-white/10 hover:border-blue-400/40 transition-all duration-300 hover:-translate-y-1"
                             >
                                 <div className="w-12 h-12 rounded-xl bg-[#0e488b]/30 flex items-center justify-center mb-4 group-hover:bg-[#0e488b]/50 transition-colors shadow-lg">
-                                    <Icon className="w-6 h-6 text-[#a4d4ff] group-hover:text-[#f59e0b] transition-colors" />
+                                    <Icon className="w-6 h-6 text-[#a4d4ff] group-hover:text-white transition-colors" />
                                 </div>
                                 <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
                                 <p className="text-white/60 text-sm leading-relaxed">{feature.description}</p>

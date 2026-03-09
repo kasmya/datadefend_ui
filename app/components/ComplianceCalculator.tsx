@@ -83,7 +83,7 @@ export function ComplianceCalculator() {
 
     const getScoreColor = (score: number) => {
         if (score >= 80) return "text-green-500";
-        if (score >= 50) return "text-amber-500";
+        if (score >= 50) return "text-blue-500";
         return "text-red-500";
     };
 
@@ -136,7 +136,7 @@ export function ComplianceCalculator() {
                             </div>
                             <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
                                 <motion.div
-                                    className="h-full bg-gradient-to-r from-[#0e488b] to-[#f59e0b]"
+                                    className="h-full bg-gradient-to-r from-[#0e488b] to-[#3b82f6]"
                                     initial={{ width: 0 }}
                                     animate={{ width: `${progress}%` }}
                                     transition={{ duration: 0.3 }}
@@ -218,7 +218,7 @@ export function ComplianceCalculator() {
                                             {answerScore === 100 ? (
                                                 <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
                                             ) : answerScore >= 50 ? (
-                                                <AlertTriangle className="w-5 h-5 text-amber-500 flex-shrink-0" />
+                                                <AlertTriangle className="w-5 h-5 text-blue-500 flex-shrink-0" />
                                             ) : (
                                                 <X className="w-5 h-5 text-red-500 flex-shrink-0" />
                                             )}
@@ -239,7 +239,7 @@ export function ComplianceCalculator() {
                         <div className="flex flex-col sm:flex-row gap-4">
                             <Link
                                 href="/contact"
-                                className="flex-1 px-6 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold rounded-xl transition-all shadow-lg text-center flex items-center justify-center gap-2 cursor-pointer"
+                                className="flex-1 px-6 py-4 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-bold rounded-xl transition-all shadow-lg text-center flex items-center justify-center gap-2 cursor-pointer"
                             >
                                 <Sparkles className="w-5 h-5" />
                                 {getScoreMessage(score).action}

@@ -29,7 +29,7 @@ export function CustomerLogos() {
                     transition={{ duration: 0.5 }}
                     className="text-center mb-12"
                 >
-                    <p className="text-sm font-semibold text-[#f59e0b] uppercase tracking-wide mb-3">
+                    <p className="text-sm font-semibold text-[#3b82f6] uppercase tracking-wide mb-3">
                         Trusted by Industry Leaders
                     </p>
                     <h2 className="text-3xl md:text-4xl font-bold text-[#152645] mb-4">

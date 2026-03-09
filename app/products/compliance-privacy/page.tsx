@@ -31,7 +31,7 @@ export default function CompliancePrivacyPage() {
                 "Pre-built questionnaire templates for ISO 27001, ISO 27701, DPDP compliance",
                 "Custom assessment workflows with automated risk calculations and scoring"
             ],
-            color: "from-[#f59e0b] to-[#d97706]"
+            color: "from-[#3b82f6] to-[#2563eb]"
         },
         {
             icon: BarChart3,
@@ -50,7 +50,7 @@ export default function CompliancePrivacyPage() {
     const complianceMetrics = [
         { label: "Compliance Score", value: "94%", icon: BarChart3, color: "text-[#14b8a6]" },
         { label: "Data Processed", value: "847 GB", icon: Activity, color: "text-[#6366f1]" },
-        { label: "Active Alerts", value: "3", icon: AlertTriangle, color: "text-[#f59e0b]" },
+        { label: "Active Alerts", value: "3", icon: AlertTriangle, color: "text-[#3b82f6]" },
         { label: "Assessments Done", value: "28", icon: ClipboardCheck, color: "text-[#14b8a6]" }
     ];
 
@@ -107,7 +107,7 @@ export default function CompliancePrivacyPage() {
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <Link
                                     href="/contact"
-                                    className="px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 cursor-pointer"
+                                    className="px-8 py-4 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 cursor-pointer"
                                 >
                                     <Calendar className="w-5 h-5" />
                                     Get Compliance Assessment

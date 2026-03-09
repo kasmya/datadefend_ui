@@ -31,7 +31,7 @@ export default function StartupsPage() {
                     >
                         Get Compliant. <span className="text-[#0e488b]">Close Deals.</span>
                         <br />
-                        <span className="text-[#f59e0b]">Don't Slow Down.</span>
+                        <span className="text-[#3b82f6]">Don't Slow Down.</span>
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -50,7 +50,7 @@ export default function StartupsPage() {
                     >
                         <Link
                             href="/contact"
-                            className="px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-[#152645] font-bold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center gap-2"
+                            className="px-8 py-4 bg-[#3b82f6] hover:bg-[#2563eb] text-[#152645] font-bold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center gap-2"
                         >
                             Get Compliant Fast
                             <Zap className="w-5 h-5" />
@@ -105,21 +105,21 @@ export default function StartupsPage() {
                             <h3 className="text-2xl font-bold mb-6">DataDefend Startup Pack</h3>
                             <div className="space-y-6">
                                 <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-[#f59e0b] font-bold text-xl">1</div>
+                                    <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-[#3b82f6] font-bold text-xl">1</div>
                                     <div>
                                         <h4 className="font-bold">Instant Policies</h4>
                                         <p className="text-sm text-white/70">Generated in minutes, not weeks.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-[#f59e0b] font-bold text-xl">2</div>
+                                    <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-[#3b82f6] font-bold text-xl">2</div>
                                     <div>
                                         <h4 className="font-bold">Auto-Discovery</h4>
                                         <p className="text-sm text-white/70">Find where your data lives automatically.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-[#f59e0b] font-bold text-xl">3</div>
+                                    <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-[#3b82f6] font-bold text-xl">3</div>
                                     <div>
                                         <h4 className="font-bold">Consent Banner</h4>
                                         <p className="text-sm text-white/70">Drop-in code for instant compliance.</p>
@@ -139,7 +139,7 @@ export default function StartupsPage() {
                     </div>
                     <div className="grid md:grid-cols-3 gap-8">
                         <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                            <Zap className="w-10 h-10 text-[#f59e0b] mb-4" />
+                            <Zap className="w-10 h-10 text-[#3b82f6] mb-4" />
                             <h3 className="text-xl font-bold text-[#152645] mb-2">Speed to Value</h3>
                             <p className="text-gray-600">Get your compliance badge in days. Unblock sales and move on.</p>
                         </div>

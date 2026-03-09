@@ -122,7 +122,7 @@ export function Footer() {
             <div className="relative bg-gradient-to-br from-[#152645] via-[#0e488b] to-[#152645] pt-20 pb-10 rounded-[3rem] overflow-hidden shadow-2xl">
                 {/* Enhanced Background effects */}
                 <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#a4d4ff]/20 rounded-full blur-[150px] pointer-events-none" />
-                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#f59e0b]/10 rounded-full blur-[120px] pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(164,212,255,0.1),transparent)]" />
 
                 <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -153,7 +153,7 @@ export function Footer() {
                                 <button
                                     type="submit"
                                     disabled={isLoading}
-                                    className="px-8 py-3.5 bg-[#f59e0b] hover:bg-[#d97706] text-[#152645] font-bold rounded-full transition-all flex items-center justify-center gap-2 shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="px-8 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full transition-all flex items-center justify-center gap-2 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                     {isLoading ? "Subscribing..." : "Subscribe"}
                                     {!isLoading && <ArrowRight className="w-4 h-4" />}

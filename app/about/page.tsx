@@ -70,7 +70,7 @@ export default function AboutPage() {
                             transition={{ duration: 0.5 }}
                         >
                             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6">
-                                <Shield className="w-4 h-4 text-[#f59e0b]" />
+                                <Shield className="w-4 h-4 text-[#3b82f6]" />
                                 <span className="text-sm font-semibold text-white">About DataDefend</span>
                             </div>
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
@@ -91,7 +91,7 @@ export default function AboutPage() {
                                 <div className="grid grid-cols-2 gap-6">
                                     {stats.map((stat, idx) => (
                                         <div key={idx} className="text-center">
-                                            <div className="text-4xl font-bold text-[#f59e0b] mb-2">
+                                            <div className="text-4xl font-bold text-[#3b82f6] mb-2">
                                                 {stat.value}
                                             </div>
                                             <div className="text-sm text-white/70">
@@ -183,7 +183,7 @@ export default function AboutPage() {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link
                             href="/contact"
-                            className="px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold rounded-xl transition-all shadow-lg cursor-pointer inline-flex items-center justify-center gap-2"
+                            className="px-8 py-4 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-bold rounded-xl transition-all shadow-lg cursor-pointer inline-flex items-center justify-center gap-2"
                         >
                             <CheckCircle className="w-5 h-5" />
                             Get Started

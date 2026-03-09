@@ -59,7 +59,7 @@ export default function EcommercePage() {
                             transition={{ duration: 0.5 }}
                         >
                             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6">
-                                <ShoppingCart className="w-4 h-4 text-[#f59e0b]" />
+                                <ShoppingCart className="w-4 h-4 text-[#3b82f6]" />
                                 <span className="text-sm font-semibold text-white">E-commerce Solutions</span>
                             </div>
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
@@ -71,7 +71,7 @@ export default function EcommercePage() {
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <Link
                                     href="/contact"
-                                    className="px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
+                                    className="px-8 py-4 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-bold rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
                                 >
                                     <Calendar className="w-5 h-5" />
                                     Book E-commerce Demo
@@ -96,7 +96,7 @@ export default function EcommercePage() {
                                 <div className="grid grid-cols-2 gap-6">
                                     {stats.map((stat, idx) => (
                                         <div key={idx} className="text-center">
-                                            <div className="text-4xl font-bold text-[#f59e0b] mb-2">
+                                            <div className="text-4xl font-bold text-[#3b82f6] mb-2">
                                                 {stat.value}
                                             </div>
                                             <div className="text-sm text-white/70">
@@ -199,7 +199,7 @@ export default function EcommercePage() {
                     </p>
                     <Link
                         href="/contact"
-                        className="inline-block px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold rounded-xl transition-all shadow-lg cursor-pointer"
+                        className="inline-block px-8 py-4 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-bold rounded-xl transition-all shadow-lg cursor-pointer"
                     >
                         Schedule E-commerce Consultation
                     </Link>

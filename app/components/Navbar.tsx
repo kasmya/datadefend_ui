@@ -64,12 +64,12 @@ export function Navbar() {
         <>
             {/* Top Banner */}
             {bannerVisible && (
-                <div className="bg-[#b45309] text-white text-xs md:text-sm py-2 px-4 relative">
+                <div className="bg-blue-800 text-white text-xs md:text-sm py-2 px-4 relative">
                     <div className="max-w-7xl mx-auto flex items-center justify-between">
                         <div className="flex-1 text-center">
                             <span className="font-medium">
                                 🎉 Deadline: {timeLeft.months} mo | {timeLeft.days} days until May 13, 2027{" "}
-                                <Link href="/dpdp-guide" className="underline hover:no-underline ml-1 text-[#fcd34d]">
+                                <Link href="/dpdp-guide" className="underline hover:no-underline ml-1 text-blue-200">
                                     DPDP Rules Guide →
                                 </Link>
                             </span>
@@ -118,7 +118,7 @@ export function Navbar() {
                             <div className="hidden md:flex items-center gap-4 pr-2">
                                 <Link
                                     href="/contact"
-                                    className="flex items-center gap-2 px-6 py-2.5 bg-[#f59e0b] hover:bg-[#d97706] text-[#152645] font-semibold rounded-full transition-colors shadow-lg shadow-amber-500/20"
+                                    className="flex items-center gap-2 px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-colors shadow-lg shadow-blue-500/20"
                                 >
                                     Book Demo
                                 </Link>
@@ -165,7 +165,7 @@ export function Navbar() {
                                     <div className="pt-3 mt-3 border-t border-gray-100">
                                         <Link
                                             href="/contact"
-                                            className="block w-full text-center px-5 py-3.5 bg-gradient-to-r from-[#f59e0b] to-[#d97706] text-white font-bold rounded-xl shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40 active:scale-[0.98] transition-all"
+                                            className="block w-full text-center px-5 py-3.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold rounded-xl shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 active:scale-[0.98] transition-all"
                                             onClick={() => {
                                                 setIsOpen(false);
                                                 setMobileDropdown(null);

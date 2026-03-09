@@ -113,7 +113,7 @@ export default function IntegrationsPage() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Link
                                 href="/contact"
-                                className="px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold rounded-xl transition-all shadow-lg cursor-pointer"
+                                className="px-8 py-4 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-bold rounded-xl transition-all shadow-lg cursor-pointer"
                             >
                                 Request Integration
                             </Link>
@@ -223,7 +223,7 @@ export default function IntegrationsPage() {
                     <div className="bg-[#152645] rounded-3xl p-8 md:p-12 shadow-2xl">
                         <div className="flex items-center gap-2 mb-6">
                             <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                            <div className="w-3 h-3 rounded-full bg-amber-500"></div>
+                            <div className="w-3 h-3 rounded-full bg-blue-500"></div>
                             <div className="w-3 h-3 rounded-full bg-green-500"></div>
                         </div>
                         <pre className="text-green-400 font-mono text-sm md:text-base overflow-x-auto">
@@ -268,7 +268,7 @@ console.log('Consent granted:', hasConsent);`}
                     </p>
                     <Link
                         href="/contact"
-                        className="inline-block px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold rounded-xl transition-all shadow-lg cursor-pointer"
+                        className="inline-block px-8 py-4 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-bold rounded-xl transition-all shadow-lg cursor-pointer"
                     >
                         Contact Integration Team
                     </Link>

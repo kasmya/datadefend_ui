@@ -31,7 +31,7 @@ export default function DataLifecyclePage() {
                 "Identify shadow IT and unauthorized data transfers automatically",
                 "Visual data flow diagrams for compliance audits and risk assessments"
             ],
-            color: "from-[#f59e0b] to-[#d97706]"
+            color: "from-[#3b82f6] to-[#2563eb]"
         },
         {
             icon: Trash2,
@@ -107,7 +107,7 @@ export default function DataLifecyclePage() {
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <Link
                                     href="/contact"
-                                    className="px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 cursor-pointer"
+                                    className="px-8 py-4 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 cursor-pointer"
                                 >
                                     <Calendar className="w-5 h-5" />
                                     Start Data Discovery

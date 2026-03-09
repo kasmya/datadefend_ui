@@ -197,7 +197,7 @@ export default function PlatformPage() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5 }}
-                                className="inline-block px-4 py-1.5 text-sm font-bold tracking-wide text-[#152645] bg-[#f59e0b] rounded-full mb-6"
+                                className="inline-block px-4 py-1.5 text-sm font-bold tracking-wide text-[#152645] bg-[#3b82f6] rounded-full mb-6"
                             >
                                 ALL-IN-ONE PLATFORM
                             </motion.span>
@@ -234,7 +234,7 @@ export default function PlatformPage() {
                             >
                                 <Link
                                     href="/contact"
-                                    className="px-6 py-3 bg-[#f59e0b] hover:bg-[#d97706] text-[#152645] font-semibold rounded-full text-base shadow-xl shadow-amber-500/20 transition-all hover:scale-105 flex items-center gap-2 cursor-pointer"
+                                    className="px-6 py-3 bg-[#3b82f6] hover:bg-[#2563eb] text-[#152645] font-semibold rounded-full text-base shadow-xl shadow-amber-500/20 transition-all hover:scale-105 flex items-center gap-2 cursor-pointer"
                                 >
                                     <Zap className="w-4 h-4" />
                                     Get Started Free
@@ -256,15 +256,15 @@ export default function PlatformPage() {
                                 className="flex flex-wrap justify-center gap-4 md:gap-8 text-xs md:text-sm text-white/50"
                             >
                                 <div className="flex items-center gap-2">
-                                    <CheckCircle className="w-5 h-5 text-[#f59e0b]" />
+                                    <CheckCircle className="w-5 h-5 text-[#3b82f6]" />
                                     <span>6 Powerful Modules</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <CheckCircle className="w-5 h-5 text-[#f59e0b]" />
+                                    <CheckCircle className="w-5 h-5 text-[#3b82f6]" />
                                     <span>7000+ Integrations</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <CheckCircle className="w-5 h-5 text-[#f59e0b]" />
+                                    <CheckCircle className="w-5 h-5 text-[#3b82f6]" />
                                     <span>AI-Powered Automation</span>
                                 </div>
                             </motion.div>
@@ -314,7 +314,7 @@ export default function PlatformPage() {
                                     <h3 className="text-lg font-bold text-[#152645] mb-2">{cap.title}</h3>
                                     <p className="text-sm text-gray-600 mb-4">{cap.description}</p>
                                     <div className="flex items-baseline gap-2">
-                                        <span className="text-3xl font-bold text-[#f59e0b]">{cap.stat}</span>
+                                        <span className="text-3xl font-bold text-[#3b82f6]">{cap.stat}</span>
                                         <span className="text-sm text-gray-500">{cap.statLabel}</span>
                                     </div>
                                 </div>
@@ -348,7 +348,7 @@ export default function PlatformPage() {
                                 <div className="space-y-3">
                                     {["Auto-detect sensitive data in real-time", "Predict compliance risks before they occur", "Generate audit reports with one click", "Learn from your organization's patterns"].map((item, i) => (
                                         <div key={i} className="flex items-center gap-3">
-                                            <CheckCircle className="w-5 h-5 text-[#f59e0b]" />
+                                            <CheckCircle className="w-5 h-5 text-[#3b82f6]" />
                                             <span className="text-white/90">{item}</span>
                                         </div>
                                     ))}
@@ -358,26 +358,26 @@ export default function PlatformPage() {
                             {/* Visual Dashboard Graphic */}
                             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
                                 <div className="flex items-center gap-2 mb-4">
-                                    <div className="w-3 h-3 rounded-full bg-red-400" />
-                                    <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                                    <div className="w-3 h-3 rounded-full bg-green-400" />
+                                    <div className="w-3 h-3 rounded-full bg-blue-500" />
+                                    <div className="w-3 h-3 rounded-full bg-blue-300" />
+                                    <div className="w-3 h-3 rounded-full bg-blue-100" />
                                 </div>
                                 <div className="space-y-3">
                                     <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
                                         <span className="text-white/90 text-sm">Data Sources Scanned</span>
-                                        <span className="text-[#f59e0b] font-bold">2,847</span>
+                                        <span className="text-[#3b82f6] font-bold">2,847</span>
                                     </div>
                                     <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
                                         <span className="text-white/90 text-sm">PII Records Classified</span>
-                                        <span className="text-[#f59e0b] font-bold">1.2M+</span>
+                                        <span className="text-[#3b82f6] font-bold">1.2M+</span>
                                     </div>
                                     <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
                                         <span className="text-white/90 text-sm">Compliance Score</span>
-                                        <span className="text-green-400 font-bold">94%</span>
+                                        <span className="text-blue-400 font-bold">94%</span>
                                     </div>
                                     <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
                                         <span className="text-white/90 text-sm">Active Alerts</span>
-                                        <span className="text-amber-400 font-bold">3</span>
+                                        <span className="text-blue-400 font-bold">3</span>
                                     </div>
                                 </div>
                             </div>
@@ -400,7 +400,7 @@ export default function PlatformPage() {
 
                     <div className="relative">
                         {/* Connection Line */}
-                        <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#0e488b] via-[#f59e0b] to-[#0e488b] -translate-y-1/2 rounded-full" />
+                        <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#0e488b] via-[#3b82f6] to-[#0e488b] -translate-y-1/2 rounded-full" />
 
                         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                             {processSteps.map((step, index) => (
@@ -413,7 +413,7 @@ export default function PlatformPage() {
                                     className="relative bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center"
                                 >
                                     {/* Step Number */}
-                                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-10 bg-gradient-to-br from-[#f59e0b] to-[#d97706] rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-10 bg-gradient-to-br from-[#3b82f6] to-[#2563eb] rounded-full flex items-center justify-center text-white font-bold shadow-lg">
                                         {step.step}
                                     </div>
 
@@ -439,7 +439,7 @@ export default function PlatformPage() {
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
-                            className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#f59e0b]/10 text-[#f59e0b] text-sm font-semibold rounded-full mb-4"
+                            className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#3b82f6]/10 text-[#3b82f6] text-sm font-semibold rounded-full mb-4"
                         >
                             <Users className="w-4 h-4" />
                             BUILT FOR EVERY TEAM
@@ -502,7 +502,7 @@ export default function PlatformPage() {
                                 transition={{ delay: index * 0.1 }}
                                 className="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-lg hover:shadow-xl transition-shadow group"
                             >
-                                <div className="w-14 h-14 bg-[#e0f2fe] rounded-2xl flex items-center justify-center mb-6 text-[#0e488b] group-hover:bg-[#f59e0b] group-hover:text-white transition-colors">
+                                <div className="w-14 h-14 bg-[#e0f2fe] rounded-2xl flex items-center justify-center mb-6 text-[#0e488b] group-hover:bg-[#3b82f6] group-hover:text-white transition-colors">
                                     <feature.icon className="w-7 h-7" />
                                 </div>
                                 <h3 className="text-xl font-bold text-[#152645] mb-3">{feature.title}</h3>
@@ -625,7 +625,7 @@ export default function PlatformPage() {
                             </p>
                             <Link
                                 href="/onboarding"
-                                className="inline-flex items-center gap-2 px-8 py-3 bg-[#f59e0b] hover:bg-[#d97706] text-[#152645] font-bold rounded-full transition-all shadow-lg hover:scale-105"
+                                className="inline-flex items-center gap-2 px-8 py-3 bg-[#3b82f6] hover:bg-[#2563eb] text-[#152645] font-bold rounded-full transition-all shadow-lg hover:scale-105"
                             >
                                 View Onboarding Process
                                 <ArrowRight className="w-5 h-5" />

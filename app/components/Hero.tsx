@@ -62,11 +62,11 @@ export function Hero() {
                         >
                             <span className="font-semibold text-white/80">Industry-Tested:</span>
                             <span>BFSI</span>
-                            <span className="text-[#f59e0b]">•</span>
+                            <span className="text-blue-500">•</span>
                             <span>Healthcare</span>
-                            <span className="text-[#f59e0b]">•</span>
+                            <span className="text-blue-500">•</span>
                             <span>Pharma</span>
-                            <span className="text-[#f59e0b]">•</span>
+                            <span className="text-blue-500">•</span>
                             <span>Manufacturing</span>
                         </motion.div>
 
@@ -79,7 +79,7 @@ export function Hero() {
                         >
                             <Link
                                 href="/contact"
-                                className="px-6 py-3 bg-[#f59e0b] hover:bg-[#d97706] text-[#152645] font-semibold rounded-full text-base shadow-xl shadow-amber-500/20 transition-all hover:scale-105 flex items-center gap-2 cursor-pointer"
+                                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full text-base shadow-xl shadow-blue-500/20 transition-all hover:scale-105 flex items-center gap-2 cursor-pointer"
                             >
                                 <Calendar className="w-4 h-4" />
                                 Book a demo
@@ -101,15 +101,15 @@ export function Hero() {
                             className="flex flex-wrap justify-center gap-4 md:gap-8 text-xs md:text-sm text-white/50"
                         >
                             <div className="flex items-center gap-2">
-                                <CheckCircle className="w-5 h-5 text-[#f59e0b]" />
+                                <CheckCircle className="w-5 h-5 text-blue-500" />
                                 <span>Enterprise-grade security</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <CheckCircle className="w-5 h-5 text-[#f59e0b]" />
+                                <CheckCircle className="w-5 h-5 text-blue-500" />
                                 <span>Get compliance-ready in weeks</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <CheckCircle className="w-5 h-5 text-[#f59e0b]" />
+                                <CheckCircle className="w-5 h-5 text-blue-500" />
                                 <span>Trusted by 500+ companies</span>
                             </div>
                         </motion.div>

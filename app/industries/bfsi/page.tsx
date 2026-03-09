@@ -68,7 +68,7 @@ export default function BFSIPage() {
                             transition={{ duration: 0.5 }}
                         >
                             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6">
-                                <Building2 className="w-4 h-4 text-[#f59e0b]" />
+                                <Building2 className="w-4 h-4 text-[#3b82f6]" />
                                 <span className="text-sm font-semibold text-white">BFSI Solutions</span>
                             </div>
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
@@ -80,7 +80,7 @@ export default function BFSIPage() {
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <Link
                                     href="/contact"
-                                    className="px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
+                                    className="px-8 py-4 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-bold rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
                                 >
                                     <Calendar className="w-5 h-5" />
                                     Book BFSI Demo
@@ -105,7 +105,7 @@ export default function BFSIPage() {
                                 <div className="grid grid-cols-2 gap-6">
                                     {stats.map((stat, idx) => (
                                         <div key={idx} className="text-center">
-                                            <div className="text-4xl font-bold text-[#f59e0b] mb-2">
+                                            <div className="text-4xl font-bold text-[#3b82f6] mb-2">
                                                 {stat.value}
                                             </div>
                                             <div className="text-sm text-white/70">
@@ -219,7 +219,7 @@ export default function BFSIPage() {
                                 transition={{ duration: 0.5, delay: idx * 0.05 }}
                                 className="bg-gradient-to-br from-[#152645] to-[#0e488b] rounded-2xl p-6 text-center shadow-lg"
                             >
-                                <Shield className="w-8 h-8 text-[#f59e0b] mx-auto mb-3" />
+                                <Shield className="w-8 h-8 text-[#3b82f6] mx-auto mb-3" />
                                 <p className="font-bold text-white text-sm">
                                     {framework}
                                 </p>
@@ -248,7 +248,7 @@ export default function BFSIPage() {
                             </p>
                         </div>
 
-                        <blockquote className="text-lg text-gray-700 italic border-l-4 border-[#f59e0b] pl-6 mb-8">
+                        <blockquote className="text-lg text-gray-700 italic border-l-4 border-[#3b82f6] pl-6 mb-8">
                             "DataDefend helped us navigate RBI's digital lending guidelines while ensuring DPDP compliance. We went from manual consent tracking to fully automated workflows in just 2 weeks. The ROI was immediate—no regulatory fines and 40% faster customer onboarding."
                         </blockquote>
 
@@ -276,7 +276,7 @@ export default function BFSIPage() {
                     </p>
                     <Link
                         href="/contact"
-                        className="inline-block px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold rounded-xl transition-all shadow-lg cursor-pointer"
+                        className="inline-block px-8 py-4 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-bold rounded-xl transition-all shadow-lg cursor-pointer"
                     >
                         Schedule BFSI Consultation
                     </Link>

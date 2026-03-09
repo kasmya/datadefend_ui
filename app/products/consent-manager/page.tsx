@@ -31,7 +31,7 @@ export default function ConsentManagerPage() {
                 "Real-time Consent Check API for instant verification",
                 "Comprehensive reporting dashboard with exportable audit logs"
             ],
-            color: "from-[#f59e0b] to-[#d97706]"
+            color: "from-[#3b82f6] to-[#2563eb]"
         },
         {
             icon: Shield,
@@ -110,13 +110,13 @@ export default function ConsentManagerPage() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6 }}
                         >
-                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#f59e0b]/10 border border-[#f59e0b]/20 rounded-full mb-4">
-                                <Shield className="w-4 h-4 text-[#f59e0b]" />
-                                <span className="text-sm font-semibold text-[#f59e0b]">CONSENT MANAGEMENT</span>
+                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#3b82f6]/10 border border-[#3b82f6]/20 rounded-full mb-4">
+                                <Shield className="w-4 h-4 text-[#3b82f6]" />
+                                <span className="text-sm font-semibold text-[#3b82f6]">CONSENT MANAGEMENT</span>
                             </div>
                             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#152645] mb-4 leading-tight">
                                 Go Live with DPDP-Compliant{" "}
-                                <span className="bg-gradient-to-r from-[#f59e0b] to-[#d97706] bg-clip-text text-transparent">
+                                <span className="bg-gradient-to-r from-[#3b82f6] to-[#2563eb] bg-clip-text text-transparent">
                                     Consent Management
                                 </span>{" "}
                                 in Less Than a Week
@@ -128,7 +128,7 @@ export default function ConsentManagerPage() {
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <Link
                                     href="/contact"
-                                    className="px-8 py-4 bg-[#f59e0b] hover:bg-[#d97706] text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 cursor-pointer"
+                                    className="px-8 py-4 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 cursor-pointer"
                                 >
                                     <Calendar className="w-5 h-5" />
                                     Get Free Account
@@ -150,7 +150,7 @@ export default function ConsentManagerPage() {
                                 <div className="space-y-6">
                                     <div className="flex items-center justify-between p-4 bg-gray-100 rounded-xl">
                                         <span className="text-gray-500">Consent Collections</span>
-                                        <span className="text-2xl font-bold text-[#f59e0b]">11,452/min</span>
+                                        <span className="text-2xl font-bold text-[#3b82f6]">11,452/min</span>
                                     </div>
                                     <div className="flex items-center justify-between p-4 bg-gray-100 rounded-xl">
                                         <span className="text-gray-500">System Uptime</span>
@@ -250,10 +250,10 @@ export default function ConsentManagerPage() {
                                 transition={{ delay: index * 0.1 }}
                                 className="relative bg-gray-50 border border-gray-200 rounded-3xl p-8 hover:border-gray-300 transition-all group"
                             >
-                                <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-r from-[#f59e0b] to-[#d97706] rounded-2xl flex items-center justify-center text-2xl font-bold text-white shadow-lg">
+                                <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-r from-[#3b82f6] to-[#2563eb] rounded-2xl flex items-center justify-center text-2xl font-bold text-white shadow-lg">
                                     {step.step}
                                 </div>
-                                <step.icon className="w-12 h-12 text-[#f59e0b] mb-6 mt-4 group-hover:scale-110 transition-transform" />
+                                <step.icon className="w-12 h-12 text-[#3b82f6] mb-6 mt-4 group-hover:scale-110 transition-transform" />
                                 <h3 className="text-xl font-bold text-[#152645] mb-3">{step.title}</h3>
                                 <p className="text-gray-500 leading-relaxed">{step.description}</p>
                             </motion.div>
@@ -273,9 +273,9 @@ export default function ConsentManagerPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="bg-white border border-gray-200 rounded-2xl p-6 hover:border-[#f59e0b]/50 transition-all text-center"
+                                className="bg-white border border-gray-200 rounded-2xl p-6 hover:border-[#3b82f6]/50 transition-all text-center"
                             >
-                                <benefit.icon className="w-10 h-10 text-[#f59e0b] mx-auto mb-4" />
+                                <benefit.icon className="w-10 h-10 text-[#3b82f6] mx-auto mb-4" />
                                 <h4 className="text-lg font-bold text-[#152645] mb-2">{benefit.title}</h4>
                                 <p className="text-gray-400 text-sm">{benefit.description}</p>
                             </motion.div>

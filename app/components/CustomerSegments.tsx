@@ -90,9 +90,9 @@ export function CustomerSegments() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="group bg-white rounded-3xl border border-[#a4d4ff]/50 p-6 md:p-8 hover:shadow-2xl hover:border-[#f59e0b]/30 transition-all duration-300"
+                            className="group bg-white rounded-3xl border border-[#a4d4ff]/50 p-6 md:p-8 hover:shadow-2xl hover:border-[#3b82f6]/30 transition-all duration-300"
                         >
-                            <span className="inline-block px-3 py-1 text-xs font-bold tracking-wide text-[#152645] bg-[#f59e0b]/20 rounded-full mb-6">
+                            <span className="inline-block px-3 py-1 text-xs font-bold tracking-wide text-[#152645] bg-[#3b82f6]/20 rounded-full mb-6">
                                 {segment.label}
                             </span>
                             <GridIcon pattern={segment.gridPattern} color={segment.color} />
@@ -100,7 +100,7 @@ export function CustomerSegments() {
                             <p className="text-gray-600 mb-6 leading-relaxed text-sm md:text-base">{segment.description}</p>
                             <a
                                 href={segment.link}
-                                className="inline-flex items-center gap-2 text-[#0e488b] font-semibold hover:text-[#f59e0b] hover:gap-3 transition-all group-hover:underline text-sm md:text-base"
+                                className="inline-flex items-center gap-2 text-[#0e488b] font-semibold hover:text-[#3b82f6] hover:gap-3 transition-all group-hover:underline text-sm md:text-base"
                             >
                                 Learn more
                                 <ArrowRight className="w-4 h-4" />
