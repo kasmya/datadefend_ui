@@ -96,27 +96,27 @@ const integrationLogos = ['SAP', 'Oracle', 'Shopify', 'Tally', 'AWS', 'Azure', '
 
 // Radial Progress Ring Component - smaller
 function RadialProgress({ value }: { value: number }) {
-    const circumference = 2 * Math.PI * 28;
+    const circumference = 2 * Math.PI * 24;
     const offset = circumference - (value / 100) * circumference;
     
     return (
-        <div className="relative w-16 h-16">
-            <svg width="64" height="64" viewBox="0 0 64 64" className="transform -rotate-90">
+        <div className="relative w-14 h-14 sm:w-16 sm:h-16">
+            <svg width="60" height="60" viewBox="0 0 60 60" className="w-12 h-12 sm:w-16 sm:h-16 transform -rotate-90 mx-auto">
                 <circle
-                    cx="32"
-                    cy="32"
-                    r="28"
+                    cx="30"
+                    cy="30"
+                    r="24"
                     fill="none"
                     stroke="rgba(255,255,255,0.1)"
-                    strokeWidth="4"
+                    strokeWidth="3.5"
                 />
                 <circle
-                    cx="32"
-                    cy="32"
-                    r="28"
+                    cx="30"
+                    cy="30"
+                    r="24"
                     fill="none"
-                    stroke="#10B981"
-                    strokeWidth="4"
+stroke="#3B82F6"
+                    strokeWidth="3.5"
                     strokeLinecap="round"
                     strokeDasharray={circumference}
                     strokeDashoffset={offset}
@@ -124,7 +124,7 @@ function RadialProgress({ value }: { value: number }) {
                 />
             </svg>
             <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-xs font-bold text-white">{value}</span>
+                <span className="text-xs font-bold text-white">{value}%</span>
             </div>
         </div>
     );
@@ -138,7 +138,7 @@ function SegmentedProgress({ filled = 5 }: { filled?: number }) {
             {Array.from({ length: segments }).map((_, i) => (
                 <div 
                     key={i} 
-                    className={`w-[15px] h-1 rounded-sm ${i < filled ? 'bg-emerald-400 shadow-lg shadow-emerald-400/50' : 'bg-white/10'}`}
+                    className={`w-[15px] h-1 rounded-sm ${i < filled ? 'bg-blue-400 shadow-lg shadow-blue-400/50' : 'bg-white/10'}`}
                 />
             ))}
         </div>
@@ -153,7 +153,7 @@ function TrendLine() {
             {heights.map((h, i) => (
                 <div 
                     key={i} 
-                    className="flex-1 bg-emerald-400 rounded-sm"
+                    className="flex-1 bg-blue-400 rounded-sm"
                     style={{ height: `${h}%` }}
                 />
             ))}
@@ -169,7 +169,7 @@ function Sparkline() {
             {heights.map((h, i) => (
                 <div 
                     key={i} 
-                    className="w-1 bg-emerald-400 rounded-sm"
+                    className="w-1 bg-blue-400 rounded-sm"
                     style={{ height: `${h}%` }}
                 />
             ))}
@@ -202,12 +202,12 @@ export function AnimatedProductDemo() {
     }, []);
 
     return (
-        <div className="relative h-[600px] md:h-[700px] rounded-3xl overflow-y-auto cyber-bg border border-gray-800 shadow-2xl custom-scrollbar">
+<div className="relative h-[500px] sm:h-[600px] md:h-[700px] rounded-3xl overflow-y-auto cyber-bg border border-gray-800 shadow-2xl custom-scrollbar">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-10">
                 <div className="absolute inset-0" style={{
-                    backgroundImage: `radial-gradient(circle at 25% 25%, #3b82f6 1px, transparent 1px),
-                                      radial-gradient(circle at 75% 75%, #10B981 1px, transparent 1px)`,
+backgroundImage: `radial-gradient(circle at 25% 25%, #3b82f6 1px, transparent 1px),
+                                      radial-gradient(circle at 75% 75%, #3B82F6 1px, transparent 1px)`,
                     backgroundSize: '30px 30px'
                 }}></div>
             </div>
@@ -217,9 +217,9 @@ export function AnimatedProductDemo() {
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
 
             {/* Full Dashboard Layout */}
-            <div className="absolute inset-0 flex">
-                {/* Sidebar - Fixed width 260px */}
-                <div className="w-[260px] bg-[#020617] flex flex-col border-r border-gray-800">
+            <div className="absolute inset-0 lg:flex">
+                {/* Sidebar - Hidden on mobile */}
+                <div className="hidden lg:w-[260px] lg:bg-[#020617] lg:flex lg:flex-col lg:border-r lg:border-gray-800">
                     {/* Logo */}
                     <div className="p-6 border-b border-gray-800">
                         <div className="flex items-center gap-3">
@@ -238,8 +238,8 @@ export function AnimatedProductDemo() {
                                 initial={{ opacity: 0, x: -10 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: idx * 0.05 }}
-                                className={`relative px-4 py-3 rounded-lg flex items-center gap-3 cursor-pointer transition-all mb-1 ${item.active 
-                                    ? 'bg-emerald-500/10 text-emerald-400' 
+                                className={`relative px-4 py-3 rounded-lg flex items-center gap-3 cursor-pointer transition-all mb-1 ${item.active
+                                    ? 'bg-blue-500/10 text-blue-400'
                                     : 'text-gray-400 hover:bg-white/5 hover:text-gray-300'
                                 }`}
                             >
@@ -261,8 +261,8 @@ export function AnimatedProductDemo() {
                     </div>
                 </div>
  
-                {/* Main Content - 32px padding - Scrollable */}
-                <div className="flex-1 flex flex-col overflow-y-auto p-8">
+                {/* Main Content - Responsive padding */}
+                <div className="flex-1 flex flex-col overflow-y-auto p-4 sm:p-6 lg:p-8 pl-0 lg:pl-0">
                     {/* Top Header */}
                     <div className="flex items-center justify-between mb-6">
                         <div className="flex items-center gap-3">
@@ -289,11 +289,11 @@ export function AnimatedProductDemo() {
                         </div>
                     </div>
  
-                    {/* Row 1: Compliance Radar - 4-column grid */}
-                    <div className="grid grid-cols-4 gap-6 mb-6">
+                    {/* Row 1: Responsive grid */}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-6">
                         {/* Box 1: Score - Radial Circle */}
                         <motion.div 
-                            className="cyber-glass rounded-xl p-4 flex flex-col items-center"
+                            className="cyber-glass rounded-xl p-3 sm:p-4 flex flex-col items-center"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                         >
@@ -310,11 +310,9 @@ export function AnimatedProductDemo() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.1 }}
                         >
-                            <div>
-                                <div className="text-xs text-gray-400 mb-1">Active Consents</div>
+                            <div className="text-xs sm:text-sm text-gray-400 mb-1 truncate">Active Consents</div>
                                 <div className="text-2xl font-bold text-white">12,847</div>
                                 <div className="text-[10px] text-emerald-400">+12% from last month</div>
-                            </div>
                             <div className="flex justify-end">
                                 <Sparkline />
                             </div>
@@ -352,14 +350,14 @@ export function AnimatedProductDemo() {
 
                     {/* Row 2: Meity Code Ranking - 3-column grid */}
                     <div className="mb-6">
-                        <div className="grid grid-cols-3 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
                             {topSections.map((section, idx) => (
                                 <motion.div
                                     key={section.rank}
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: idx * 0.1 }}
-                                    className={`cyber-glass rounded-xl p-5 relative overflow-hidden min-h-[140px] ${section.rank === 1 ? 'border border-amber-500/50' : ''}`}
+                                    className={`cyber-glass rounded-xl p-3 sm:p-5 relative overflow-hidden min-h-[120px] sm:min-h-[140px] ${section.rank === 1 ? 'border border-amber-500/50' : ''}`}
                                     style={section.rank === 1 ? { boxShadow: '0 0 10px rgba(245, 158, 11, 0.2)' } : {}}
                                 >
                                     {/* Ghost Number - 80px, opacity 0.05 */}
@@ -367,20 +365,20 @@ export function AnimatedProductDemo() {
                                         {section.rank}
                                     </span>
                                     
-                                    <div className="relative z-10 flex flex-col h-full">
-                                        {/* Left: Rank Label */}
-                                        <div className={`text-xs font-semibold mb-2 ${section.rank === 1 ? 'text-amber-400' : section.rank === 2 ? 'text-gray-300' : 'text-orange-400'}`}>
-                                            {section.rankLabel}
-                                        </div>
-                                        
-                                        {/* Center: Title and Score */}
-                                        <div className="mb-auto">
-                                            <div className="text-sm font-semibold text-white">{section.title}</div>
-                                            <div className="text-[10px] text-gray-400">{section.subtitle}</div>
-                                            <div className={`text-2xl font-bold mt-2 ${section.color === 'emerald' ? 'text-emerald-400' : 'text-amber-400'}`}>
-                                                {section.score}%
+                                        <div className="relative z-10 flex flex-col h-full pr-20 sm:pr-24">
+                                            {/* Left: Rank Label */}
+                                            <div className={`text-xs font-semibold mb-2 ${section.rank === 1 ? 'text-amber-400' : section.rank === 2 ? 'text-gray-300' : 'text-orange-400'}`}>
+                                                {section.rankLabel}
                                             </div>
-                                        </div>
+                                            
+                                            {/* Center: Title and Score */}
+                                            <div className="mb-auto">
+                                                <div className="text-sm font-semibold text-white truncate">{section.title}</div>
+                                                <div className="text-[10px] text-gray-400 line-clamp-2">{section.subtitle}</div>
+                                                <div className={`text-2xl font-bold mt-2 ${section.color === 'emerald' ? 'text-emerald-400' : 'text-amber-400'}`}>
+                                                    {section.score}%
+                                                </div>
+                                            </div>
                                         
                                         {/* Bottom Center: Progress */}
                                         <div className="mt-3">
@@ -394,8 +392,8 @@ export function AnimatedProductDemo() {
                                         </div>
 
                                         {/* Right: View Details button */}
-                                        <div className="absolute right-4 top-4">
-                                            <button className="px-3 py-1 rounded-md text-[10px] text-gray-400 border border-gray-700 hover:border-gray-500 hover:text-white transition-all">
+                                        <div className="absolute right-2 sm:right-4 top-2 sm:top-4">
+                                            <button className="px-2 sm:px-3 py-1 rounded-md text-[10px] text-gray-400 border border-gray-700 hover:border-gray-500 hover:text-white transition-all whitespace-nowrap">
                                                 View Details
                                             </button>
                                         </div>
@@ -405,29 +403,29 @@ export function AnimatedProductDemo() {
                         </div>
                     </div>
  
-                    {/* Row 3: Split 40/60 - Quick Actions vs Activity */}
-                    <div className="grid grid-cols-5 gap-6">
-                        {/* Left: Quick Actions - 40% (2 columns) */}
-                        <div className="col-span-2">
+                    {/* Row 3: Responsive grid */}
+                    <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-6">
+                        {/* Quick Actions */}
+                        <div className="lg:col-span-2 order-2 lg:order-1">
                             <div className="text-sm text-gray-400 mb-3">Quick Actions</div>
-                            <div className="grid grid-cols-2 gap-3">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                                 {quickActions.map((action, idx) => (
                                     <motion.button 
                                         key={action.label}
                                         initial={{ opacity: 0, y: 10 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: 0.1 + idx * 0.05 }}
-                                        className="action-btn flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-gray-300 bg-white/5 border border-gray-700/50 hover:border-emerald-500/50"
+                                        className="action-btn flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 rounded-lg text-xs sm:text-sm text-gray-300 bg-white/5 border border-gray-700/50 hover:border-emerald-500/50 line-clamp-1"
                                     >
-                                        <action.icon className="w-4 h-4" />
-                                        {action.label}
+                                        <action.icon className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
+                                        <span className="truncate">{action.label}</span>
                                     </motion.button>
                                 ))}
                             </div>
                         </div>
 
-                        {/* Right: Recent Activity - 60% */}
-                        <div className="col-span-3">
+                        {/* Activity */}
+                        <div className="order-1 lg:order-none lg:col-span-3 col-span-1">
                             <div className="cyber-glass rounded-xl p-5 h-full">
                                 <div className="text-sm text-gray-400 mb-4 flex items-center gap-2">
                                     <Clock className="w-4 h-4" />

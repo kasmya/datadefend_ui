@@ -31,7 +31,6 @@ export function Navbar() {
 
             if (days < 0) {
                 months--;
-                // Get days in previous month
                 const prevMonthDate = new Date(now.getFullYear(), now.getMonth(), 0);
                 days += prevMonthDate.getDate();
             }
@@ -40,13 +39,11 @@ export function Navbar() {
         };
 
         calculateTimeLeft();
-        // Update everyday at midnight (or simple interval is fine for this granularity)
         const timer = setInterval(calculateTimeLeft, 60000 * 60);
 
         const handleScroll = () => setScrolled(window.scrollY > 20);
         window.addEventListener("scroll", handleScroll);
 
-        // Prevent body scroll when mobile menu is open
         if (isOpen) {
             document.body.style.overflow = 'hidden';
         } else {
@@ -64,8 +61,8 @@ export function Navbar() {
         <>
             {/* Top Banner */}
             {bannerVisible && (
-                <div className="bg-blue-800 text-white text-xs md:text-sm py-2 px-4 relative">
-                    <div className="max-w-7xl mx-auto flex items-center justify-between">
+                <div className="bg-blue-800 text-white text-xs sm:text-sm py-1.5 sm:py-2 px-3 sm:px-4 md:px-6 relative">
+                    <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-0">
                         <div className="flex-1 text-center">
                             <span className="font-medium">
                                 🎉 Deadline: {timeLeft.months} mo | {timeLeft.days} days until May 13, 2027{" "}
@@ -86,19 +83,18 @@ export function Navbar() {
             )}
 
             {/* Main Navbar - Floating Pill Logic */}
-            <div className={`sticky z-50 transition-all duration-300 ${scrolled ? "top-0 mb-0" : "top-4 mb-4"} ${isOpen ? "md:px-8" : "px-4 md:px-8"}`}>
+            <div className={`sticky z-50 transition-all duration-300 ${scrolled ? "top-0 mb-0" : "top-4 mb-4"} px-3 sm:px-4 md:px-6 lg:px-8 ${isOpen ? "md:px-6 lg:px-8" : ""}`}>
                 <nav
                     className={`transition-all duration-300 mx-auto bg-white/95 backdrop-blur-md shadow-2xl ${isOpen ? "rounded-t-3xl md:rounded-full" : "rounded-full"} max-w-7xl border border-gray-100/50`}
                 >
                     <div className="container mx-auto px-4 md:px-6">
-                        <div className="flex items-center justify-between h-16">
+                        <div className="flex items-center justify-between h-14 sm:h-16 md:h-16">
                             {/* Logo */}
                             <Link href="/" className="flex items-center gap-2 pl-2" onClick={() => {
                                 setIsOpen(false);
                                 setMobileDropdown(null);
                             }}>
-                                {/* Using dad.svg logo as requested - No Invert needed for white background */}
-                                <img src="/dad.svg" alt="DataDefend Logo" className="h-8 w-auto" />
+                                <img src="/dad.svg" alt="DataDefend Logo" className="h-7 sm:h-8 w-auto" />
                             </Link>
 
                             {/* Desktop Navigation */}
@@ -107,7 +103,7 @@ export function Navbar() {
                                     <Link
                                         key={item.name}
                                         href={item.href}
-                                        className="font-medium transition-colors text-gray-700 hover:text-[#0e488b]"
+                                        className="text-sm sm:text-base font-medium transition-colors text-gray-700 hover:text-[#0e488b]"
                                     >
                                         {item.name}
                                     </Link>
@@ -148,12 +144,12 @@ export function Navbar() {
                                 transition={{ duration: 0.25, ease: "easeInOut" }}
                                 className="md:hidden bg-white border-t border-gray-100 rounded-b-3xl overflow-hidden shadow-2xl"
                             >
-                                <div className="px-4 py-4 space-y-1 max-h-[calc(100vh-120px)] overflow-y-auto">
+                                <div className="px-4 sm:px-6 py-6 space-y-2 max-h-[calc(100vh-100px)] overflow-y-auto">
                                     {navItems.map((item) => (
                                         <Link
                                             key={item.name}
                                             href={item.href}
-                                            className="block text-gray-800 font-semibold py-3 px-4 hover:bg-gray-50 rounded-lg transition-all text-base active:scale-[0.98]"
+                                            className="block text-base sm:text-lg text-gray-800 font-semibold py-4 px-6 hover:bg-gray-50 rounded-xl transition-all active:scale-[0.98] hover:shadow-md"
                                             onClick={() => {
                                                 setIsOpen(false);
                                                 setMobileDropdown(null);

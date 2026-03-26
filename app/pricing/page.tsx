@@ -178,8 +178,7 @@ export default function PricingPage() {
                                     </p>
                                     {plan.features.map((feature, idx) => (
                                         <div key={idx} className="flex items-start gap-3">
-                                            <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.highlight ? 'text-[#3b82f6]' : 'text-green-500'
-                                                }`} />
+<Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.highlight ? 'text-[#3b82f6]' : 'text-blue-500'}`} />
                                             <span className={`text-sm ${plan.highlight ? 'text-white/90' : 'text-gray-700'}`}>
                                                 {feature}
                                             </span>
@@ -194,8 +193,7 @@ export default function PricingPage() {
                                         </p>
                                         {plan.notIncluded.map((feature, idx) => (
                                             <div key={idx} className="flex items-start gap-3">
-                                                <X className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.highlight ? 'text-white/40' : 'text-gray-400'
-                                                    }`} />
+<X className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.highlight ? 'text-white/40' : 'text-gray-400'}`} />
                                                 <span className={`text-sm ${plan.highlight ? 'text-white/60' : 'text-gray-500'}`}>
                                                     {feature}
                                                 </span>

@@ -173,14 +173,6 @@ const processSteps = [
     }
 ];
 
-
-
-
-
-
-
-
-
 export default function PlatformPage() {
     return (
         <main className="min-h-screen bg-white">
@@ -355,29 +347,29 @@ export default function PlatformPage() {
                                 </div>
                             </div>
 
-                            {/* Visual Dashboard Graphic */}
-                            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                                <div className="flex items-center gap-2 mb-4">
-                                    <div className="w-3 h-3 rounded-full bg-blue-500" />
-                                    <div className="w-3 h-3 rounded-full bg-blue-300" />
-                                    <div className="w-3 h-3 rounded-full bg-blue-100" />
+                            {/* Visual Dashboard Graphic - FIXED FOR MOBILE */}
+                            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-3 sm:p-6 border border-white/20 overflow-hidden">
+                                <div className="flex items-center gap-2 mb-3 sm:mb-4 flex-wrap">
+                                    <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-blue-500" />
+                                    <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-blue-300" />
+                                    <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-blue-100" />
                                 </div>
-                                <div className="space-y-3">
-                                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
-                                        <span className="text-white/90 text-sm">Data Sources Scanned</span>
-                                        <span className="text-[#3b82f6] font-bold">2,847</span>
+                                <div className="space-y-2 sm:space-y-3">
+                                    <div className="flex flex-col sm:flex-row sm:items-center justify-between p-2 sm:p-3 bg-white/10 rounded-lg text-xs sm:text-sm">
+                                        <span className="text-white/90 line-clamp-1">Data Sources Scanned</span>
+                                        <span className="text-[#3b82f6] font-bold mt-1 sm:mt-0">2,847</span>
                                     </div>
-                                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
-                                        <span className="text-white/90 text-sm">PII Records Classified</span>
-                                        <span className="text-[#3b82f6] font-bold">1.2M+</span>
+                                    <div className="flex flex-col sm:flex-row sm:items-center justify-between p-2 sm:p-3 bg-white/10 rounded-lg text-xs sm:text-sm">
+                                        <span className="text-white/90 line-clamp-1">PII Records Classified</span>
+                                        <span className="text-[#3b82f6] font-bold mt-1 sm:mt-0">1.2M+</span>
                                     </div>
-                                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
-                                        <span className="text-white/90 text-sm">Compliance Score</span>
-                                        <span className="text-blue-400 font-bold">94%</span>
+                                    <div className="flex flex-col sm:flex-row sm:items-center justify-between p-2 sm:p-3 bg-white/10 rounded-lg text-xs sm:text-sm">
+                                        <span className="text-white/90 line-clamp-1">Compliance Score</span>
+                                        <span className="text-blue-400 font-bold mt-1 sm:mt-0">94%</span>
                                     </div>
-                                    <div className="flex items-center justify-between p-3 bg-white/10 rounded-lg">
-                                        <span className="text-white/90 text-sm">Active Alerts</span>
-                                        <span className="text-blue-400 font-bold">3</span>
+                                    <div className="flex flex-col sm:flex-row sm:items-center justify-between p-2 sm:p-3 bg-white/10 rounded-lg text-xs sm:text-sm">
+                                        <span className="text-white/90 line-clamp-1">Active Alerts</span>
+                                        <span className="text-blue-400 font-bold mt-1 sm:mt-0">3</span>
                                     </div>
                                 </div>
                             </div>
@@ -386,43 +378,39 @@ export default function PlatformPage() {
                 </div>
             </section>
 
-            {/* How It Works - Process Flow */}
-            <section className="py-20 px-4">
+            {/* How It Works */}
+            <section className="py-16 sm:py-20 px-2 sm:px-4">
                 <div className="container mx-auto max-w-7xl">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-[#152645] mb-4">
+                    <div className="text-center mb-12">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#152645] mb-4">
                             How DataDefend Works
                         </h2>
-                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                        <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto line-clamp-2">
                             Get compliance-ready in 4 simple steps. Our AI handles the complexity so you can focus on your business.
                         </p>
                     </div>
 
                     <div className="relative">
-                        {/* Connection Line */}
                         <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-[#0e488b] via-[#3b82f6] to-[#0e488b] -translate-y-1/2 rounded-full" />
-
-                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
                             {processSteps.map((step, index) => (
                                 <motion.div
                                     key={step.step}
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
-                                    transition={{ delay: index * 0.15 }}
-                                    className="relative bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center"
+                                    transition={{ delay: index * 0.1 }}
+                                    className="relative bg-white p-4 sm:p-6 rounded-2xl shadow-lg border border-gray-100 text-center overflow-hidden"
                                 >
-                                    {/* Step Number */}
-                                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-10 bg-gradient-to-br from-[#3b82f6] to-[#2563eb] rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-[#3b82f6] to-[#2563eb] rounded-full flex items-center justify-center text-white font-bold shadow-lg text-xs sm:text-base">
                                         {step.step}
                                     </div>
-
-                                    <div className="mt-6">
-                                        <div className="w-16 h-16 mx-auto bg-[#e0f2fe] rounded-2xl flex items-center justify-center mb-4 text-[#0e488b]">
-                                            <step.icon className="w-8 h-8" />
+                                    <div className="mt-8 sm:mt-10">
+                                        <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto bg-[#e0f2fe] rounded-2xl flex items-center justify-center mb-3 sm:mb-4 text-[#0e488b]">
+                                            <step.icon className="w-6 h-6 sm:w-8 sm:h-8" />
                                         </div>
-                                        <h3 className="text-xl font-bold text-[#152645] mb-2">{step.title}</h3>
-                                        <p className="text-gray-600 text-sm">{step.description}</p>
+                                        <h3 className="text-base sm:text-xl font-bold text-[#152645] mb-2 line-clamp-1">{step.title}</h3>
+                                        <p className="text-xs sm:text-sm text-gray-600 line-clamp-2">{step.description}</p>
                                     </div>
                                 </motion.div>
                             ))}
@@ -431,28 +419,28 @@ export default function PlatformPage() {
                 </div>
             </section>
 
-            {/* Team Benefits Section */}
-            <section className="py-20 px-4 bg-gray-50">
+            {/* Team Benefits */}
+            <section className="py-16 sm:py-20 px-2 sm:px-4 bg-gray-50">
                 <div className="container mx-auto max-w-7xl">
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-12">
                         <motion.span
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
-                            className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#3b82f6]/10 text-[#3b82f6] text-sm font-semibold rounded-full mb-4"
+                            className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 bg-[#3b82f6]/10 text-[#3b82f6] text-xs sm:text-sm font-semibold rounded-full mb-4"
                         >
                             <Users className="w-4 h-4" />
                             BUILT FOR EVERY TEAM
                         </motion.span>
-                        <h2 className="text-3xl md:text-4xl font-bold text-[#152645] mb-4">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#152645] mb-4">
                             One Platform for All Your Teams
                         </h2>
-                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                        <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto line-clamp-2">
                             Whether you're in tech, compliance, or legal – DataDefend speaks your language and fits your workflow.
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {teamBenefits.map((team, index) => (
                             <motion.div
                                 key={team.team}
@@ -460,17 +448,17 @@ export default function PlatformPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow"
+                                className="bg-white rounded-2xl p-6 overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition-shadow"
                             >
-                                <div className={`w-14 h-14 bg-gradient-to-br ${team.color} rounded-2xl flex items-center justify-center mb-6 text-white`}>
+                                <div className={`w-14 h-14 bg-gradient-to-br ${team.color} rounded-2xl flex items-center justify-center mb-4 text-white`}>
                                     <team.icon className="w-7 h-7" />
                                 </div>
-                                <h3 className="text-xl font-bold text-[#152645] mb-4">{team.team}</h3>
-                                <ul className="space-y-3">
+                                <h3 className="text-lg sm:text-xl font-bold text-[#152645] mb-4 line-clamp-1">{team.team}</h3>
+                                <ul className="space-y-2">
                                     {team.benefits.map((benefit, i) => (
-                                        <li key={i} className="flex items-start gap-3">
-                                            <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                                            <span className="text-gray-600 text-sm">{benefit}</span>
+                                        <li key={i} className="flex items-start gap-3 text-sm">
+                                            <CheckCircle className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" />
+                                            <span className="text-gray-600 line-clamp-1">{benefit}</span>
                                         </li>
                                     ))}
                                 </ul>
@@ -481,18 +469,18 @@ export default function PlatformPage() {
             </section>
 
             {/* Features Grid */}
-            <section className="py-20 px-4">
+            <section className="py-16 sm:py-20 px-2 sm:px-4">
                 <div className="container mx-auto max-w-7xl">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-[#152645] mb-4">
+                    <div className="text-center mb-12">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#152645] mb-4">
                             Everything You Need for DPDPA Compliance
                         </h2>
-                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                        <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto line-clamp-2">
                             Six powerful modules working together to give you complete control over your data privacy operations.
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {platformFeatures.map((feature, index) => (
                             <motion.div
                                 key={feature.title}
@@ -500,16 +488,16 @@ export default function PlatformPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-lg hover:shadow-xl transition-shadow group"
+                                className="bg-white p-6 rounded-[2rem] border border-gray-100 shadow-lg hover:shadow-xl transition-shadow group overflow-hidden"
                             >
-                                <div className="w-14 h-14 bg-[#e0f2fe] rounded-2xl flex items-center justify-center mb-6 text-[#0e488b] group-hover:bg-[#3b82f6] group-hover:text-white transition-colors">
+                                <div className="w-14 h-14 bg-[#e0f2fe] rounded-2xl flex items-center justify-center mb-4 text-[#0e488b] group-hover:bg-[#3b82f6] group-hover:text-white transition-colors">
                                     <feature.icon className="w-7 h-7" />
                                 </div>
-                                <h3 className="text-xl font-bold text-[#152645] mb-3">{feature.title}</h3>
-                                <p className="text-gray-600 mb-4">{feature.description}</p>
+                                <h3 className="text-lg sm:text-xl font-bold text-[#152645] mb-3 line-clamp-1">{feature.title}</h3>
+                                <p className="text-sm text-gray-600 mb-4 line-clamp-2">{feature.description}</p>
                                 <div className="space-y-2">
                                     {feature.highlights.map((highlight) => (
-                                        <div key={highlight} className="flex items-center gap-2 text-sm text-gray-500">
+                                        <div key={highlight} className="flex items-center gap-2 text-xs sm:text-sm text-gray-500 line-clamp-1">
                                             <CheckCircle className="w-4 h-4 text-[#0e488b]" />
                                             {highlight}
                                         </div>
@@ -522,61 +510,42 @@ export default function PlatformPage() {
             </section>
 
             {/* Integration Visual */}
-            <section className="py-20 px-4 bg-gradient-to-b from-white to-gray-50">
+            <section className="py-16 sm:py-20 px-2 sm:px-4 bg-gradient-to-b from-white to-gray-50">
                 <div className="container mx-auto max-w-6xl">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-gray-100"
+                        className="bg-white rounded-3xl shadow-2xl p-6 sm:p-8 md:p-12 border border-gray-100 overflow-hidden"
                     >
-                        <div className="grid md:grid-cols-2 gap-12 items-center">
+                        <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
                             <div>
-                                <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-green-100 text-green-700 text-sm font-semibold rounded-full mb-4">
+                                <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 bg-blue-100 text-blue-700 text-xs sm:text-sm font-semibold rounded-full mb-4 line-clamp-1">
                                     <Clock className="w-4 h-4" />
                                     QUICK SETUP
                                 </span>
-                                <h3 className="text-2xl md:text-3xl font-bold text-[#152645] mb-4">
+                                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#152645] mb-4 line-clamp-1">
                                     Go Live in Under 2 Weeks
                                 </h3>
-                                <p className="text-gray-600 mb-6">
+                                <p className="text-sm sm:text-base text-gray-600 mb-6 line-clamp-2">
                                     With our guided onboarding, pre-built templates, and 7000+ integrations, you'll be compliance-ready
                                     faster than you ever thought possible.
                                 </p>
-                                <div className="space-y-4">
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 bg-[#e0f2fe] rounded-xl flex items-center justify-center text-[#0e488b]">
-                                            <Target className="w-6 h-6" />
+                                <div className="space-y-3 sm:space-y-4">
+                                    <div className="flex items-start sm:items-center gap-3 sm:gap-4">
+                                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#e0f2fe] rounded-xl flex items-center justify-center text-[#0e488b] flex-shrink-0">
+                                            <Target className="w-5 h-5 sm:w-6 sm:h-6" />
                                         </div>
                                         <div>
-                                            <h4 className="font-semibold text-[#152645]">Dedicated Onboarding Manager</h4>
-                                            <p className="text-sm text-gray-500">Personal guidance through every step</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 bg-[#e0f2fe] rounded-xl flex items-center justify-center text-[#0e488b]">
-                                            <Laptop className="w-6 h-6" />
-                                        </div>
-                                        <div>
-                                            <h4 className="font-semibold text-[#152645]">White-Glove Implementation</h4>
-                                            <p className="text-sm text-gray-500">We configure everything for you</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 bg-[#e0f2fe] rounded-xl flex items-center justify-center text-[#0e488b]">
-                                            <AlertCircle className="w-6 h-6" />
-                                        </div>
-                                        <div>
-                                            <h4 className="font-semibold text-[#152645]">24/7 Support</h4>
-                                            <p className="text-sm text-gray-500">Expert help whenever you need it</p>
+                                            <h4 className="font-semibold text-[#152645] line-clamp-1">Dedicated Onboarding Manager</h4>
+                                            <p className="text-xs sm:text-sm text-gray-500 line-clamp-1">Personal guidance through every step</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Integration Visual */}
                             <div className="relative">
-                                <div className="grid grid-cols-4 gap-4">
+                                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4">
                                     {["Salesforce", "AWS", "MongoDB", "Slack", "HubSpot", "Azure", "PostgreSQL", "Teams", "Shopify", "GCP", "MySQL", "Jira"].map((name, i) => (
                                         <motion.div
                                             key={name}
@@ -584,14 +553,14 @@ export default function PlatformPage() {
                                             whileInView={{ opacity: 1, scale: 1 }}
                                             viewport={{ once: true }}
                                             transition={{ delay: i * 0.05 }}
-                                            className="aspect-square bg-gray-50 rounded-xl border border-gray-200 flex items-center justify-center text-xs font-medium text-gray-600 hover:border-[#0e488b] hover:bg-[#e0f2fe] transition-colors cursor-pointer"
+                                            className="aspect-square bg-gray-50 rounded-xl border border-gray-200 flex items-center justify-center text-xs font-medium text-gray-600 hover:border-[#0e488b] hover:bg-[#e0f2fe] transition-colors cursor-pointer overflow-hidden line-clamp-1 px-1"
                                         >
                                             {name}
                                         </motion.div>
                                     ))}
                                 </div>
-                                <div className="text-center mt-6">
-                                    <p className="text-sm text-gray-500">
+                                <div className="text-center mt-4">
+                                    <p className="text-xs sm:text-sm text-gray-500 line-clamp-1">
                                         And <span className="font-bold text-[#0e488b]">7000+ more</span> integrations
                                     </p>
                                 </div>
@@ -601,31 +570,30 @@ export default function PlatformPage() {
                 </div>
             </section>
 
-            {/* Onboarding Journey Teaser */}
-            <section className="py-20 px-4">
+            {/* Onboarding */}
+            <section className="py-16 sm:py-20 px-2 sm:px-4">
                 <div className="container mx-auto max-w-5xl">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="bg-gradient-to-r from-[#152645] to-[#0e488b] rounded-3xl p-8 md:p-12 text-center text-white shadow-2xl relative overflow-hidden"
+                        className="bg-gradient-to-r from-[#152645] to-[#0e488b] rounded-3xl p-6 sm:p-8 md:p-12 text-center text-white shadow-2xl relative overflow-hidden"
                     >
-                        {/* Background Pattern */}
                         <div className="absolute inset-0 opacity-10">
                             <div className="absolute top-10 left-10 w-40 h-40 border border-white rounded-full" />
                             <div className="absolute bottom-10 right-10 w-60 h-60 border border-white rounded-full" />
                         </div>
 
                         <div className="relative z-10">
-                            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 line-clamp-1">
                                 Your Journey to Compliance
                             </h2>
-                            <p className="text-lg text-white/80 max-w-2xl mx-auto mb-8">
+                            <p className="text-base sm:text-lg text-white/80 max-w-2xl mx-auto mb-8 line-clamp-2">
                                 Discover how we take you from zero to compliant in weeks, with a special consultation track for large enterprises involving C-Suite systematic planning.
                             </p>
                             <Link
                                 href="/onboarding"
-                                className="inline-flex items-center gap-2 px-8 py-3 bg-[#3b82f6] hover:bg-[#2563eb] text-[#152645] font-bold rounded-full transition-all shadow-lg hover:scale-105"
+                                className="inline-flex items-center gap-2 px-6 sm:px-8 py-2 sm:py-3 bg-[#3b82f6] hover:bg-[#2563eb] text-[#152645] font-bold rounded-full transition-all shadow-lg hover:scale-105 line-clamp-1"
                             >
                                 View Onboarding Process
                                 <ArrowRight className="w-5 h-5" />
@@ -635,14 +603,7 @@ export default function PlatformPage() {
                 </div>
             </section>
 
-
-
-
-
-
-
             <Footer />
         </main>
     );
 }
-
