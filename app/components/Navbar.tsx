@@ -83,9 +83,9 @@ export function Navbar() {
             )}
 
             {/* Main Navbar - Floating Pill Logic */}
-            <div className={`sticky z-50 transition-all duration-300 ${scrolled ? "top-0 mb-0" : "top-4 mb-4"} px-3 sm:px-4 md:px-6 lg:px-8 ${isOpen ? "md:px-6 lg:px-8" : ""}`}>
+            <div className={`sticky z-50 transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] ${scrolled ? "top-0 mb-0" : "top-4 mb-4"} px-3 sm:px-4 md:px-6 lg:px-8 ${isOpen ? "md:px-6 lg:px-8" : ""}`}>
                 <nav
-                    className={`transition-all duration-300 mx-auto bg-white/95 backdrop-blur-md shadow-2xl ${isOpen ? "rounded-t-3xl md:rounded-full" : "rounded-full"} max-w-7xl border border-gray-100/50`}
+                    className={`transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] mx-auto bg-white/95 backdrop-blur-md shadow-2xl ${isOpen ? "rounded-2xl rounded-b-none" : "rounded-2xl"} max-w-7xl border border-gray-100/50 will-change-transform`}
                 >
                     <div className="container mx-auto px-4 md:px-6">
                         <div className="flex items-center justify-between h-14 sm:h-16 md:h-16">
@@ -141,8 +141,8 @@ export function Navbar() {
                                 initial={{ opacity: 0, height: 0 }}
                                 animate={{ opacity: 1, height: "auto" }}
                                 exit={{ opacity: 0, height: 0 }}
-                                transition={{ duration: 0.25, ease: "easeInOut" }}
-                                className="md:hidden bg-white border-t border-gray-100 rounded-b-3xl overflow-hidden shadow-2xl"
+                                transition={{ duration: 0.4, ease: "easeOut" }}
+                                className="md:hidden bg-white border-t border-gray-100 rounded-b-2xl overflow-hidden shadow-2xl will-change-transform [transform:translateZ(0)] motion-reduce:transform-none"
                             >
                                 <div className="px-4 sm:px-6 py-6 space-y-2 max-h-[calc(100vh-100px)] overflow-y-auto">
                                     {navItems.map((item) => (

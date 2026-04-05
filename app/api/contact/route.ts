@@ -5,6 +5,15 @@ export async function POST(request: NextRequest) {
     try {
         const { name, email, subject, message } = await request.json();
 
+        // Skip DB for static build
+        if (!process.env.MONGODB_URI) {
+            console.log('Static build - no DB connection');
+            return NextResponse.json(
+                { success: true, message: "Message received (demo mode)" },
+                { status: 201 }
+            );
+        }
+
         // Validate required fields
         if (!name || !email || !subject || !message) {
             return NextResponse.json(
@@ -12,6 +21,7 @@ export async function POST(request: NextRequest) {
                 { status: 400 }
             );
         }
+
 
         // Validate email format
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -22,9 +32,14 @@ export async function POST(request: NextRequest) {
             );
         }
 
-        const client = await clientPromise;
+        const clientPromiseResult = await clientPromise;
+        if (!clientPromiseResult) {
+          throw new Error('MongoDB client not available');
+        }
+        const client = clientPromiseResult;
         const db = client.db("datadefend");
         const collection = db.collection("contacts");
+
 
         // Insert contact submission
         await collection.insertOne({

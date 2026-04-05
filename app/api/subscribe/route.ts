@@ -21,9 +21,14 @@ export async function POST(request: NextRequest) {
             );
         }
 
-        const client = await clientPromise;
+        const clientPromiseResult = await clientPromise;
+        if (!clientPromiseResult) {
+          throw new Error('MongoDB client not available');
+        }
+        const client = clientPromiseResult;
         const db = client.db("datadefend");
         const collection = db.collection("subscribers");
+
 
         // Check if email already exists
         const existingSubscriber = await collection.findOne({ email });
