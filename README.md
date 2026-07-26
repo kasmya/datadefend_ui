@@ -1,4 +1,4 @@
-# DataDefend - DPDPA Compliance Platform UI
+# 📊 DataDefend - DPDPA Compliance Platform UI
 
 ## Next.js 16 Frontend
 
